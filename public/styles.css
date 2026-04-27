@@ -1,0 +1,184 @@
+    :root {
+        --taqbit-navy: #3a4bcd;
+        --taqbit-red: #ff5a6b;
+        --taqbit-dark-navy: #2a3a9d;
+        --taqbit-light-navy: #5a6bed;
+        --taqbit-light-red: #ff7b8a;
+        --taqbit-dark-red: #e64956;
+        --taqbit-bg: #f8fafc;
+        --taqbit-card: #ffffff;
+        --taqbit-text: #1e293b;
+        --taqbit-text-light: #64748b;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--taqbit-bg);
+        color: var(--taqbit-text);
+        overflow-x: hidden;
+    }
+
+    .hero-gradient {
+        background: radial-gradient(circle at 70% 30%, rgba(58, 75, 205, 0.15) 0%, rgba(248, 250, 252, 1) 70%);
+        background-color: var(--taqbit-bg);
+    }
+
+    .quantum-pattern {
+        background-image:
+            radial-gradient(circle at 25% 25%, rgba(58, 75, 205, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 90, 107, 0.08) 0%, transparent 50%);
+    }
+
+    .card-hover-effect {
+        transition: all 0.3s ease;
+    }
+
+    .card-hover-effect:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(58, 75, 205, 0.15), 0 10px 10px -5px rgba(255, 90, 107, 0.1);
+    }
+
+    .glow {
+        box-shadow: 0 0 15px rgba(58, 75, 205, 0.3);
+    }
+
+    .quantum-dots {
+            background-image: radial-gradient(circle, rgba(30,40,117,0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .taqbit-primary {
+        background-color: var(--taqbit-navy);
+    }
+
+    .taqbit-secondary {
+        background-color: var(--taqbit-red);
+    }
+
+    .taqbit-hover-primary:hover {
+        background-color: var(--taqbit-light-navy);
+    }
+
+    .taqbit-hover-secondary:hover {
+        background-color: var(--taqbit-light-red);
+    }
+
+    .taqbit-text-primary {
+        color: var(--taqbit-navy);
+    }
+
+    .taqbit-text-secondary {
+        color: var(--taqbit-red);
+    }
+
+    .taqbit-border-primary {
+        border-color: var(--taqbit-navy);
+    }
+
+    .taqbit-border-secondary {
+        border-color: var(--taqbit-red);
+    }
+
+    .taqbit-gradient-text {
+        background: linear-gradient(135deg, var(--taqbit-navy) 0%, var(--taqbit-red) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .taqbit-gradient-bg {
+        background: linear-gradient(135deg, var(--taqbit-navy) 0%, var(--taqbit-red) 100%);
+    }
+    @keyframes fadeup {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fadeup {
+        animation: fadeup 1s ease-out forwards;
+    }
+
+    .delay-150 {
+        animation-delay: 0.15s;
+    }
+
+    .delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    /* Custom Animation Classes */
+    .animate-quantum-fade {
+        opacity: 0;
+        animation: quantumFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes quantumFade {
+            to { opacity: 1; }
+    }
+
+
+
+    .quote-slide {
+        transition: all 0.1s ease-in-out;
+    }
+
+    .active-slide {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 10;
+    }
+
+    .inactive-slide {
+        opacity: 0;
+        transform: scale(0.9);
+        z-index: 0;
+    }
+
+    /* Add this to your style section */
+    #mobile-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    /* Ensure dropdowns have proper z-index */
+    .relative.group .absolute {
+        z-index: 60;
+    }
+
+    :root {
+        --track-duration: 20s;
+    }
+
+    .news-strip {
+        width: 90%;
+        max-width: 1200px;
+        height: 210px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .track {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: nowrap;
+        animation: slide var(--track-duration) linear infinite;
+    }
+
+    
+    /* pause on hover */
+    .news-strip:hover .track {
+        animation-play-state: paused;
+    }
+
+    

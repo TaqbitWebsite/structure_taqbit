@@ -1,0 +1,555 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taqbit's Quantum Random Number Generator (QRNG) produces true random numbers from quantum vacuum fluctuations for cryptographic security">
+    <title>Quantum Random Number Generator (QRNG) | Taqbit Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .quantum-pattern {
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+        .taqbit-secondary {
+            background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+        }
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #8b5cf6 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <!-- QRNG Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <img src="./assets/qrng-background.png" alt="Quantum Randomness" class="absolute inset-0 w-full h-full object-cover brightness-75 opacity-80 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-indigo-900/60 z-0"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 taqbit-gradient-text">
+                Quantum Random Number Generator
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                True randomness derived from quantum vacuum fluctuations for cryptographic security
+            </p>
+        </div>
+    </section>
+
+    <!-- QRNG Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">QRNG</h2>
+                <p class="text-gray-600 max-w-4xl mx-auto">
+                    Our Quantum Random Number Generator produces fundamentally unpredictable random numbers by measuring quantum vacuum fluctuations, delivering cryptographic-strength randomness at multi-Gbps speeds.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Quantum Vacuum Fluctuations</h3>
+                    <p class="text-gray-600 mb-6">
+                        This QRNG exploits the fundamental unpredictability of quantum vacuum noise - the zero-point energy present even in empty space. By performing balanced homodyne detection on the vacuum state, we extract true randomness that is provably non-deterministic.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-indigo-50 p-4 rounded-lg">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">>95% Entropy Per Bit</p>
+                                <p class="text-sm text-gray-600">Trusted quantum entropy source exceeds cryptographic requirements</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-indigo-50 p-4 rounded-lg">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Multi-Gbps Throughput</p>
+                                <p class="text-sm text-gray-600">High-speed output meets demands of modern encryption systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <img src="./assets/QRNG.png" alt="QRNG Device" class="rounded-lg mx-auto" style="max-height: 300px;">
+                </div>
+            </div>
+            
+            <!-- QRNG vs PRNG -->
+            <div class="bg-indigo-50 rounded-xl p-8 mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">QRNG vs Traditional Randomness Sources</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantum RNG</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pseudo RNG</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hardware RNG</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Randomness Source</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Quantum vacuum fluctuations</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Mathematical algorithm</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Classical noise (thermal, jitter)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Entropy Quality</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Fundamentally unpredictable</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Deterministic with seed</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Potentially predictable</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Security</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Provably secure</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Vulnerable to seed attacks</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Subject to physical attacks</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Speed</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Multi-Gbps</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Very fast</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Typically slow</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Certifications</td>
+                                <td class="px-6 py-4 whitespace-nowrap">NIST SP800-22, Dieharder</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Limited</td>
+                                <td class="px-6 py-4 whitespace-nowrap">Varies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QRNG Technology -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">QRNG Technology</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">How our quantum random number generator works</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Balanced Homodyne Detection</h3>
+                    <p class="text-gray-600 mb-6">
+                        The QRNG uses balanced homodyne detection to measure the quadrature fluctuations of the quantum vacuum state. This approach provides several advantages over other quantum randomness extraction methods:
+                    </p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2">•</span>
+                            <span><strong>High efficiency:</strong> Nearly all available quantum noise is converted to random bits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2">•</span>
+                            <span><strong>Robustness:</strong> Insensitive to classical noise sources and environmental fluctuations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2">•</span>
+                            <span><strong>Scalability:</strong> The same core technology supports from Mbps to Gbps generation</span>
+                        </li>
+                    </ul>
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <p class="text-sm text-indigo-800 font-medium">Quantum Advantage:</p>
+                        <p class="text-sm text-gray-700">The vacuum state is the purest quantum state, with fluctuations that are fundamentally unpredictable according to quantum mechanics.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <img src="./assets/HD.png" alt="Homodyne Detection Diagram" class="rounded-lg">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 order-last md:order-first">
+                    <img src="./assets/vfqrng.png" alt="Randomness Generation Pipeline" class="rounded-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Randomness Generation Pipeline</h3>
+                    <ol class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Quantum Source</h4>
+                                <p class="text-gray-600 mt-1">Vacuum state input to balanced homodyne detector</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Analog-to-Digital Conversion</h4>
+                                <p class="text-gray-600 mt-1">High-speed ADC samples the quantum noise</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">3</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Conditioning</h4>
+                                <p class="text-gray-600 mt-1">Digital signal processing removes classical noise</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">4</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Randomness Extraction</h4>
+                                <p class="text-gray-600 mt-1">Cryptographic algorithms distill pure randomness</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">5</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Output</h4>
+                                <p class="text-gray-600 mt-1">High-speed interface delivers random bits</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QRNG Applications -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">QRNG Applications</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Critical uses for quantum-grade randomness</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- App 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-indigo-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-indigo-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-key text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Cryptographic Keys</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Generation of encryption keys that cannot be predicted or reproduced
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>AES, RSA, ECC key generation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>One-time pad creation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Perfect forward secrecy</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- App 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-indigo-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-indigo-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Security Protocols</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Secure initialization vectors, nonces, and salts for protocols
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>TLS/SSL handshake randomness</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Secure authentication tokens</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Blockchain nonce generation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- App 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-indigo-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-indigo-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Simulations & Finance</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        High-quality randomness for modeling and financial applications
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Monte Carlo simulations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Algorithmic trading systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-indigo-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Statistical sampling</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QRNG Specifications -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Technical Specifications</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">QRNG performance characteristics</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Core Specifications</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Entropy Source</span>
+                                <span class="font-medium">Quantum vacuum fluctuations</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Output Rate</span>
+                                <span class="font-medium">Multi-Gbps true random bit rate</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Entropy Quality</span>
+                                <span class="font-medium">>95% per bit</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Latency</span>
+                                <span class="font-medium">< a few microseconds</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Certifications</span>
+                                <span class="font-medium">NIST SP800-22, Dieharder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Physical Characteristics</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Dimensions</span>
+                                <span class="font-medium">12"×9"×2" (W×D×H)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Weight</span>
+                                <span class="font-medium">2.5 kg</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Operating Temp</span>
+                                <span class="font-medium">0–50°C</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Storage Temp</span>
+                                <span class="font-medium">-40–85°C</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Power</span>
+                                <span class="font-medium">12V DC, 15W</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Interfaces & Software</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="font-medium text-indigo-800">Physical Interfaces</p>
+                            <p class="text-sm text-gray-600">USB 3.0, Ethernet (RJ45), PCIe</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="font-medium text-indigo-800">OS Support</p>
+                            <p class="text-sm text-gray-600">Windows, Linux, macOS</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="font-medium text-indigo-800">APIs</p>
+                            <p class="text-sm text-gray-600">C/C++, Python, Java, .NET</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+        <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeup');
+            animatedElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+        });
+    </script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

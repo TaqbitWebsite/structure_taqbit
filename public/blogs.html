@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqbit Blog | Quantum Security Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #4f46e5;
+            --secondary: #7c3aed;
+            --accent: #10b981;
+            --dark: #1e1b4b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+        }
+        
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover-effect {
+            transition: all 0.3s ease;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-date {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            margin-right: 0.3rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .tag:hover, .tag.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Masonry specific styles */
+        .masonry-container {
+            columns: 1;
+            column-gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .masonry-container {
+                columns: 2;
+                max-width: 800px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-container {
+                columns: 2;
+                max-width: 1000px;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-container {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .search-container.open {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+    
+
+    <!-- Blog Hero -->
+<section class="h min-h-[40vh] flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[url('./assets/blogshero.png')] bg-cover bg-center bg-no-repeat relative">
+    <div class="absolute inset-0 bg-black/50 z-0"></div> <!-- Optional overlay for contrast -->
+    
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
+            Quantum Security Blog
+        </h1>
+        <p class="text-lg text-white/80">
+            Cutting-edge research and expert analysis on post-quantum cryptography
+        </p>
+    </div>
+</section>
+    <!-- Blog Content - Centered Masonry Layout -->
+    <section class="py-12 bg-white" id="blog-list">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Latest Articles</h2>
+                    <p class="text-gray-600 text-sm">Explore our quantum security research</p>
+                </div>
+                
+                <div class="mt-4 md:mt-0 w-full md:w-auto">
+                    <!-- Search/Toggle Button -->
+                    <button id="search-toggle" class="flex items-center text-sm text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-search mr-2"></i> Search Articles
+                    </button>
+                    
+                    <!-- Search Container -->
+                    <div id="search-container" class="search-container mt-2">
+                        <div class="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+                            <input type="text" id="search-input" placeholder="Search by title or keyword..." 
+                                   class="flex-grow px-4 py-2 rounded-l-lg focus:outline-none text-sm">
+                            <button id="search-button" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg text-sm font-medium">
+                                Search
+                            </button>
+                        </div>
+                        
+                        <!-- Tag Filters -->
+                        <div id="tag-filters" class="mt-3 flex flex-wrap gap-2">
+                            <!-- Tags will be loaded here -->
+                            <div class="text-xs text-gray-500">Loading tags...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Masonry Grid -->
+            <div class="masonry-container">
+                <!-- Posts will be loaded here -->
+                <div class="text-center py-8 col-span-full">
+                    <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+                    <p class="mt-2 text-sm text-gray-600">Loading articles...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <!-- <section class="py-12 bg-gray-50">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Quantum Security Newsletter</h2>
+            <p class="text-gray-600 mb-6 text-sm">
+                Get the latest research and insights delivered to your inbox.
+            </p>
+            <div class="flex bg-white rounded-lg p-1 shadow-sm max-w-md mx-auto">
+                <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 rounded-l-lg focus:outline-none text-sm">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg text-sm font-medium">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <script>
+        // Global variables
+        let allPosts = [];
+        let allCategories = new Set();
+        let activeFilter = null;
+        
+        // DOM elements
+        const searchToggle = document.getElementById('search-toggle');
+        const searchContainer = document.getElementById('search-container');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const tagFilters = document.getElementById('tag-filters');
+        
+        // Toggle search container
+        searchToggle.addEventListener('click', () => {
+            searchContainer.classList.toggle('open');
+        });
+        
+        // Fetch all blog posts from Sanity
+        async function fetchBlogPosts() {
+            try {
+                const query = `*[_type == "post"] | order(publishedAt desc) {
+                    _id,
+                    title,
+                    slug,
+                    description,
+                    publishedAt,
+                    "mainImage": mainImage.asset->url,
+                    estimatedReadingTime,
+                    categories[]->{title}
+                }`;
+                
+                const encodedQuery = encodeURIComponent(query);
+                const response = await fetch(`https://c4hmiq4c.api.sanity.io/v2021-10-21/data/query/production?query=${encodedQuery}`);
+                const { result: posts } = await response.json();
+                
+                if (!posts || posts.length === 0) {
+                    throw new Error('No posts found');
+                }
+                
+                allPosts = posts;
+                extractCategories(posts);
+                renderBlogPosts(posts);
+                renderTagFilters();
+                
+            } catch (error) {
+                console.error('Error loading posts:', error);
+                document.getElementById('blog-list').innerHTML = `
+                    <div class="text-center py-8 col-span-full">
+                        <p class="text-gray-600 text-sm">Failed to load articles. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Extract unique categories
+        function extractCategories(posts) {
+            posts.forEach(post => {
+                if (post.categories && post.categories.length > 0) {
+                    post.categories.forEach(cat => allCategories.add(cat.title));
+                } else {
+                    allCategories.add('General');
+                }
+            });
+        }
+        
+        // Render tag filters
+        function renderTagFilters() {
+            tagFilters.innerHTML = '';
+            
+            // Add "All" option
+            const allTag = document.createElement('div');
+            allTag.className = `tag ${!activeFilter ? 'active' : ''}`;
+            allTag.textContent = 'All';
+            allTag.addEventListener('click', () => {
+                activeFilter = null;
+                renderBlogPosts(allPosts);
+                updateActiveTag();
+            });
+            tagFilters.appendChild(allTag);
+            
+            // Add category tags
+            allCategories.forEach(category => {
+                const tag = document.createElement('div');
+                tag.className = `tag ${activeFilter === category ? 'active' : ''}`;
+                tag.textContent = category;
+                tag.addEventListener('click', () => {
+                    activeFilter = activeFilter === category ? null : category;
+                    filterPosts();
+                    updateActiveTag();
+                });
+                tagFilters.appendChild(tag);
+            });
+        }
+        
+        // Update active tag styling
+        function updateActiveTag() {
+            document.querySelectorAll('#tag-filters .tag').forEach(tag => {
+                tag.classList.toggle('active', tag.textContent === (activeFilter || 'All'));
+            });
+        }
+        
+        // Filter posts by active filter and search
+        function filterPosts() {
+            let filteredPosts = [...allPosts];
+            
+            // Apply category filter
+            if (activeFilter) {
+                filteredPosts = filteredPosts.filter(post => 
+                    (post.categories && post.categories.some(cat => cat.title === activeFilter)) || 
+                    (activeFilter === 'General' && (!post.categories || post.categories.length === 0))
+                );
+            }
+            
+            // Apply search filter
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm) {
+                filteredPosts = filteredPosts.filter(post => 
+                    post.title.toLowerCase().includes(searchTerm) || 
+                    (post.description && post.description.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderBlogPosts(filteredPosts);
+        }
+        
+        // Search functionality
+        searchButton.addEventListener('click', filterPosts);
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') filterPosts();
+        });
+        
+        // Render blog posts
+        function renderBlogPosts(posts) {
+            const container = document.querySelector('.masonry-container');
+            container.innerHTML = '';
+            
+            if (posts.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 col-span-full">
+                        <p class="text-gray-600 text-sm">No articles found matching your criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            posts.forEach(post => {
+                const postCard = document.createElement('div');
+                postCard.className = 'masonry-item';
+                
+                postCard.innerHTML = `
+                    <div class="card-hover-effect">
+                        <a href="test.html?slug=${post.slug.current}">
+                            ${post.mainImage ? `
+                                <img src="${post.mainImage}" alt="${post.title}" class="w-full h-48 object-cover rounded-t-lg">
+                            ` : `
+                                <div class="w-full h-48 bg-gray-100 flex items-center justify-center rounded-t-lg">
+                                    <i class="fas fa-newspaper text-gray-300 text-3xl"></i>
+                                </div>
+                            `}
+                            <div class="p-6">
+                                <div class="mb-3">
+                                    ${post.categories && post.categories.length > 0 ? 
+                                        post.categories.map(cat => `<span class="tag">${cat.title}</span>`).join('') : 
+                                        '<span class="tag">General</span>'
+                                    }
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3">${post.title}</h3>
+                                <p class="text-sm text-gray-600 mb-4">${post.description || ''}</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>${new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                    ${post.estimatedReadingTime ? `
+                                        <span>${post.estimatedReadingTime} min read</span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                
+                container.appendChild(postCard);
+            });
+        }
+        
+        // Load posts when page loads
+        document.addEventListener('DOMContentLoaded', fetchBlogPosts);
+    </script>
+
+    <!-- Mobile menu script -->
+    <script>
+    (function() {
+        'use strict';
+        
+        // Mobile menu functionality
+        function initializeMobileMenu() {
+            console.log('🔧 Initializing mobile menu...');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuButton) {
+                console.error('❌ Mobile menu button not found');
+                return;
+            }
+            
+            if (!mobileMenu) {
+                console.error('❌ Mobile menu not found');
+                return;
+            }
+            
+            console.log('✅ Mobile menu elements found');
+            
+            // Remove any existing listeners to prevent duplicates
+            const newButton = menuButton.cloneNode(true);
+            menuButton.parentNode.replaceChild(newButton, menuButton);
+            
+            // Add click listener to toggle menu
+            newButton.addEventListener('click', function(e) {
+                console.log('📱 Menu button clicked');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const wasHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                const isNowHidden = mobileMenu.classList.contains('hidden');
+                
+                console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        console.log('📱 Closing menu - clicked outside');
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            console.log('✅ Mobile menu initialized successfully');
+        }
+
+        // Dropdown toggle function
+        window.toggleDropdown = function(menuId) {
+            console.log(`🔽 Toggling dropdown: ${menuId}`);
+            
+            const menu = document.getElementById(`${menuId}-menu`);
+            const arrow = document.getElementById(`${menuId}-arrow`);
+            
+            if (!menu) {
+                console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+                return;
+            }
+            
+            const wasHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            
+            if (arrow) {
+                arrow.classList.toggle('rotate-180');
+            } else {
+                console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+            }
+            
+            console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+        };
+        
+        // Initialize when DOM is ready
+        function init() {
+            console.log('🚀 Starting mobile menu initialization...');
+            
+            // Wait a bit for imported content to load
+            setTimeout(() => {
+                initializeMobileMenu();
+            }, 100);
+            
+            // Also try again after a longer delay in case of slow loading
+            setTimeout(() => {
+                if (!document.getElementById('mobile-menu-button')?.onclick) {
+                    console.log('🔄 Retrying mobile menu initialization...');
+                    initializeMobileMenu();
+                }
+            }, 500);
+        }
+        
+        // Start initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+        
+        // Also initialize on window load as backup
+        window.addEventListener('load', function() {
+            setTimeout(init, 200);
+        });
+    })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,532 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Quantum Cryptography (PQC) Solutions | Taqbit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Gradient text */
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Background pattern */
+        .quantum-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Color variables */
+        .taqbit-primary {
+            background-color: #3b82f6;
+        }
+        .taqbit-text-primary {
+            color: #3b82f6;
+        }
+        .taqbit-secondary {
+            background-color: #8b5cf6;
+        }
+        .taqbit-text-secondary {
+            color: #8b5cf6;
+        }
+        .taqbit-bg {
+            background-color: #f8fafc;
+        }
+        .taqbit-card {
+            background-color: #ffffff;
+        }
+        .taqbit-text {
+            color: #1e293b;
+        }
+        .taqbit-text-light {
+            color: #64748b;
+        }
+        .taqbit-gradient-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        
+        /* PQC specific styles */
+        .pqc-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .pqc-timeline:before {
+            content: "";
+            position: absolute;
+            left: 1.25rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        .pqc-timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+        .pqc-timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .pqc-timeline-dot {
+            position: absolute;
+            left: -2.85rem;
+            top: 0.25rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* Animation classes */
+        .animate-fadeup {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <img src="./assets/PQC.png" alt="Quantum Randomness" class="absolute inset-0 w-full h-full object-cover brightness-75 opacity-80 z-0">
+        <div class="absolute inset-0 text-center bg-gradient-to-br from-black/70 to-indigo-900/60 z-0"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 taqbit-gradient-text animate-fadeup">
+                Post-Quantum Cryptography Solutions
+            </h1>
+            <p class="text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed animate-fadeup" style="animation-delay: 150ms">
+                Preparing your organization for the quantum computing era with cryptographic algorithms resistant to quantum attacks.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 animate-fadeup" style="animation-delay: 300ms">
+                <a href="#solutions" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-shield-alt mr-2"></i> Explore Solutions
+                </a>
+                <a href="#migration" class="px-6 py-3 rounded-lg bg-white text-gray-800 border border-gray-200 font-medium hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-road mr-2"></i> Migration Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is PQC Section -->
+    <section class="py-20 px-6 md:px-12 lg:px-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-taqbit-text mb-6">What is Post-Quantum Cryptography?</h2>
+                    <p class="text-lg text-taqbit-text-light mb-6">
+                        Post-quantum cryptography (PQC) refers to cryptographic algorithms that are secure against both classical and quantum computing attacks. Unlike traditional cryptography that relies on integer factorization or discrete logarithms, PQC uses mathematical problems that remain hard even for quantum computers.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full taqbit-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-taqbit-text">
+                                <span class="font-medium">Quantum-resistant:</span> Based on mathematical problems that quantum computers cannot solve efficiently
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full taqbit-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-taqbit-text">
+                                <span class="font-medium">Standardized:</span> NIST is finalizing PQC standards with expected completion in 2024
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full taqbit-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-taqbit-text">
+                                <span class="font-medium">Future-proof:</span> Protects against "harvest now, decrypt later" attacks
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-xl font-bold text-taqbit-text mb-4">Quantum Threat Timeline</h3>
+                    <div class="pqc-timeline">
+                        <div class="pqc-timeline-item">
+                            <div class="pqc-timeline-dot">1</div>
+                            <h4 class="text-lg font-bold text-taqbit-text mb-2">Today</h4>
+                            <p class="text-taqbit-text-light">Data is being harvested and stored for future decryption by quantum computers</p>
+                        </div>
+                        <div class="pqc-timeline-item">
+                            <div class="pqc-timeline-dot">2</div>
+                            <h4 class="text-lg font-bold text-taqbit-text mb-2">2025-2030</h4>
+                            <p class="text-taqbit-text-light">First cryptographically-relevant quantum computers expected</p>
+                        </div>
+                        <div class="pqc-timeline-item">
+                            <div class="pqc-timeline-dot">3</div>
+                            <h4 class="text-lg font-bold text-taqbit-text mb-2">Now-2025</h4>
+                            <p class="text-taqbit-text-light">Critical window for PQC migration planning and implementation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why PQC Matters Section -->
+    <section class="py-20 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-taqbit-text mb-4">Why PQC Matters Now</h2>
+                <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+                    The quantum threat isn't just about future risks - sensitive data encrypted today may be vulnerable tomorrow.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-lock-open text-2xl taqbit-text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Current Encryption Vulnerable</h3>
+                    <p class="text-taqbit-text-light">RSA and ECC can be broken by Shor's algorithm on a quantum computer, compromising most modern encryption.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-2xl taqbit-text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Data Harvesting Threat</h3>
+                    <p class="text-taqbit-text-light">Attackers are collecting encrypted data now to decrypt later when quantum computers become available.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-2xl taqbit-text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Long Migration Cycles</h3>
+                    <p class="text-taqbit-text-light">Enterprise crypto-agility projects often take 5-10 years to complete - must start now.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PQC Solutions Section -->
+    <section id="solutions" class="py-20 px-6 md:px-12 lg:px-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-taqbit-text mb-4">Our PQC Solutions</h2>
+                <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+                    Comprehensive quantum-resistant solutions tailored to your security needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-taqbit-bg p-8 rounded-xl border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-key text-2xl taqbit-text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">PQC Key Exchange</h3>
+                    <p class="text-taqbit-text-light mb-4">Quantum-safe key exchange protocols including CRYSTALS-Kyber and NTRU implementations.</p>
+                    <ul class="space-y-2 text-taqbit-text-light">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>NIST-selected algorithms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>Backward compatible</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-taqbit-bg p-8 rounded-xl border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-signature text-2xl taqbit-text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">PQC Digital Signatures</h3>
+                    <p class="text-taqbit-text-light mb-4">Quantum-resistant signature schemes including CRYSTALS-Dilithium and Falcon implementations.</p>
+                    <ul class="space-y-2 text-taqbit-text-light">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>High-performance variants</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>Compact signatures</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-taqbit-bg p-8 rounded-xl border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg taqbit-secondary bg-opacity-10 flex items-center justify-center mb-6">
+                        <i class="fas fa-exchange-alt text-2xl taqbit-text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Hybrid Solutions</h3>
+                    <p class="text-taqbit-text-light mb-4">Combining classical and post-quantum cryptography for transitional security.</p>
+                    <ul class="space-y-2 text-taqbit-text-light">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>Gradual migration path</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-sm text-green-500 mt-1 mr-2"></i>
+                            <span>Best of both worlds</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Migration Guide Section -->
+    <section id="migration" class="py-20 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-taqbit-text mb-6">PQC Migration Roadmap</h2>
+                    <p class="text-lg text-taqbit-text-light mb-8">
+                        Transitioning to post-quantum cryptography requires careful planning. Our proven 5-phase approach ensures a smooth migration.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full taqbit-primary flex items-center justify-center text-white font-bold mr-4">1</div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-taqbit-text mb-2">Discovery & Inventory</h4>
+                                <p class="text-taqbit-text-light">Identify all cryptographic assets and dependencies across your organization.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full taqbit-primary flex items-center justify-center text-white font-bold mr-4">2</div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-taqbit-text mb-2">Risk Assessment</h4>
+                                <p class="text-taqbit-text-light">Prioritize systems based on sensitivity and quantum vulnerability.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full taqbit-primary flex items-center justify-center text-white font-bold mr-4">3</div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-taqbit-text mb-2">Hybrid Deployment</h4>
+                                <p class="text-taqbit-text-light">Implement PQC alongside classical crypto for backward compatibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-taqbit-text mb-6">Migration Considerations</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                    <i class="fas fa-microchip text-indigo-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-taqbit-text">Performance Impact</h4>
+                                <p class="text-taqbit-text-light mt-1">PQC algorithms may have different performance characteristics than classical crypto.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                    <i class="fas fa-sitemap text-indigo-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-taqbit-text">Interoperability</h4>
+                                <p class="text-taqbit-text-light mt-1">Ensure compatibility with existing systems and protocols during transition.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                    <i class="fas fa-user-shield text-indigo-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-taqbit-text">Security Policies</h4>
+                                <p class="text-taqbit-text-light mt-1">Update security policies and procedures to reflect new cryptographic standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 md:px-12 lg:px-24 taqbit-gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Future-Proof Your Cryptography?</h2>
+            <p class="text-xl mb-10 opacity-90">
+                Our experts can help you assess your quantum risk and develop a tailored migration strategy.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="px-8 py-4 rounded-lg bg-white text-indigo-600 font-bold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i> Contact Us
+                </a>
+                <!-- <a href="whitepapers.html" class="px-8 py-4 rounded-lg bg-transparent border-2 border-white text-white font-bold hover:bg-white hover:bg-opacity-10 transition-colors">
+                    <i class="fas fa-file-alt mr-2"></i> Download Whitepaper
+                </a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeup');
+            animatedElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+            
+            // Mobile menu functionality
+            function initializeMobileMenu() {
+                console.log('🔧 Initializing mobile menu...');
+                
+                const menuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (!menuButton) {
+                    console.error('❌ Mobile menu button not found');
+                    return;
+                }
+                
+                if (!mobileMenu) {
+                    console.error('❌ Mobile menu not found');
+                    return;
+                }
+                
+                console.log('✅ Mobile menu elements found');
+                
+                // Remove any existing listeners to prevent duplicates
+                const newButton = menuButton.cloneNode(true);
+                menuButton.parentNode.replaceChild(newButton, menuButton);
+                
+                // Add click listener to toggle menu
+                newButton.addEventListener('click', function(e) {
+                    console.log('📱 Menu button clicked');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const wasHidden = mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    const isNowHidden = mobileMenu.classList.contains('hidden');
+                    
+                    console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            console.log('📱 Closing menu - clicked outside');
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+                
+                console.log('✅ Mobile menu initialized successfully');
+            }
+
+            // Dropdown toggle function
+            window.toggleDropdown = function(menuId) {
+                console.log(`🔽 Toggling dropdown: ${menuId}`);
+                
+                const menu = document.getElementById(`${menuId}-menu`);
+                const arrow = document.getElementById(`${menuId}-arrow`);
+                
+                if (!menu) {
+                    console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+                    return;
+                }
+                
+                const wasHidden = menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                
+                if (arrow) {
+                    arrow.classList.toggle('rotate-180');
+                } else {
+                    console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+                }
+                
+                console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+            };
+            
+            // Initialize when DOM is ready
+            function init() {
+                console.log('🚀 Starting mobile menu initialization...');
+                
+                // Wait a bit for imported content to load
+                setTimeout(() => {
+                    initializeMobileMenu();
+                }, 100);
+                
+                // Also try again after a longer delay in case of slow loading
+                setTimeout(() => {
+                    if (!document.getElementById('mobile-menu-button')?.onclick) {
+                        console.log('🔄 Retrying mobile menu initialization...');
+                        initializeMobileMenu();
+                    }
+                }, 500);
+            }
+            
+            // Start initialization
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+            
+            // Also initialize on window load as backup
+            window.addEventListener('load', function() {
+                setTimeout(init, 200);
+            });
+        })();
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,408 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Taqbit Labs</title>
+    <!-- Same head content as index.html -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+       
+    </style>
+    <link rel="stylesheet" href="styles.css.html">
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+   
+    <!-- FAQ Hero -->
+    <section class=" min-h-[40vh] flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-[url('./assets/faqshero.png')] bg-cover bg-center bg-no-repeat relative">
+    <!-- Optional dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+    <div class="max-w-7xl mx-auto text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 taqbit-gradient-text">
+            Frequently Asked Questions
+        </h1>
+        <p class="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed">
+            Find answers to common questions about our quantum security solutions and services
+        </p>
+    </div>
+</section>
+
+
+    <!-- FAQ Categories -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="category-btn px-6 py-2 rounded-full font-medium taqbit-primary text-white active" data-category="all">
+                    All Questions
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="academy">
+                    Quantum Academy
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="products">
+                    Products
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="security">
+                    Security
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="general">
+                    General
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Academy Questions -->
+            <div class="mb-16" data-category="academy">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b border-gray-200 taqbit-text-primary">
+                    Quantum Academy Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">What should I know before taking the course?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>To get the most out of this course, you should have a basic understanding of classical cryptography and linear algebra. Comfort with Python is helpful but not required. Don't worry if you need to brush up—we provide preparatory materials to help get you ready.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">Are your certifications accepted in the industry?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>Yes! Our certifications are backed by leading organizations in quantum technology and cybersecurity. We've partnered with top academic institutions and industry leaders. Many graduates have secured roles in quantum security at major tech firms, government agencies, and research labs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">Can I still access the course content after I finish?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>Absolutely. You'll keep access to all course materials for 12 months after completion. Key resources are downloadable, and for certifications, we provide ongoing access to updated content as quantum security standards evolve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Questions -->
+            <div class="mb-16" data-category="products">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b border-gray-200 taqbit-text-secondary">
+                    Product Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">How will your QKD system fit into our existing network?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>Our QKD system plugs in alongside your current encryption setup—it acts as a standalone unit. We offer comprehensive API documentation and integration support across all major network environments, ensuring smooth deployment.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">What is the typical timeline to deploy your QKD in an enterprise?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>On average, deployments finish in 4–6 weeks, following this timeline:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Week 1: Assessment & planning</li>
+                                <li>Weeks 2–3: Hardware installation</li>
+                                <li>Weeks 4–5: Integration & testing</li>
+                                <li>Week 6: Staff training and handover</li>
+                            </ul>
+                            <p class="mt-2">Need faster implementation? We offer accelerated deployment options for urgent security needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security Questions -->
+            <div class="mb-16" data-category="security">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b border-gray-200 taqbit-text-primary">
+                    Security Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">How soon should we switch to quantum-secure methods?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>If your organization handles data needing long-term confidentiality—like financial, healthcare, government, or critical infrastructure—you should start migrating now due to risks like "harvest now, decrypt later." NIST recommends planning immediately and completing the transition within 5–10 years, but higher-risk sectors should prioritize sooner.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">What's the difference between QKD and PQC?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>QKD (Quantum Key Distribution) uses quantum principles to distribute keys securely, offering quantum information-theoretic security. PQC (Post-Quantum Cryptography) relies on purely classical algorithms designed to resist quantum attacks and is generally easier to deploy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- General Questions -->
+            <div class="mb-16" data-category="general">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 pb-2 border-b border-gray-200 taqbit-text-secondary">
+                    General Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">Where are Taqbit Labs facilities located?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p> Our main office is located at 47/1, Srirampura, Main Road, Amrutahalli, Jakkuru, Bengaluru, Karnataka – 560001.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item p-6 rounded-lg" onclick="toggleFAQ(this)">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-gray-900">How can I contact customer support?</h3>
+                            <svg class="faq-toggle w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <div class="faq-answer mt-4 text-gray-600">
+                            <p>Our customer support team is available 24/7 through multiple channels:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Email: support@taqbitlabs.com</li>
+                                <li>Phone: +91 8884459524</li>
+                                
+                                <li>Dedicated support portal for enterprise clients</li>
+                            </ul>
+                            <p class="mt-2">Average response time is under 2 hours for critical issues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="py-20 taqbit-gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Still have questions?</h2>
+            <p class="text-gray-200 max-w-2xl mx-auto mb-8">Our quantum security experts are ready to help with any additional questions you may have.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-gray-900 bg-white hover:bg-gray-100 transition-all">
+                    Contact Support
+                </a>
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md shadow-sm text-white bg-transparent hover:bg-white hover:bg-opacity-10 transition-all">
+                    Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        let activeCategory = 'all';
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const selectedCategory = this.dataset.category;
+
+                // Deselect if same category is clicked again
+                if (activeCategory === selectedCategory) {
+                    activeCategory = 'all';
+                } else {
+                    activeCategory = selectedCategory;
+                }
+
+                // Update button styles
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('taqbit-primary', 'text-white', 'active');
+                    btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                });
+
+                if (activeCategory !== 'all') {
+                    const activeButton = document.querySelector(`[data-category="${activeCategory}"]`);
+                    activeButton.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                    activeButton.classList.add('taqbit-primary', 'text-white', 'active');
+                } else {
+                    const allBtn = document.querySelector(`[data-category="all"]`);
+                    allBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                    allBtn.classList.add('taqbit-primary', 'text-white', 'active');
+                }
+
+                // Show/Hide sections based on category
+                const faqSections = document.querySelectorAll('[data-category]');
+                faqSections.forEach(section => {
+                    if (activeCategory === 'all' || section.dataset.category === activeCategory) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

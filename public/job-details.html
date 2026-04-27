@@ -1,0 +1,570 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | Taqbit Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taqbit: {
+                            primary: '#1e40af',
+                            dark: '#0f172a',
+                            gradient: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .job-header-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+        .highlight-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .highlight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .prose ul li:before {
+            background-color: #1e40af;
+        }
+        .apply-section {
+            background: rgba(241, 245, 249, 0.7);
+            backdrop-filter: blur(10px);
+        }
+            .submit-btn {
+     background-color: #1e40af !important; /* Light gray for disabled state */
+    color: #9ca3af; /* Gray text for disabled state */
+    cursor: not-allowed;
+}
+
+.submit-btn-enabled {
+    background-color: #1e40af !important; /* Your Taqbit primary blue */
+}
+
+
+
+#submit-btn {
+    transition: all 0.3s ease;
+}
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+     <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+    
+
+    <!-- Job Details -->
+    <section class="py-16 animate-fade-in">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Job Header Card -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 highlight-card">
+                <div class="job-header-gradient p-8 md:p-10 text-white">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                        <div class="space-y-4">
+                            <h1 id="job-title" class="text-3xl md:text-4xl font-bold tracking-tight">Loading...</h1>
+                            
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <span id="job-location" class="flex items-center bg-white bg-opacity-10 px-3 py-1 rounded-full">
+                                    <i class="fas fa-briefcase mr-2 text-blue-200"></i>
+                                    <span class="text-blue-50">Loading...</span>
+                                </span>
+                                <span id="job-type" class="flex items-center bg-white bg-opacity-10 px-3 py-1 rounded-full">
+                                    <i class="fas fa-map-marker-alt mr-2 text-blue-200"></i>
+                                    <span class="text-blue-50">Loading...</span>
+                                </span>
+                                <span id="job-department" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                    Loading...
+                                </span>
+                            </div>
+                        </div>
+                        <a href="#apply" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-taQbit-primary bg-blue hover:bg-blue transition-all duration-300 transform hover:scale-105">
+                            Apply Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job Content -->
+                <div class="p-8 md:p-10">
+                    <div class="prose max-w-none">
+                        <!-- Description Section -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <div class="w-8 h-0.5 bg-taQbit-primary mr-4"></div>
+                                <h2 class="text-2xl font-bold text-gray-900">Job Description</h2>
+                            </div>
+                            <div id="job-description" class="text-gray-700 leading-relaxed">
+                                <div class="animate-pulse space-y-3">
+                                    <div class="h-4 bg-gray-200 rounded w-full"></div>
+                                    <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                                    <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Responsibilities Section -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <div class="w-8 h-0.5 bg-taQbit-primary mr-4"></div>
+                                <h2 class="text-2xl font-bold text-gray-900">Key Responsibilities</h2>
+                            </div>
+                            <ul id="job-responsibilities" class="space-y-3 pl-5">
+                                <li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-taQbit-primary text-gray-700 pl-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Requirements Section -->
+                        <div class="mb-12">
+                            <div class="flex items-center mb-6">
+                                <div class="w-8 h-0.5 bg-taQbit-primary mr-4"></div>
+                                <h2 class="text-2xl font-bold text-gray-900">Requirements</h2>
+                            </div>
+                            <ul id="job-requirements" class="space-y-3 pl-5">
+                                <li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-taQbit-primary text-gray-700 pl-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Benefits Section -->
+                        <div class="mb-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-8 h-0.5 bg-taQbit-primary mr-4"></div>
+                                <h2 class="text-2xl font-bold text-gray-900">Benefits</h2>
+                            </div>
+                            <ul id="job-benefits" class="space-y-3 pl-5">
+                                <li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-taQbit-primary text-gray-700 pl-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                         <!-- Key Skills Section -->
+                        <div class="mb-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-8 h-0.5 bg-Taqbit-primary mr-4"></div>
+                                <h2 class="text-2xl font-bold text-gray-900">Key Skills</h2>
+                            </div>
+                            <ul id="job-key-skills" class="space-y-3 pl-5">
+                                <li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-qdit-primary text-gray-700 pl-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apply Section -->
+            <div id="apply" class="apply-section rounded-2xl shadow-lg p-8 md:p-10 border border-gray-200">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Apply for This Position</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Join our team of quantum security experts</p>
+                </div>
+                
+                 <form id="application-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLScNGrkdYxbL_3JkzeKf4YpAMABNH2RZM33bJNJ2z2UZHd5zgQ/formResponse"
+                method="POST"
+                target="hidden_iframe"
+                class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                <input type="text" name="entry.2014241344" required
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                <input type="text" name="entry.2019822433" required
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                <input type="email" name="entry.85833498" required
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                <input type="tel" name="entry.664686211"
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                <input type="date" name="entry.1727693267"
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Resume (Google Drive Link) *</label>
+                <input type="url" name="entry.47658816" required
+                placeholder="Paste your Google Drive resume link"
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">LinkedIn Profile</label>
+                <input type="url" name="entry.854793834"
+                placeholder="https://linkedin.com/in/your-profile"
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                </div>
+
+                <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Cover Letter</label>
+                <textarea name="entry.51755001" rows="5"
+                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary"></textarea>
+                </div>
+
+                <div class="flex items-start">
+                <input id="consent" type="checkbox" required
+                class="h-4 w-4 text-qdit-primary border-gray-300 rounded">
+                <label class="ml-3 text-sm text-gray-700">
+                I consent to qdit Labs processing my data for recruitment purposes *
+                </label>
+                </div>
+
+                    <div>
+                      <button type="submit"
+               class="w-full py-4 px-6 rounded-lg text-lg font-medium text-white bg-blue-700 hover:bg-blue-800 transition">
+                Submit Application
+                </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <!-- Your original script remains unchanged -->
+    <script>
+        // Get job ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('id');
+//         document.getElementById('job-id').value = jobId;
+
+//         // Fetch job details via proxy
+//         if (jobId) {
+//             fetch(`https://airtable-backend-vxap.onrender.com/api/Jobs/${jobId}`)
+//                 .then(res => res.json())
+//                 .then(data => {
+//                     const job = data.fields;
+                    
+//                     // Update UI
+//                     document.title = `${job['Job Title']} | Taqbit Labs Careers`;
+//                     document.getElementById('job-title').textContent = job['Job Title'];
+//                     document.getElementById('job-location').querySelector('span').textContent = job['Location'];
+//                     document.getElementById('job-type').querySelector('span').textContent = job['Type'];
+//                     document.getElementById('job-department').textContent = job['Department'];
+                    
+//                     document.getElementById('job-description').innerHTML = job['Description'] || '<p>No description provided.</p>';
+                    
+//                     // Render lists
+//                     const renderList = (id, content) => {
+//                         const items = content ? content.split('\n') : ['Not specified'];
+//                         document.getElementById(id).innerHTML = items.map(item => `<li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-taQbit-primary text-gray-700 pl-4">${item}</li>`).join('');
+//                     };
+                    
+//                     renderList('job-responsibilities', job['Responsibilities']);
+//                     renderList('job-requirements', job['Requirements']);
+//                     renderList('job-benefits', job['Benefits']);
+//                 })
+//                 .catch(err => {
+//                     console.error(err);
+//                     alert('Failed to load job details. Please try again later.');
+//                 });
+//         }
+
+//         // Form submission via proxy
+//         document.getElementById('application-form').addEventListener('submit', async (e) => {
+//             e.preventDefault();
+            
+//             const formData = new FormData(e.target);
+            
+//             try {
+//     const response = await fetch('https://airtable-backend-vxap.onrender.com/api/Applications', {
+//         method: 'POST',
+//         body: formData
+//     });
+
+//     const result = await response.json();
+
+//     if (response.ok) {
+//         alert('✅ Application submitted successfully!');
+//         e.target.reset();
+//     } else if (response.status === 400 && result.error) {
+//         alert(`⚠️ ${result.error}`);
+//     } else {
+//         throw new Error('Submission failed');
+//     }
+// } catch (error) {
+//     alert('❌ Application failed. Please try again later.');
+// }
+//         });
+//         // Form validation for submit button
+// // Form validation for submit button
+// const applicationForm = document.getElementById('application-form');
+// const submitBtn = document.getElementById('submit-btn');
+// const requiredFields = ['first-name', 'last-name', 'email', 'resume', 'consent'];
+
+// function checkFormValidity() {
+//     const isFormValid = requiredFields.every(field => {
+//         if (field === 'consent') {
+//             return document.getElementById(field).checked;
+//         }
+//         if (field === 'resume') {
+//             return document.getElementById(field).files.length > 0;
+//         }
+//         return document.getElementById(field).value.trim() !== '';
+//     });
+
+//     if (isFormValid) {
+//         submitBtn.disabled = false;
+//         submitBtn.classList.remove('bg-white', 'text-gray-400');
+//         submitBtn.classList.add('text-white', 'bg-taQbit-primary', 'hover:bg-blue-800');
+//     } else {
+//         submitBtn.disabled = true;
+//         submitBtn.classList.add('bg-white', 'text-gray-400');
+//         submitBtn.classList.remove('text-white', 'bg-taQbit-primary', 'hover:bg-blue-800');
+//     }
+// }
+
+// // Add event listeners to all form fields
+// applicationForm.querySelectorAll('input, textarea, select').forEach(field => {
+//     field.addEventListener('input', checkFormValidity);
+//     field.addEventListener('change', checkFormValidity);
+// });
+
+// // Special listener for consent checkbox
+// document.getElementById('consent').addEventListener('change', checkFormValidity);
+
+// // Initial check
+// checkFormValidity();
+
+// fallback if id missing
+if(jobId === null){
+    jobId = 0;
+}
+
+// document.getElementById('job-id').value = jobId; 
+
+
+// ============================
+// FETCH GOOGLE SHEET
+// ============================
+
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3yGUyCJYRK1Qwv5MWMmadKodyFIPM76tO7X8BbMEF44C0-PUiBulhDLlRArIjl3AF_5OK3zACh9a9/pub?output=csv";
+
+fetch(sheetURL)
+.then(response => response.text())
+.then(data => {
+
+    console.log("CSV Loaded");
+
+    const rows = data.trim().split("\n");
+
+    // remove header
+    rows.shift();
+
+    if(!rows[jobId]){
+        console.error("Job not found for id:", jobId);
+        return;
+    }
+
+    const job = rows[jobId].split(",");
+
+    console.log("Job row:", job);
+
+    document.title = (job[1] || "Job") + " | qdit Labs Careers";
+
+document.getElementById("job-title").textContent = job[1] || "Not specified";
+
+document.getElementById("job-location")
+    .querySelector("span").textContent = job[3] || "Not specified";
+
+document.getElementById("job-type")
+    .querySelector("span").textContent = job[4] || "Not specified";
+
+document.getElementById("job-department")
+    .textContent = job[2] || "Not specified";
+
+document.getElementById("job-description")
+    .innerHTML = job[5] || "<p>No description provided</p>";
+
+    function renderList(id,data){
+
+        const items = data ? data.split("\\n") : ["Not specified"];
+
+        document.getElementById(id).innerHTML =
+            items.map(item =>
+                `<li class="relative before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-qdit-primary text-gray-700 pl-4">${item}</li>`
+            ).join("");
+
+    }
+
+    renderList("job-responsibilities",job[7]);
+    renderList("job-requirements",job[8]);
+    renderList("job-benefits",job[9]);
+    renderList("job-key-skills",job[10]);
+
+})
+.catch(error=>{
+    console.error("Fetch error:",error);
+});
+
+    </script>
+    <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    easing: 'ease-in-out', // Smooth easing
+    once: false, // Animate only once per element
+  });
+</script>
+<script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

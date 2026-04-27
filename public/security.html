@@ -1,0 +1,297 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security | Taqbit Quantum Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .security-feature {
+            transition: all 0.3s ease;
+        }
+        .security-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 px-6 text-center bg-gradient-to-r from-blue-50 to-purple-50">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 taqbit-gradient-text">Our Security Practices</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    How we protect our website and your information using industry-leading security measures.
+                </p>
+            </div>
+        </section>
+
+        <!-- Security Features -->
+        <section class="py-16 px-6 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Encryption</h3>
+                    <p class="text-gray-600">
+                        All data transmissions are encrypted using TLS 1.3 with modern cipher suites. We enforce HTTPS across the entire website with HSTS headers.
+                    </p>
+                </div>
+
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-purple-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Web Application Security</h3>
+                    <p class="text-gray-600">
+                        Our website is protected by Cloudflare's Web Application Firewall (WAF) with OWASP rulesets, rate limiting, and DDoS mitigation.
+                    </p>
+                </div>
+
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-green-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-user-secret text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Data Privacy</h3>
+                    <p class="text-gray-600">
+                        We minimize data collection and anonymize analytics data. Personal data is only collected when explicitly provided through contact forms.
+                    </p>
+                </div>
+
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-red-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-bug text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Vulnerability Management</h3>
+                    <p class="text-gray-600">
+                        We conduct regular security audits and vulnerability scans. All third-party dependencies are monitored and updated promptly.
+                    </p>
+                </div>
+
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-yellow-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Infrastructure Security</h3>
+                    <p class="text-gray-600">
+                        Our website is hosted on secure cloud infrastructure with strict access controls, network segmentation, and intrusion detection systems.
+                    </p>
+                </div>
+
+                <div class="security-feature bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <div class="w-16 h-16 rounded-lg bg-indigo-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-mail-bulk text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Email Security</h3>
+                    <p class="text-gray-600">
+                        All email communications are protected with SPF, DKIM, and DMARC policies to prevent spoofing and phishing attacks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Security Best Practices</h2>
+                
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-sync-alt text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Regular Updates</h3>
+                            <p class="text-gray-600">
+                                We maintain a strict patch management policy to ensure all systems are updated with the latest security fixes within 72 hours of release.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                <i class="fas fa-users-cog text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Access Control</h3>
+                            <p class="text-gray-600">
+                                Principle of least privilege enforced with multi-factor authentication (MFA) for all administrative access to our systems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fas fa-eye-slash text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Data Minimization</h3>
+                            <p class="text-gray-600">
+                                We only collect essential data and retain it only as long as necessary. All data is encrypted at rest and in transit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reporting Section -->
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Report a Security Concern</h2>
+                    <p class="text-gray-600 mb-6">
+                        If you've discovered a security vulnerability on our website, please responsibly disclose it to our security team.
+                    </p>
+                    <a href="mailto:security@taqbit.com" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                        <i class="fas fa-envelope mr-2"></i> Contact Security Team
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+    <script src="script.js"></script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

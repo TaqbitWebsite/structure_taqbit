@@ -1,0 +1,229 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Taqbit Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .blog-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .blog-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+        .blog-content ul, 
+        .blog-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        .blog-content a {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+        .blog-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #475569;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Post Header -->
+        <div class="mb-8">
+            <h1 id="post-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Loading Post...
+            </h1>
+            <div class="flex items-center gap-4 text-gray-600">
+                <span id="post-date">Loading date...</span>
+                <span>•</span>
+                <span id="reading-time">Loading reading time...</span>
+            </div>
+        </div>
+
+        <!-- Featured Image -->
+        <div id="post-image" class="w-full h-64 md:h-96 bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
+            <i class="fas fa-image text-4xl text-gray-400"></i>
+        </div>
+
+        <!-- Post Content -->
+        <article id="post-content" class="blog-content prose max-w-none">
+            <div class="text-center py-8">
+                <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+                <p class="mt-2 text-gray-600">Loading content...</p>
+            </div>
+        </article>
+
+        <!-- Back Button -->
+        <div class="mt-12">
+            <a href="blogs.html" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Sanity.io configuration (moved to top)
+        const projectId = 'c4hmiq4c';
+        const dataset = 'production';
+        
+        // Get post slug from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const postSlug = urlParams.get('slug');
+        
+        async function loadPost(slug) {
+            try {
+                // Fetch post from Sanity
+                const query = `*[_type == "post" && slug.current == "${slug}"]{
+                    title,
+                    publishedAt,
+                    body,
+                    "mainImage": mainImage.asset->url,
+                    author->{name, "imageUrl": image.asset->url},
+                    categories[]->{title},
+                    estimatedReadingTime
+                }[0]`;
+                
+                const encodedQuery = encodeURIComponent(query);
+                const response = await fetch(`https://${projectId}.api.sanity.io/v2021-10-21/data/query/${dataset}?query=${encodedQuery}`);
+                const { result: post } = await response.json();
+                
+                if (!post) throw new Error('Post not found');
+                
+                // Update page title
+                document.title = `${post.title} | Taqbit Labs`;
+                
+                // Update header
+                document.getElementById('post-title').textContent = post.title;
+                document.getElementById('post-date').textContent = new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // Update reading time if available
+                if (post.estimatedReadingTime) {
+                    document.getElementById('reading-time').textContent = `${post.estimatedReadingTime} min read`;
+                }
+                
+                // Update featured image
+                if (post.mainImage) {
+                    const imageContainer = document.getElementById('post-image');
+                    imageContainer.style.backgroundImage = `url(${post.mainImage})`;
+                    imageContainer.style.backgroundSize = 'cover';
+                    imageContainer.style.backgroundPosition = 'center';
+                    imageContainer.innerHTML = '';
+                }
+                
+                // Process and display the body content
+                if (post.body) {
+                    const contentContainer = document.getElementById('post-content');
+                    contentContainer.innerHTML = '';
+                    
+                    // Process each block in the body
+                    post.body.forEach(block => {
+                        if (block._type === 'block') {
+                            let element;
+                            
+                            // Handle different styles
+                            switch(block.style) {
+                                case 'h1':
+                                    element = document.createElement('h1');
+                                    break;
+                                case 'h2':
+                                    element = document.createElement('h2');
+                                    break;
+                                case 'h3':
+                                    element = document.createElement('h3');
+                                    break;
+                                case 'h4':
+                                    element = document.createElement('h4');
+                                    break;
+                                default:
+                                    element = document.createElement('p');
+                            }
+                            
+                            // Handle list items
+                            if (block.listItem) {
+                                element = document.createElement('li');
+                                if (block.listItem === 'number') {
+                                    const ol = document.createElement('ol');
+                                    ol.appendChild(element);
+                                    element = ol;
+                                } else {
+                                    const ul = document.createElement('ul');
+                                    ul.appendChild(element);
+                                    element = ul;
+                                }
+                            }
+                            
+                            // Add text content
+                            const textNode = document.createTextNode(
+                                block.children.map(child => child.text).join('')
+                            );
+                            element.appendChild(textNode);
+                            
+                            contentContainer.appendChild(element);
+                        }
+                    });
+                }
+                
+            } catch (error) {
+                console.error('Error loading post:', error);
+                document.getElementById('post-content').innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">Error Loading Post</h2>
+                        <p class="text-gray-600 mb-4">${error.message}</p>
+                        <a href="blogs.html" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Check for slug and load post
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!postSlug) {
+                document.getElementById('post-content').innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">Post Not Found</h2>
+                        <p class="text-gray-600 mb-4">No post slug specified in URL.</p>
+                        <a href="blogs.html" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+                        </a>
+                    </div>
+                `;
+            } else {
+                loadPost(postSlug);
+            }
+        });
+    </script>
+</body>
+</html>
+
+

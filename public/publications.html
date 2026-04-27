@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Publications | Taqbit Quantum Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Animation classes */
+        .animate-fadeup {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient text */
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Background pattern */
+        .quantum-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Color variables */
+        .taqbit-primary {
+            background-color: #3b82f6;
+        }
+        
+        .taqbit-text-primary {
+            color: #3b82f6;
+        }
+        
+        .taqbit-secondary {
+            background-color: #8b5cf6;
+        }
+        
+        .taqbit-text-secondary {
+            color: #8b5cf6;
+        }
+        
+        .taqbit-bg {
+            background-color: #f8fafc;
+        }
+        
+        .taqbit-card {
+            background-color: #ffffff;
+        }
+        
+        .taqbit-text {
+            color: #1e293b;
+        }
+        
+        .taqbit-text-light {
+            color: #64748b;
+        }
+        
+        .taqbit-navy {
+            color: #1e3a8a;
+        }
+        
+        .taqbit-gradient-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .taqbit-hover-primary:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+<section class=" py-20 px-6 md:px-12 lg:px-24 bg-[url('./assets/publicationshero.png')] bg-cover bg-center bg-no-repeat relative">
+    <!-- Optional dark overlay for better contrast -->
+    <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white !text-white animate-fadeup">
+                Research Publications
+            </h1>
+<p class="text-xl text-white !text-white max-w-3xl mx-auto mb-10 leading-relaxed animate-fadeup delay-150">
+
+                Explore our peer-reviewed publications, conference papers, and technical reports contributing to the advancement of quantum-safe cryptography.
+            </p>
+            <div class="animate-fadeup delay-300">
+                <a href="#publications" class="inline-flex items-center px-6 py-3 taqbit-primary text-white rounded-lg font-medium taqbit-hover-primary">
+                    <i class="fas fa-arrow-down mr-2"></i> Browse Publications
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Main Publications Section -->
+<section id="publications" class="py-16 px-6 md:px-12 lg:px-24 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <!-- Search and Filter Bar -->
+        <div class="mb-12 bg-taqbit-card p-6 rounded-xl shadow-sm border border-gray-200">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="search-input" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Search publications...">
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <select id="type-filter" class="block w-full md:w-auto px-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                        <option value="all">All Types</option>
+                        <option value="journal">Journal Articles</option>
+                        <option value="conference">Conference Papers</option>
+                        <option value="technical">Technical Reports</option>
+                    </select>
+                    <select id="topic-filter" class="block w-full md:w-auto px-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                        <option value="all">All Topics</option>
+                        <option value="correlations">Quantum Correlations</option>
+                        <option value="key-agreement">Quantum Key Agreement</option>
+                        <option value="random-numbers">Quantum Random Numbers</option>
+                        <option value="vacuum">Quantum Vacuum</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications List -->
+        <div id="publications-container" class="grid md:grid-cols-2 gap-8"></div>
+    </div>
+</section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="publications-data.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all filter elements
+    const searchInput = document.getElementById('search-input');
+    const typeFilter = document.getElementById('type-filter');
+    const topicFilter = document.getElementById('topic-filter');
+    const container = document.getElementById('publications-container');
+    
+    // Current filter state
+    let currentFilters = {
+        searchTerm: '',
+        type: 'all',
+        topic: 'all'
+    };
+    
+    // Convert your publications data to a flat array for filtering
+    function getFlatPublications() {
+        return Object.entries(publicationsData).flatMap(([year, pubs]) => 
+            pubs.map(pub => ({ ...pub, year }))
+)}
+    
+    // Enhanced filter function that works with your data structure
+    function filterPublications() {
+        const allPublications = getFlatPublications();
+        const filtered = allPublications.filter(pub => {
+            const matchesSearch = !currentFilters.searchTerm || 
+                pub.title.toLowerCase().includes(currentFilters.searchTerm) ||
+                (pub.journal && pub.journal.toLowerCase().includes(currentFilters.searchTerm)) ||
+                (pub.authors && pub.authors.toLowerCase().includes(currentFilters.searchTerm));
+                
+            const matchesType = currentFilters.type === 'all' || 
+                (currentFilters.type === 'journal' && !pub.isConference) ||
+                (currentFilters.type === 'conference' && pub.isConference);
+                
+            const matchesTopic = currentFilters.topic === 'all' || 
+                (pub.tags && pub.tags.some(tag => 
+                    tag.toLowerCase().includes(currentFilters.topic)));
+            
+            return matchesSearch && matchesType && matchesTopic;
+        });
+        
+        return filtered;
+    }
+    
+    // Render filtered publications
+    function renderFilteredPublications() {
+        const filteredData = filterPublications();
+        renderPublicationsFromFilteredData(filteredData);
+    }
+    
+    // Modified render function that works with filtered data
+    function renderPublicationsFromFilteredData(filteredData) {
+        let html = '';
+        
+        if (filteredData.length === 0) {
+            html = '<p class="text-center py-12 text-gray-500 col-span-2">No publications match your filters</p>';
+        } else {
+            filteredData.forEach(pub => {
+                html += `
+                    <div class="card-hover-effect bg-taqbit-card p-6 rounded-xl shadow-md border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas ${pub.isConference ? 'fa-file-alt' : 'fa-book-open'} text-lg taqbit-text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-taqbit-text mb-1">${pub.title}</h3>
+                                <p class="text-sm text-taqbit-text-light mb-2">${pub.journal}</p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    ${pub.tags.map(tag => 
+                                        `<span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">${tag}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-taqbit-text-light mb-4">Authors: ${pub.authors}</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                ${pub.year}
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="${pub.link}" class="text-blue-600 hover:text-blue-800" title="View Publication" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800" title="Cite">
+                                    <i class="fas fa-quote-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        
+        container.innerHTML = html;
+    }
+    
+    // Event listeners for filters
+    searchInput.addEventListener('input', function() {
+        currentFilters.searchTerm = this.value.toLowerCase();
+        renderFilteredPublications();
+    });
+    
+    typeFilter.addEventListener('change', function() {
+        currentFilters.type = this.value;
+        renderFilteredPublications();
+    });
+    
+    topicFilter.addEventListener('change', function() {
+        currentFilters.topic = this.value;
+        renderFilteredPublications();
+    });
+    
+    // Initial render
+    renderFilteredPublications();
+});
+</script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>

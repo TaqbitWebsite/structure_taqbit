@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Taqbit Quantum Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Gradient text */
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Background pattern */
+        .quantum-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Color variables */
+        .taqbit-primary {
+            background-color: #3b82f6;
+        }
+        .taqbit-text-primary {
+            color: #3b82f6;
+        }
+        .taqbit-secondary {
+            background-color: #8b5cf6;
+        }
+        .taqbit-text-secondary {
+            color: #8b5cf6;
+        }
+        .taqbit-bg {
+            background-color: #f8fafc;
+        }
+        .taqbit-card {
+            background-color: #ffffff;
+        }
+        .taqbit-text {
+            color: #1e293b;
+        }
+        .taqbit-text-light {
+            color: #64748b;
+        }
+        .taqbit-gradient-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        
+        /* Contact form styles */
+        .contact-input {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .contact-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .contact-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 md:px-12 lg:px-24 bg-[url('./assets/contactushero.png')] bg-cover bg-center bg-no-repeat relative">
+        <!-- Dark overlay for contrast -->
+        <div class="absolute inset-0 bg-black/70 z-0"></div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Contact Our Quantum Security Team
+            </h1>
+            <p class="text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed">
+                Have questions about quantum-safe solutions? Our experts are ready to help you navigate the post-quantum transition.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact-form" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium hover:bg-blue-600">
+                    <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Send a Message
+                </a>
+                <a href="#contact-methods" class="px-6 py-3 rounded-lg bg-white text-taqbit-text border border-gray-200 font-medium hover:bg-gray-50">
+                    <svg class="w-4 h-4 mr-2 inline-block text-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-50.6 61.3a370.35 370.35 0 0 1-177.1-177.1l61.3-50.6a24 24 0 0 0 6.9-28l-48-112A24.07 24.07 0 0 0 128 0H24A24 24 0 0 0 0 24C0 291.1 220.9 512 488 512a24 24 0 0 0 24-24V384a24.07 24.07 0 0 0-14.61-22.2z"/>
+                    </svg>
+                    <span>Other Ways to Connect</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Contact Form Section -->
+<section id="contact-form" class="py-16 px-6 md:px-12 lg:px-24 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-taqbit-text mb-4">Send Us a Message</h2>
+            <p class="text-lg text-taqbit-text-light max-w-2xl mx-auto">
+                Fill out the form below and our team will get back to you soon.
+            </p>
+        </div>
+
+        <form id="contact-us-form"
+action="https://docs.google.com/forms/d/e/1FAIpQLSewNio1AXmdRnB7NljxqwfIrkF5ve8y9CxaaKPCIFosZvByYg/formResponse"
+method="POST"
+target="hidden_iframe"
+onsubmit="formSubmitted()"
+class="space-y-6">
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <input type="text"  name="entry.1230527811" required 
+                           class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label  class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                    <input type="email"  name="entry.545578063" required 
+                           class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <div>
+                <label  class="block text-sm font-medium text-gray-700 mb-1">Company/Organization</label>
+                <input type="text"  name="entry.1608802158"
+                       class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <select  name="entry.1691273455"
+                        class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Product Information">Product Information</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label  class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                <textarea  name="entry.1382442882" rows="5" required 
+                          class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+
+            <div class="flex items-center">
+                <input type="checkbox"  required 
+                       class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                <label for="consent" class="ml-2 block text-sm text-gray-700">
+                    I agree to the privacy policy and terms of service
+                </label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit"  class="px-8 py-3 taqbit-gradient-bg text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
+                    <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i> Send Message
+                </button>
+
+            </div>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+function formSubmitted() {
+    setTimeout(function () {
+        alert("✅ Message sent successfully!");
+        document.getElementById("contact-us-form").reset();
+    }, 500);
+}
+</script>
+        
+    </div>
+</section>
+
+    <!-- Contact Methods Section -->
+    <section id="contact-methods" class="py-16 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-taqbit-text mb-4">Other Ways to Connect</h2>
+                <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+                    Reach out through your preferred channel - we're available through multiple contact points.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Contact Card 1 -->
+                <div class="contact-card bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 rounded-full taqbit-primary bg-opacity-10 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-phone-alt text-2xl taqbit-text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Phone Support</h3>
+                    <p class="text-taqbit-text-light mb-4">Speak directly with our quantum security specialists during business hours.</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-medium text-taqbit-text">
+                            <i class="fas fa-phone mr-2 text-blue-500" aria-hidden="true"></i> +91 8884459524
+                        </p>
+                        <p class="text-sm text-gray-500">Mon-Fri, 9AM-5PM IST</p>
+                    </div>
+                </div>
+
+                <!-- Contact Card 2 -->
+                <div class="contact-card bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 rounded-full taqbit-secondary bg-opacity-10 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-envelope text-2xl taqbit-text-secondary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Email Inquiries</h3>
+                    <p class="text-taqbit-text-light mb-4">Send us an email and we'll respond within one business day.</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-medium text-taqbit-text">
+                            <i class="fas fa-at mr-2 text-purple-500" aria-hidden="true"></i> contact@taqbit.com
+                        </p>
+                        <p class="text-sm text-gray-500">For general inquiries</p>
+                    </div>
+                </div>
+
+                <!-- Contact Card 3 -->
+                <div class="contact-card bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-headset text-2xl text-green-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-taqbit-text mb-3">Technical Support</h3>
+                    <p class="text-taqbit-text-light mb-4">24/7 support for our enterprise customers and partners.</p>
+                    <div class="space-y-2">
+                        <p class="text-lg font-medium text-taqbit-text">
+                            <i class="fas fa-life-ring mr-2 text-green-500" aria-hidden="true"></i> support@taqbit.com
+                        </p>
+                        <p class="text-sm text-gray-500">24/7 for registered customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="py-16 px-6 md:px-12 lg:px-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-taqbit-text mb-4">Our Offices</h2>
+                <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+                    We operate research centers and offices in multiple locations to serve our global client base.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="contact-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-xl text-red-600" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-taqbit-text">India</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-taqbit-text">
+                            <i class="fas fa-building mr-2 text-gray-400" aria-hidden="true"></i> 47/1, Srirampura, Main Rd, Amrutahalli, Jakkuru, Bengaluru, Karnataka 560001
+                        </p>
+                        <p class="text-taqbit-text">
+                            <i class="fas fa-phone mr-2 text-gray-400" aria-hidden="true"></i> +91 8884459524
+                        </p>
+                        <p class="text-taqbit-text">
+                            <i class="fas fa-clock mr-2 text-gray-400" aria-hidden="true"></i> Mon-Fri, 9AM-6PM IST
+                        </p>
+                        <div class="pt-2">
+                            <a href="https://www.google.com/maps/dir//47%2F1,+Srirampura,+Main+Rd,+Amrutahalli,+Jakkuru,+Bengaluru,+Karnataka+560001/@13.067058,77.5256232,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bae19003f9756cd:0xfe44d12c6baac42!2m2!1d77.6080251!2d13.0670711?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" class="text-blue-600 hover:underline inline-flex items-center">
+                                <i class="fas fa-directions mr-2" aria-hidden="true"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+    <script src="script.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            
+            // Mobile menu functionality
+            function initializeMobileMenu() {
+                console.log('🔧 Initializing mobile menu...');
+                
+                const menuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (!menuButton) {
+                    console.error('❌ Mobile menu button not found');
+                    return;
+                }
+                
+                if (!mobileMenu) {
+                    console.error('❌ Mobile menu not found');
+                    return;
+                }
+                
+                console.log('✅ Mobile menu elements found');
+                
+                // Remove any existing listeners to prevent duplicates
+                const newButton = menuButton.cloneNode(true);
+                menuButton.parentNode.replaceChild(newButton, menuButton);
+                
+                // Add click listener to toggle menu
+                newButton.addEventListener('click', function(e) {
+                    console.log('📱 Menu button clicked');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const wasHidden = mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    const isNowHidden = mobileMenu.classList.contains('hidden');
+                    
+                    console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            console.log('📱 Closing menu - clicked outside');
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+                
+                console.log('✅ Mobile menu initialized successfully');
+            }
+
+            // Dropdown toggle function
+            window.toggleDropdown = function(menuId) {
+                console.log(`🔽 Toggling dropdown: ${menuId}`);
+                
+                const menu = document.getElementById(`${menuId}-menu`);
+                const arrow = document.getElementById(`${menuId}-arrow`);
+                
+                if (!menu) {
+                    console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+                    return;
+                }
+                
+                const wasHidden = menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                
+                if (arrow) {
+                    arrow.classList.toggle('rotate-180');
+                } else {
+                    console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+                }
+                
+                console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+            };
+            
+            // Initialize when DOM is ready
+            function init() {
+                console.log('🚀 Starting mobile menu initialization...');
+                
+                // Wait a bit for imported content to load
+                setTimeout(() => {
+                    initializeMobileMenu();
+                }, 100);
+                
+                // Also try again after a longer delay in case of slow loading
+                setTimeout(() => {
+                    if (!document.getElementById('mobile-menu-button')?.onclick) {
+                        console.log('🔄 Retrying mobile menu initialization...');
+                        initializeMobileMenu();
+                    }
+                }, 500);
+            }
+            
+            // Start initialization
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+            
+            // Also initialize on window load as backup
+            window.addEventListener('load', function() {
+                setTimeout(init, 200);
+            });
+        })();
+    </script>
+
+   <!-- <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-us-form');
+    const submitBtn = document.getElementById('submit-contact-btn');
+    const feedbackEl = document.getElementById('form-feedback');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            feedbackEl.classList.add('hidden');
+
+            try {
+                // Get form values
+                const formData = {
+                    fields: {
+                        'Full Name': document.getElementById('full-name').value.trim(),
+                        'Email Address': document.getElementById('email-address').value.trim(),
+                        'Company/Organization': document.getElementById('company-org').value.trim(),
+                        'Subject': document.getElementById('subject').value,
+                        'Message': document.getElementById('message').value.trim()
+                    }
+                };
+
+                // Validate required fields
+                if (!formData.fields['Full Name'] || !formData.fields['Email Address'] || !formData.fields['Message']) {
+                    throw new Error('Please fill in all required fields');
+                }
+
+                // Check email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.fields['Email Address'])) {
+                    throw new Error('Please enter a valid email address');
+                }
+
+                
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+
+                // Success
+                showFeedback('Your message has been sent successfully! We will get back to you soon.', 'success');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error:', error);
+                showFeedback(error.message || 'Failed to send message. Please try again later.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Send Message';
+            }
+        });
+    }
+
+    function showFeedback(message, type) {
+        feedbackEl.textContent = message;
+        feedbackEl.className = 'mt-3 text-sm';
+        feedbackEl.classList.add(type === 'success' ? 'text-green-500' : 'text-red-500');
+        feedbackEl.classList.remove('hidden');
+        
+        // Scroll to feedback message
+        feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Hide after 5 seconds
+        setTimeout(() => {
+            feedbackEl.classList.add('hidden');
+        }, 5000);
+    }
+});
+</script> -->
+
+</body>
+</html>

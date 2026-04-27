@@ -1,0 +1,235 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqbit Labs Events | Quantum Conferences & Webinars</title>
+    <meta name="description" content="Taqbit Labs events including webinars, conferences, and workshops on quantum-safe security and cryptography.">
+    <meta name="keywords" content="quantum security events, cybersecurity webinars, quantum cryptography workshops">
+    <meta name="author" content="Taqbit Labs">
+    <meta property="og:title" content="Taqbit Labs Events | Quantum Security Meetups">
+    <meta property="og:description" content="Join our upcoming events, webinars, and tech talks on quantum-safe cybersecurity.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="styles.css.html">
+</head>
+<body class="quantum-pattern">
+
+    
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[50vh] flex items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <img src="./assets/eventshero.png" alt="Quantum Events Background" class="absolute inset-0 w-full h-full object-cover brightness-75 opacity-80 z-0" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-blue-900/60 z-0"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 taqbit-gradient-text">Upcoming Quantum Events</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Join our webinars, conferences, and workshops on quantum-safe cybersecurity technologies.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#events" class="px-6 py-3 rounded-md taqbit-primary text-white font-medium hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">View Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
+                <p class="text-gray-600 max-w-4xl mx-auto">Stay updated with our events calendar—featuring expert panels, quantum security webinars, and industry conferences.</p>
+            </div>
+
+            <div id="events-grid" class="grid md:grid-cols-3 gap-8">
+                <!-- JS will inject event cards here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0c1123] relative overflow-hidden">
+        <div id="particles-bg" class="absolute inset-0 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter or footer CTA can go here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+<script src="eventsData.js"></script>
+    <script>
+        
+
+        function renderEvents() {
+            const container = document.getElementById('events-grid');
+            container.innerHTML = eventsData.map(event => `
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                    <div class="h-48 overflow-hidden flex justify-center items-center">
+    <img src="${event.cover}" alt="${event.title}" class="w-full h-full object-cover">
+</div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3 text-sm text-gray-500">
+                            <span class="mr-2"><i class="fa-regular fa-calendar"></i> ${event.date}</span>
+                            <span class="ml-2"><i class="fa-regular fa-clock"></i> ${event.time}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">${event.title}</h3>
+                        <p class="text-gray-600 mb-4 text-sm">${event.description}</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa-solid fa-location-dot mr-1 text-blue-600"></i> ${event.location}
+                        </div>
+                        <a href="${event.link}.html" class="inline-flex items-center text-blue-600 font-medium text-sm hover:underline">
+                            Learn More
+                            <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderEvents();
+        });
+    </script>
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, easing: 'ease-in-out' });
+        lucide.createIcons();
+        tsParticles.load("particles-bg", {
+            background: { color: "#000000" },
+            particles: {
+                number: { value: 50 },
+                size: { value: 2 },
+                color: { value: "#ffffff" },
+                move: { enable: true, speed: 0.5 },
+                opacity: { value: 0.3 },
+                links: { enable: true, distance: 100, color: "#ffffff", opacity: 0.2 }
+            },
+            interactivity: { events: { onHover: { enable: true, mode: "repulse" } } }
+        });
+    </script>
+<script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

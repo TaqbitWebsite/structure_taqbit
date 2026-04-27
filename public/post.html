@@ -1,0 +1,77 @@
+ 
+
+
+<!-- post.html -->
+<body>
+  <main id="blog-post" class="max-w-3xl mx-auto py-16 px-6"></main>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@sanity/client';
+
+    const client = createClient({
+      projectId: 'c4hmiq4c',
+      dataset: 'production',
+      apiVersion: '2025-07-28',
+      useCdn: true
+    });
+
+    // Get slug from URL
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+
+    async function loadPost() {
+      if (!slug) {
+        document.getElementById("blog-post").innerHTML = `<p class="text-red-500">No post found.</p>`;
+        return;
+      }
+
+      try {
+        const query = `*[_type == "post" && slug.current == $slug][0]{
+          title,
+          body,
+          publishedAt,
+          "mainImage": mainImage.asset->url,
+          categories[]->{title},
+          estimatedReadingTime
+        }`;
+        const post = await client.fetch(query, { slug });
+
+        if (!post) {
+          document.getElementById("blog-post").innerHTML = `<p class="text-red-500">Post not found.</p>`;
+          return;
+        }
+
+        // Basic rich text rendering
+        const bodyHtml = Array.isArray(post.body)
+          ? post.body.map(block => {
+              if (block._type === "block") {
+                return `<p class="mb-4">${block.children.map(child => child.text).join('')}</p>`;
+              }
+              return '';
+            }).join('')
+          : '';
+
+        const date = new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        document.getElementById("blog-post").innerHTML = `
+          <article>
+            ${post.mainImage ? `<img src="${post.mainImage}" alt="${post.title}" class="w-full mb-6 rounded-lg" />` : ''}
+            <h1 class="text-3xl font-bold mb-2">${post.title}</h1>
+            <div class="text-sm text-gray-500 mb-4">${date} • ${post.estimatedReadingTime || '—'} min read</div>
+            <div class="flex gap-2 mb-6">
+              ${(post.categories || []).map(cat => `<span class="text-xs bg-gray-100 px-3 py-1 rounded-full">${cat.title}</span>`).join('')}
+            </div>
+            <div class="prose prose-lg max-w-none text-gray-800">${bodyHtml}</div>
+          </article>
+        `;
+      } catch (err) {
+        console.error(err);
+        document.getElementById("blog-post").innerHTML = `<p class="text-red-500">Error loading post.</p>`;
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+
+

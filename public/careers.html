@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Taqbit Labs | Quantum Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+
+    .submit-btn {
+        background-color: #e5e7eb; /* Light gray for disabled state */
+        color: #9ca3af; /* Gray text for disabled state */
+        cursor: not-allowed;
+    }
+    .submit-btn-enabled {
+        background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        color: white;
+        cursor: pointer;
+    }
+    .submit-btn-enabled:hover {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    }
+        .quantum-pattern {
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+        .taqbit-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        }
+        .taqbit-hover-primary:hover {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+        .job-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .filter-active {
+            background-color: #1e40af;
+            color: white;
+        }
+
+        .qd-button {
+            background-color: #3b82f6 ;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+    </style>
+</head>
+<body class="quantum-pattern">
+     <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+    
+
+    <!-- Careers Hero -->
+    <section
+  class="relative min-h-[50vh] flex items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
+  style="background-image: url('./assets/IMG.png');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/80"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto text-center text-white z-10">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 taqbit-gradient-text">
+      Build the Future of Security
+    </h1>
+    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Join our team of quantum physicists, cryptographers, and security experts
+    </p>
+    <a
+      href="#openings"
+      class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white taqbit-primary taqbit-hover-primary md:py-4 md:text-lg md:px-10 transition-all"
+    >
+      View Open Positions
+    </a>
+  </div>
+</section>
+
+
+    <!-- Why Work Here -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Choose Taqbit Labs?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We're building technology that will define the future of cybersecurity</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 rounded-lg taqbit-primary bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-atom text-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cutting-Edge Research</h3>
+                    <p class="text-gray-600">Work on the frontier of quantum cryptography with world-class researchers</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 rounded-lg taqbit-primary bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-medal text-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Impactful Work</h3>
+                    <p class="text-gray-600">Your contributions will protect national infrastructure and global enterprises</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 rounded-lg taqbit-primary bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Great Culture</h3>
+                    <p class="text-gray-600">Collaborative environment with flexible work options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Openings -->
+    <section id="openings" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Current Openings</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join our mission to secure the quantum future</p>
+            </div>
+            
+            <!-- Filters Section -->
+            <div class="mb-12 bg-white p-6 rounded-xl shadow-sm">
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <!-- Search by Skills -->
+                    <div>
+                        <label for="skills-search" class="block text-sm font-medium text-gray-700 mb-1">Search by Skills</label>
+                        <div class="relative">
+                            <input type="text" id="skills-search" placeholder="e.g. Quantum, Python, Cryptography" 
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search by Location -->
+                    <div>
+                        <label for="location-search" class="block text-sm font-medium text-gray-700 mb-1">Search by Location</label>
+                        <div class="relative">
+                            <input type="text" id="location-search" placeholder="e.g. Remote, New York" 
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                <i class="fas fa-map-marker-alt text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Department -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Filter by Department</label>
+                        <div class="flex space-x-2 overflow-x-auto pb-2">
+                            <button class="department-filter px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800 hover:bg-blue-100 hover:text-blue-800 transition-all" data-department="all">
+                                All
+                            </button>
+                            <!-- Department filters will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <div id="job-count" class="text-sm text-gray-600">Loading jobs...</div>
+                    <div class="flex items-center">
+                        <label for="job-type-filter" class="mr-2 text-sm text-gray-700">Job Type:</label>
+                        <select id="job-type-filter" class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="all">All Types</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Internship">Internship</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jobs List -->
+            <div id="jobs-container" class="space-y-4 max-w-6xl mx-auto">
+                <!-- Jobs will be loaded here -->
+                <div class="text-center py-10">
+                    <div class="animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/3 mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <script>
+        // Global variable to store all jobs
+        let allJobs = [];
+        
+        // Fetch jobs via proxy
+        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS3yGUyCJYRK1Qwv5MWMmadKodyFIPM76tO7X8BbMEF44C0-PUiBulhDLlRArIjl3AF_5OK3zACh9a9/pub?output=csv")
+            .then(response => response.text())
+            .then(csv => {
+            const data = Papa.parse(csv, { header: true }).data;
+
+            const jobs = data.map(row => ({
+            fields:{
+            "Job Title": row["Job Title"]?.trim(),
+            "Department": row["Department"]?.trim(),
+            "Type": row["Type"]?.trim(),
+            "Location": row["Location"]?.trim(),
+            "Short Description": row["Short Description"]?.trim(),
+            "Key Skills": row["Key Skills"]?.trim()
+            }
+            }));
+
+            allJobs = jobs;
+            renderJobs(allJobs);
+            setupDepartmentFilters(allJobs);
+            filterJobs();
+
+            });
+        
+         function filterJobs() {
+
+        const skillsSearch = document.getElementById('skills-search').value.toLowerCase();
+        const locationSearch = document.getElementById('location-search').value.toLowerCase();
+        const jobTypeFilter = document.getElementById('job-type-filter').value.toLowerCase();
+        const activeDepartment = document.querySelector('.department-filter.filter-active')?.dataset.department || 'all';
+
+        const filteredJobs = allJobs.filter(job => {
+
+        const jobData = job.fields;
+
+        const type = jobData['Type'] ? jobData['Type'].toLowerCase().trim() : '';
+        const department = jobData['Department'] ? jobData['Department'].trim() : '';
+        const skills = jobData['Key Skills'] ? jobData['Key Skills'].toLowerCase() : '';
+        const location = jobData['Location'] ? jobData['Location'].toLowerCase() : '';
+
+        if (activeDepartment !== 'all' && department.toLowerCase() !== activeDepartment.toLowerCase()) return false;
+
+        if (jobTypeFilter !== 'all' && type !== jobTypeFilter) return false;
+
+        if (skillsSearch && !skills.includes(skillsSearch)) return false;
+
+        if (locationSearch && !location.includes(locationSearch)) return false;
+
+        return true;
+
+        });
+
+        renderJobs(filteredJobs);
+
+        }
+
+        document.getElementById("job-type-filter")
+        .addEventListener("change", filterJobs);
+                function renderJobs(jobs) {
+
+                    const container = document.getElementById('jobs-container');
+                    const jobCount = document.getElementById('job-count');
+
+                    if (jobs.length === 0) {
+
+                    container.innerHTML = `
+                    <div class="text-center py-10 bg-white rounded-xl shadow-sm">
+                    <i class="fas fa-search fa-2x text-gray-400 mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">No jobs found</h3>
+                    <p class="text-gray-600">Try adjusting your filters</p>
+                    </div>`;
+
+                    jobCount.textContent = '0 jobs found';
+                    return;
+
+                    }
+
+                    container.innerHTML = '';
+                    jobCount.textContent = `${jobs.length} ${jobs.length === 1 ? 'job' : 'jobs'} found`;
+
+                    jobs
+                    .filter(job => job.fields && job.fields['Job Title'])
+                    .forEach((job, index) => {
+
+                    const jobData = job.fields;
+
+                    container.innerHTML += `
+                    <div class="card-hover-effect bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+
+                    <div class="mb-4 md:mb-0">
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">${jobData['Job Title']}</h3>
+
+                    <div class="flex flex-wrap gap-2 mb-2">
+
+                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                    ${jobData['Department']}
+                    </span>
+
+                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    ${jobData['Type']}
+                    </span>
+
+                    </div>
+
+                    <p class="text-gray-600 mb-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i>${jobData['Location']}
+                    </p>
+
+                    <p class="text-gray-700 mb-4">${jobData['Short Description']}</p>
+
+                    </div>
+
+                    <div class="flex flex-col items-end">
+
+                    <a href="job-details.html?id=${index}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white qd-button transition-all mb-2">
+                    Apply Now
+                    </a>
+
+                    <a href="job-details.html?id=${index}" class="inline-flex items-center text-black font-medium text-sm">
+                    View Details
+                    <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/>
+                    </svg>
+                    </a>
+
+                    </div>
+
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                    <p class="text-sm text-gray-500">
+                    <span class="font-medium">Key Skills:</span>
+                    ${jobData['Key Skills'] || 'Not specified'}
+                    </p>
+                    </div>
+
+                    </div>
+                    `;
+
+                    });
+
+                    }
+
+        // Setup department filters
+        function setupDepartmentFilters(jobs) {
+            const departments = new Set();
+            jobs.forEach(job => {
+                if (job.fields['Department']) {
+                    departments.add(job.fields['Department']);
+                }
+            });
+            
+            const filterContainer = document.querySelector('.flex.space-x-2.overflow-x-auto.pb-2');
+            departments.forEach(dept => {
+                filterContainer.innerHTML += `
+                    <button class="department-filter px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800 hover:bg-blue-100 hover:text-blue-800 transition-all" data-department="${dept}">
+                        ${dept}
+                    </button>`;
+            });
+            
+            // Add event listeners to department filters
+            document.querySelectorAll('.department-filter').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.department-filter').forEach(btn => {
+                        btn.classList.remove('filter-active', 'bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+                    
+                    this.classList.remove('bg-gray-200', 'text-gray-800');
+                    this.classList.add('filter-active', 'bg-blue-600', 'text-white');
+                    filterJobs();
+                });
+            });
+        }
+        
+        // // Filter jobs based on search and filters
+        // function filterJobs() {
+        //     const skillsSearch = document.getElementById('skills-search').value.toLowerCase();
+        //     const locationSearch = document.getElementById('location-search').value.toLowerCase();
+        //     const jobTypeFilter = document.getElementById('job-type-filter').value;
+        //     const activeDepartment = document.querySelector('.department-filter.filter-active')?.dataset.department || 'all';
+            
+        //     const filteredJobs = allJobs.filter(job => {
+        //         const jobData = job.fields;
+                
+        //         // Department filter
+        //         if (activeDepartment !== 'all' && jobData['Department'] !== activeDepartment) {
+        //             return false;
+        //         }
+                
+        //         // Job type filter
+        //         if (jobTypeFilter !== 'all' && jobData['Type'] !== jobTypeFilter) {
+        //             return false;
+        //         }
+                
+        //         // Skills search
+        //         if (skillsSearch && (!jobData['Key Skills'] || !jobData['Key Skills'].toLowerCase().includes(skillsSearch))) {
+        //             return false;
+        //         }
+                
+        //         // Location search
+        //         if (locationSearch && (!jobData['Location'] || !jobData['Location'].toLowerCase().includes(locationSearch))) {
+        //             return false;
+        //         }
+                
+        //         return true;
+        //     });
+            
+        //     renderJobs(filteredJobs);
+        // }
+        
+        // Set up event listeners for search and filter inputs
+        document.getElementById('skills-search').addEventListener('input', filterJobs);
+        document.getElementById('location-search').addEventListener('input', filterJobs);
+        // document.getElementById('job-type-filter').addEventListener('change', filterJobs);
+        
+        // Initialize with 'All' department selected
+        document.addEventListener('DOMContentLoaded', function() {
+            const allButton = document.querySelector('.department-filter[data-department="all"]');
+            if (allButton) {
+                allButton.classList.add('filter-active', 'bg-blue-600', 'text-white');
+                allButton.classList.remove('bg-gray-200', 'text-gray-800');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Animation duration
+            easing: 'ease-in-out', // Smooth easing
+            once: false, // Animate only once per element
+        });
+    </script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

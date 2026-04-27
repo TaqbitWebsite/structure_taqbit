@@ -1,0 +1,621 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Security Resources Hub | Taqbit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="importmap">
+  {
+    "imports": {
+      "@sanity/client": "https://esm.sh/@sanity/client@5"
+    }
+  }
+</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Animation classes */
+        .animate-fadeup {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gradient text */
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Background pattern */
+        .quantum-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Color variables */
+        .taqbit-primary {
+            background-color: #3b82f6;
+        }
+        
+        .taqbit-text-primary {
+            color: #3b82f6;
+        }
+        
+        .taqbit-secondary {
+            background-color: #8b5cf6;
+        }
+        
+        .taqbit-text-secondary {
+            color: #8b5cf6;
+        }
+        
+        .taqbit-bg {
+            background-color: #f8fafc;
+        }
+        
+        .taqbit-card {
+            background-color: #ffffff;
+        }
+        
+        .taqbit-text {
+            color: #1e293b;
+        }
+        
+        .taqbit-text-light {
+            color: #64748b;
+        }
+        
+        .taqbit-navy {
+            color: #1e3a8a;
+        }
+        
+        .taqbit-gradient-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .taqbit-hover-primary:hover {
+            background-color: #2563eb;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="quantum-pattern">
+  <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+  
+
+  <!-- Hero Section -->
+ <section class="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img src="./assets/quantum-security-banner.png"
+         alt="Quantum Security Visual"
+         class="w-full h-full object-cover opacity-70" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-blue-900/80"></div>
+  </div>
+
+  <!-- Foreground content -->
+  <div class="relative z-10 max-w-7xl mx-auto text-center text-white">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6  animate-fadeup">
+      Quantum Security Resources Hub
+    </h1>
+    <p class="text-xl max-w-3xl mx-auto mb-10 leading-relaxed animate-fadeup delay-150">
+      Your central portal for all quantum security knowledge. Explore whitepapers, stay updated with our latest insights, 
+      join upcoming events, and find answers to your most pressing questions about post-quantum cryptography.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 animate-fadeup delay-300">
+      <!-- <a href="#whitepapers" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium taqbit-hover-primary">
+        <i class="fas fa-file-pdf mr-2"></i> Whitepapers
+      </a> -->
+      <a href="#blog" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium taqbit-hover-primary">
+        <i class="fas fa-blog mr-2"></i> Research Blogs
+      </a>
+      <a href="#events" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium taqbit-hover-primary">
+        <i class="fas fa-calendar-alt mr-2"></i> Events
+      </a>
+      <a href="#faqs" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium taqbit-hover-primary">
+        <i class="fas fa-question-circle mr-2"></i> FAQs
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Resource Overview Section -->
+  <section class="py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-taqbit-text mb-4">Explore Our Resources</h2>
+        <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+          Navigate the quantum security landscape with our comprehensive collection of resources, 
+          carefully curated to help you understand and prepare for the post-quantum era.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200 text-center">
+          <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-file-pdf text-2xl taqbit-text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">Whitepapers</h3>
+          <p class="text-taqbit-text-light mb-6">In-depth technical documentation on quantum security technologies and implementations.</p>
+          <a href="whitepapers.html" class="taqbit-text-primary font-medium inline-flex items-center">
+            Explore <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div> -->
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200 text-center">
+          <div class="w-16 h-16 rounded-lg taqbit-secondary bg-opacity-10 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-blog text-2xl taqbit-text-secondary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">Research Blogs</h3>
+          <p class="text-taqbit-text-light mb-6">Latest insights, trends, and analysis from our quantum security experts.</p>
+          
+          <a href="blogs.html" class="taqbit-text-secondary font-medium inline-flex items-center">
+            Read Articles <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200 text-center">
+          <div class="w-16 h-16 rounded-lg taqbit-gradient-bg flex items-center justify-center mb-6 mx-auto text-white">
+            <i class="fas fa-calendar-alt text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">Events</h3>
+          <p class="text-taqbit-text-light mb-6">Webinars, conferences, and workshops on quantum security topics.</p>
+          <a href="events.html" class="taqbit-text-primary font-medium inline-flex items-center">
+            View Events <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200 text-center">
+          <div class="w-16 h-16 rounded-lg bg-purple-100 flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-question-circle text-2xl text-purple-600"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">FAQs</h3>
+          <p class="text-taqbit-text-light mb-6">Answers to common questions about quantum threats and security solutions.</p>
+          <a href="faqs.html" class="text-purple-600 font-medium inline-flex items-center">
+            Get Answers <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Publications Section -->
+<!-- Publications Section -->
+<section id="publications" class="py-20 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-taqbit-text mb-4">Research Publications</h2>
+            <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+                Explore our peer-reviewed publications, conference papers, and technical reports contributing 
+                to the advancement of quantum-safe cryptography and security solutions.
+            </p>
+        </div>
+
+        
+        <!-- Publications Grid -->
+        <div id="publications-container"></div>
+        
+        <!-- Pagination and View All -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                
+            </div>
+            <a href="publications.html" class="inline-flex items-center px-6 py-3 taqbit-primary text-white rounded-lg font-medium taqbit-hover-primary">
+                <i class="fas fa-book mr-2"></i> View All Publications
+            </a>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Whitepapers Section -->
+  <!-- <section id="whitepapers" class="py-20 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+    <div class="max-w-7xl mx-auto"> -->
+      <!-- <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-taqbit-text mb-4">Whitepapers & Technical Guides</h2>
+        <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+          Our whitepapers provide detailed technical documentation on post-quantum cryptography, 
+          quantum key distribution, and migration strategies for enterprise security.
+        </p>
+      </div> -->
+
+      <!-- <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+            <i class="fas fa-file-pdf text-2xl taqbit-text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">QKD Implementation Guide</h3>
+          <p class="text-taqbit-text-light mb-6">Comprehensive technical guide for deploying Quantum Key Distribution in enterprise networks.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">June 2023</span>
+            <a href="#" class="taqbit-text-primary font-medium flex items-center">
+              Download <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+            <i class="fas fa-file-pdf text-2xl taqbit-text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">Quantum Randomness</h3>
+          <p class="text-taqbit-text-light mb-6">Analysis of quantum entropy sources and their cryptographic applications.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">April 2023</span>
+            <a href="#" class="taqbit-text-primary font-medium flex items-center">
+              Download <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <div class="w-16 h-16 rounded-lg taqbit-primary bg-opacity-10 flex items-center justify-center mb-6">
+            <i class="fas fa-file-pdf text-2xl taqbit-text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">PQC Migration</h3>
+          <p class="text-taqbit-text-light mb-6">Roadmap for transitioning to post-quantum cryptography in large-scale systems.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-500">July 2023</span>
+            <a href="#" class="taqbit-text-primary font-medium flex items-center">
+              Download <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div> -->
+      
+      <!-- <div class="text-center mt-12">
+        <a href="whitepapers.html" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-taqbit-text font-medium hover:bg-gray-50">
+          <i class="fas fa-book-open mr-2"></i> View All Whitepapers
+        </a>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Blogs Section -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Latest Blog Posts</h2>
+            <div id="blog-posts-container"></div>
+            <script type="module" src="blog-data.js"></script>
+  
+            <script type="module">
+    import { fetchBlogPosts, renderBlogPosts } from './blog-data.js';
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const container = document.getElementById('blog-posts-container');
+        
+        // Show loading state
+        container.innerHTML = `
+          <div class="text-center py-8">
+            <i class="fas fa-spinner fa-spin text-blue-500"></i>
+            <p class="mt-2 text-gray-600">Loading posts...</p>
+          </div>
+        `;
+        
+        const posts = await fetchBlogPosts();
+        
+        if (posts.length === 0) {
+          container.innerHTML = `
+            <div class="text-center py-8 text-gray-500">
+              No blog posts found
+            </div>
+          `;
+          return;
+        }
+        
+        renderBlogPosts(posts, 'blog-posts-container', {
+          masonry: false,
+          limit: 6
+        });
+        
+      } catch (error) {
+        console.error('Failed to load blogs:', error);
+        document.getElementById('blog-posts-container').innerHTML = `
+          <div class="text-center py-8 text-red-500">
+            Error loading blog posts. Please try again later.
+          </div>
+        `;
+      }
+    });
+  </script>
+        <div id="featured-blog-posts"></div>
+        <div class="text-center mt-8">
+            <a href="blogs.html" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                View All Posts
+            </a>
+        </div>
+    </div>
+</section>
+
+  <!-- Events Section -->
+  <section id="events" class="py-20 px-6 md:px-12 lg:px-24 bg-taqbit-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-taqbit-text mb-4">Events & Webinars</h2>
+        <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+          Join our upcoming sessions with quantum security experts, or catch up on recordings 
+          from past events in our growing knowledge library.
+        </p>
+      </div>
+
+   <div id="resources-events-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      
+      <div class="text-center mt-12">
+        <div class="inline-flex space-x-4">
+          <a href="events.html" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg text-taqbit-text font-medium hover:bg-gray-50">
+            <i class="fas fa-calendar mr-2"></i> View All Events
+          </a>
+          <a href="#" class="inline-flex items-center px-6 py-3 taqbit-primary text-white rounded-lg font-medium taqbit-hover-primary">
+            <i class="fas fa-video mr-2"></i> Watch Past Webinars
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faqs" class="py-20 px-6 md:px-12 lg:px-24 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-taqbit-text mb-4">Frequently Asked Questions</h2>
+        <p class="text-lg text-taqbit-text-light max-w-3xl mx-auto">
+          Quick answers to common questions about quantum threats and security solutions. 
+          Can't find what you're looking for? <a href="#" class="taqbit-text-primary font-medium">Contact our team</a>.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">What is Post-Quantum Cryptography?</h3>
+          <p class="text-taqbit-text-light">Cryptographic algorithms that resist attacks from quantum computers, such as lattice-based encryption and hash-based signatures. These algorithms are designed to be secure against both classical and quantum computing threats.</p>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">How soon should we migrate to quantum-safe cryptography?</h3>
+          <p class="text-taqbit-text-light">Migration should start now due to "harvest now, decrypt later" threats where encrypted data is collected for future decryption. The transition is complex and may take years for large organizations.</p>
+        </div>
+
+        <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+          <h3 class="text-xl font-bold text-taqbit-text mb-3">Does Taqbit provide consulting services for quantum migration?</h3>
+          <p class="text-taqbit-text-light">Yes, we offer advisory services, integration support, and cryptographic audits for enterprises. Our team can help assess your current infrastructure, develop a migration roadmap, and implement quantum-safe solutions.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="faqs.html" class="inline-flex items-center px-6 py-3 taqbit-primary text-white rounded-lg font-medium taqbit-hover-primary">
+          <i class="fas fa-question-circle mr-2"></i> View Full FAQ Section
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <!-- <section class="py-20 px-6 md:px-12 lg:px-24 taqbit-gradient-bg text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Need Help With Your Quantum Security Strategy?</h2>
+      <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+        Our team of quantum cryptographers is ready to help you navigate the post-quantum transition 
+        with customized solutions for your organization.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="inline-flex items-center px-8 py-3 bg-white text-taqbit-navy rounded-lg font-medium hover:bg-gray-100">
+          <i class="fas fa-envelope mr-2"></i> Contact Our Experts
+        </a>
+        <a href="#" class="inline-flex items-center px-8 py-3 border border-white rounded-lg font-medium hover:bg-white hover:bg-opacity-10">
+          <i class="fas fa-phone-alt mr-2"></i> Schedule a Call
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+ <div id="footer-placeholder"></div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="eventsData.js"></script>
+<script>
+  function renderResourceEvents() {
+    const container = document.getElementById('resources-events-grid');
+    container.innerHTML = window.eventsData.map(event => `
+      <div class="card-hover-effect bg-taqbit-card p-8 rounded-xl shadow-md border border-gray-200">
+        <div class="w-16 h-16 rounded-lg taqbit-gradient-bg flex items-center justify-center mb-6 text-white">
+          <i class="fas ${event.icon} text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-taqbit-text mb-3">${event.title}</h3>
+        <p class="text-taqbit-text-light mb-4">${event.description}</p>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <i class="far fa-calendar mr-2"></i> ${event.date}
+        </div>
+        <a href="${event.link}.html" class="taqbit-text-primary font-medium flex items-center">
+          ${event.cta} <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    `).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', renderResourceEvents);
+</script>
+
+
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-fadeup');
+      animatedElements.forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.15}s`;
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+   <script src="script.js"></script>
+  <script>
+
+    AOS.init({
+      duration: 800, // Animation duration
+      easing: 'ease-in-out', // Smooth easing
+      once: false, // Animate only once per element
+    });
+  </script>
+  <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+<script src="publications-data.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // For resources page, show only 4 publications
+        renderPublications('publications-container', 4);
+    });
+</script>
+
+</body>
+</html>
+
+

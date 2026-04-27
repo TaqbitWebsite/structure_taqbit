@@ -1,0 +1,495 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taqbit's Quantum Key Distribution (QKD) solutions provide information-theoretically secure key exchange immune to quantum computing attacks">
+    <title>Quantum Key Distribution (QKD) | Taqbit Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .quantum-pattern {
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+        .taqbit-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        }
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <!-- QKD Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <img src="./assets/qkd-banner.png" alt="QKD Fiber Optics" class="absolute inset-0 w-full h-full object-cover brightness-75 opacity-80 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-blue-900/60 z-0"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 taqbit-gradient-text">
+                Quantum Key Distribution
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Information-theoretically secure key exchange guaranteed by the laws of quantum physics
+            </p>
+        </div>
+    </section>
+
+    <!-- QKD Protocol Comparison -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our QKD Protocols</h2>
+                <p class="text-gray-600 max-w-4xl mx-auto">
+                    Taqbit offers two complementary QKD protocols optimized for different deployment scenarios, both providing mathematically proven security against all computational attacks.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- COW QKD -->
+                <div class="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-wave-square text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">COW QKD</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        <strong>Coherent-One-Way QKD</strong> uses weak coherent pulses with time-bin encoding and a dedicated monitoring line to detect eavesdropping. The protocol offers an optimal balance between implementation simplicity and high performance.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Time-bin encoding with decoy sequences</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Dedicated monitoring line for eavesdrop detection</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Optimal for moderate-distance fiber links (up to 100km)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DPS QKD -->
+                <div class="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-lg bg-purple-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-exchange-alt text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">DPS QKD</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        <strong>Differential-Phase-Shift QKD</strong> encodes information in the relative phase between consecutive photon pulses, offering higher key-generation rates and stable operation over long distances.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Phase difference encoding between pulses</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Mach-Zehnder interferometer for detection</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Higher key rates for long-haul fiber networks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparison Table -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">COW QKD</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DPS QKD</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Protocol</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Coherent-One-Way</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Differential-Phase-Shift</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Encoding Method</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Time-bin encoding</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Phase difference encoding</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Key Rate (at 22dB loss)</td>
+                            <td class="px-6 py-4 whitespace-nowrap">~1 kbps</td>
+                            <td class="px-6 py-4 whitespace-nowrap">~2 kbps</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Max Distance</td>
+                            <td class="px-6 py-4 whitespace-nowrap">>100 km</td>
+                            <td class="px-6 py-4 whitespace-nowrap">>100 km</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Eavesdrop Detection</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Monitoring line statistics</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Phase correlation analysis</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Best For</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Metro networks, moderate distances</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Long-haul, high-throughput links</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- QKD Technology Deep Dive -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">How Quantum Key Distribution Works</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">The science behind our unbreakable quantum encryption</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Information-Theoretic Security</h3>
+                    <p class="text-gray-600 mb-6">
+                        Unlike classical encryption that relies on computational complexity, QKD's security is guaranteed by the fundamental laws of quantum physics. Any attempt to measure quantum states disturbs them (Heisenberg Uncertainty Principle), making eavesdropping detectable.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Quantum Uncertainty</p>
+                                <p class="text-sm text-gray-600">Measuring quantum states inevitably alters them, revealing eavesdroppers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">No-Cloning Theorem</p>
+                                <p class="text-sm text-gray-600">Quantum states cannot be perfectly copied, preventing undetected interception</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                    <img src="./assets/QKD.png" alt="QKD Security Principle" class="rounded-lg">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 order-last md:order-first">
+                    <img src="./assets/Shaurya.png" alt="QKD Key Exchange Process" class="rounded-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">The QKD Process</h3>
+                    <ol class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Quantum Transmission</h4>
+                                <p class="text-gray-600 mt-1">Alice encodes random bits in quantum states (photons) and sends them to Bob through a quantum channel (optical fiber)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Measurement & Sifting</h4>
+                                <p class="text-gray-600 mt-1">Bob measures the incoming quantum states, then both parties reconcile detected measurements</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">3</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Error Estimation</h4>
+                                <p class="text-gray-600 mt-1">Parties compare a subset of bits to estimate quantum bit error rate (QBER) and detect potential eavesdropping</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">4</span>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Key Distillation</h4>
+                                <p class="text-gray-600 mt-1">Error correction and privacy amplification algorithms produce a final secure key with proven secrecy</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QKD Deployment Options -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">QKD Deployment Solutions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Flexible integration options for your security infrastructure</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Option 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-building text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Data Center Interconnects</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Secure links between data centers with rack-mounted QKD terminals and key management systems
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>19" rack-mount QKD terminals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Integration with existing encryption devices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Centralized key management</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Option 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-tower-cell text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Metro Network Links</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Point-to-point quantum-secured links for metropolitan area networks and financial exchanges
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>High-availability QKD systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Network management integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Redundant quantum channels</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Option 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all">
+                    <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-satellite-dish text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 mb-4">Long-Haul Backbones</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        Trusted node networks for national-scale quantum-secured communication infrastructure
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Trusted node architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>High-performance DPS QKD</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-4 w-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Network operation center support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeup');
+            animatedElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+        });
+    </script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

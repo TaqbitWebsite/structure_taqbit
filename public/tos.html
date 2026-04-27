@@ -1,0 +1,246 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Taqbit Quantum Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .terms-section {
+            counter-increment: section-counter;
+            margin-bottom: 2rem;
+        }
+        .terms-section h2:before {
+            content: counter(section-counter) ". ";
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <main class="max-w-4xl mx-auto py-12 px-6">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4 taqbit-gradient-text">Terms of Service</h1>
+            <p class="text-lg text-gray-600">Last Updated: January 2024</p>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-gray-200">
+            <div class="prose max-w-none">
+                <p class="text-gray-700 mb-6">
+                    These Terms of Service ("Terms") govern your access to and use of the Taqbit website (the "Service"). By accessing or using the Service, you agree to be bound by these Terms.
+                </p>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Use of Website</h2>
+                    <p class="text-gray-700 mb-4">
+                        The Taqbit website provides information about our quantum security solutions and related services. You may use this site for lawful purposes only.
+                    </p>
+                    <p class="text-gray-700">
+                        You agree not to:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                        <li>Use the site in any way that violates applicable laws</li>
+                        <li>Attempt to gain unauthorized access to our systems</li>
+                        <li>Use automated systems to extract data without permission</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Intellectual Property</h2>
+                    <p class="text-gray-700 mb-4">
+                        All content on this website, including text, graphics, logos, and images, is the property of Taqbit and protected by intellectual property laws.
+                    </p>
+                    <p class="text-gray-700">
+                        You may:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                        <li>View and download content for personal, non-commercial use</li>
+                        <li>Share links to our content with attribution</li>
+                    </ul>
+                    <p class="text-gray-700">
+                        You may not:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+                        <li>Republish or redistribute content without permission</li>
+                        <li>Use our trademarks without written consent</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Disclaimer</h2>
+                    <p class="text-gray-700 mb-4">
+                        The information on this website is provided for general informational purposes only. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information.
+                    </p>
+                    <p class="text-gray-700">
+                        Any reliance you place on such information is strictly at your own risk.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Limitation of Liability</h2>
+                    <p class="text-gray-700">
+                        To the fullest extent permitted by law, Taqbit shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your access to or use of this website.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Changes to Terms</h2>
+                    <p class="text-gray-700">
+                        We reserve the right to modify these Terms at any time. Your continued use of the website after changes constitutes acceptance of the new Terms.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Governing Law</h2>
+                    <p class="text-gray-700">
+                        These Terms shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts, without regard to its conflict of law provisions.
+                    </p>
+                </div>
+
+                <div class="terms-section">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Contact Information</h2>
+                    <p class="text-gray-700">
+                        For questions about these Terms, please contact us at:<br>
+                        <strong>Email:</strong> legal@taqbit.com<br>
+                        <strong>Address:</strong> 47/1, Srirampura, Main Rd, Amrutahalli, Jakkuru, Bengaluru, Karnataka 560001
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+    <script src="script.js"></script>
+</body>
+<script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</html>
+
+

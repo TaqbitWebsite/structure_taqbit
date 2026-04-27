@@ -1,0 +1,483 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Security Whitepapers | Taqbit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Gradient text */
+        .taqbit-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Background pattern */
+        .quantum-pattern {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.05) 0px, transparent 50%);
+        }
+        
+        /* Card hover effect */
+        .whitepaper-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .whitepaper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Badge styles */
+        .badge-new {
+            background-color: #10B981;
+            color: white;
+        }
+        .badge-technical {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .badge-strategy {
+            background-color: #8B5CF6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="quantum-pattern">
+    <!-- Navigation (same as index.html) -->
+<div id="header-placeholder"></div>
+
+    
+
+    <!-- Hero Section -->
+    <section class="relative py-24 px-6 md:px-12 lg:px-24 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/whitepapershero.png');">
+    <!-- Optional overlay -->
+    <div class="absolute inset-0 bg-black/80"></div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 ">
+            Quantum Security Whitepapers
+        </h1>
+        <p class="text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+            In-depth technical resources on post-quantum cryptography, quantum key distribution, and enterprise migration strategies.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#featured" class="px-6 py-3 rounded-lg taqbit-primary text-white font-medium hover:bg-blue-600">
+                <i class="fas fa-file-alt mr-2"></i> View Whitepapers
+            </a>
+            <a href="#categories" class="px-6 py-3 rounded-lg bg-white text-gray-800 border border-gray-200 font-medium hover:bg-gray-50">
+                <i class="fas fa-filter mr-2"></i> Browse Categories
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Featured Whitepapers -->
+    <section id="featured" class="py-16 px-6 md:px-12 lg:px-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Resources</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our most popular technical whitepapers and implementation guides.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Whitepaper 1 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="relative">
+                        <div class="absolute -top-3 -right-3 px-3 py-1 rounded-full badge-new text-xs font-bold">
+                            NEW
+                        </div>
+                        <div class="w-full h-48 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg mb-4 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-file-pdf text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <span class="px-2 py-1 rounded-full badge-technical text-xs font-bold mr-2">
+                            Technical
+                        </span>
+                        <span class="text-sm text-gray-500">July 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Implementing CRYSTALS-Kyber in Enterprise Systems</h3>
+                    <p class="text-gray-600 mb-4">A practical guide to deploying NIST's selected KEM algorithm in existing infrastructure with performance benchmarks.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">24 pages</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Download <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Whitepaper 2 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="w-full h-48 bg-gradient-to-r from-purple-100 to-blue-100 rounded-lg mb-4 flex items-center justify-center text-purple-600">
+                        <i class="fas fa-file-pdf text-6xl"></i>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <span class="px-2 py-1 rounded-full badge-strategy text-xs font-bold mr-2">
+                            Strategy
+                        </span>
+                        <span class="text-sm text-gray-500">May 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">The Quantum Migration Roadmap</h3>
+                    <p class="text-gray-600 mb-4">Five-phase framework for enterprises transitioning to post-quantum cryptography with risk assessment methodology.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">32 pages</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Download <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Whitepaper 3 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg mb-4 flex items-center justify-center text-indigo-600">
+                        <i class="fas fa-file-pdf text-6xl"></i>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <span class="px-2 py-1 rounded-full badge-technical text-xs font-bold mr-2">
+                            Technical
+                        </span>
+                        <span class="text-sm text-gray-500">March 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Hybrid TLS 1.3 Implementations</h3>
+                    <p class="text-gray-600 mb-4">Combining classical and post-quantum algorithms for transitional security with compatibility analysis.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">28 pages</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                            Download <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Browse by Category</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Explore whitepapers organized by topic and technical level.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Category 1 -->
+                <a href="#" class="whitepaper-card bg-white p-8 rounded-xl border border-gray-200 text-center hover:border-blue-300">
+                    <div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto text-blue-600">
+                        <i class="fas fa-lock text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Post-Quantum Cryptography</h3>
+                    <p class="text-gray-600">Implementation guides for NIST-selected algorithms and migration strategies.</p>
+                    <div class="mt-4 text-blue-600 font-medium">
+                        View 8 Whitepapers <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="#" class="whitepaper-card bg-white p-8 rounded-xl border border-gray-200 text-center hover:border-purple-300">
+                    <div class="w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center mb-6 mx-auto text-purple-600">
+                        <i class="fas fa-key text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Quantum Key Distribution</h3>
+                    <p class="text-gray-600">Technical deep dives into QKD protocols and real-world deployment challenges.</p>
+                    <div class="mt-4 text-purple-600 font-medium">
+                        View 5 Whitepapers <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="#" class="whitepaper-card bg-white p-8 rounded-xl border border-gray-200 text-center hover:border-green-300">
+                    <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 mx-auto text-green-600">
+                        <i class="fas fa-building text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Enterprise Security</h3>
+                    <p class="text-gray-600">Architectural frameworks for quantum-safe enterprise infrastructure.</p>
+                    <div class="mt-4 text-green-600 font-medium">
+                        View 6 Whitepapers <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Whitepapers -->
+    <section class="py-16 px-6 md:px-12 lg:px-24 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">All Whitepapers</h2>
+                    <p class="text-gray-600">Browse our complete library of technical resources</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="relative">
+                        <select class="block w-full md:w-64 px-4 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option>Sort by: Newest First</option>
+                            <option>Sort by: Oldest First</option>
+                            <option>Sort by: Most Popular</option>
+                            <option>Sort by: Technical Level</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Whitepaper Row 1 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-200">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0 md:pr-6">
+                            <div class="w-full h-40 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                                <i class="fas fa-file-pdf text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <div class="flex items-center mb-3">
+                                <span class="px-2 py-1 rounded-full badge-technical text-xs font-bold mr-3">
+                                    Technical
+                                </span>
+                                <span class="text-sm text-gray-500">June 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Lattice-Based Cryptography: Performance Optimization</h3>
+                            <p class="text-gray-600 mb-4">Comparative analysis of parameter sets for lattice-based schemes with benchmarks across different hardware platforms.</p>
+                            <div class="flex flex-wrap justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500 mb-2 md:mb-0">
+                                    <i class="fas fa-file-alt mr-2"></i> 18 pages
+                                    <span class="mx-3">•</span>
+                                    <i class="fas fa-download mr-2"></i> 1,248 downloads
+                                </div>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                    Download Whitepaper <i class="fas fa-arrow-down ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whitepaper Row 2 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200 hover:border-purple-200">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0 md:pr-6">
+                            <div class="w-full h-40 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                                <i class="fas fa-file-pdf text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <div class="flex items-center mb-3">
+                                <span class="px-2 py-1 rounded-full badge-strategy text-xs font-bold mr-3">
+                                    Strategy
+                                </span>
+                                <span class="text-sm text-gray-500">April 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Crypto-Agility in Financial Systems</h3>
+                            <p class="text-gray-600 mb-4">Framework for financial institutions to implement cryptographic agility with case studies from early adopters.</p>
+                            <div class="flex flex-wrap justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500 mb-2 md:mb-0">
+                                    <i class="fas fa-file-alt mr-2"></i> 22 pages
+                                    <span class="mx-3">•</span>
+                                    <i class="fas fa-download mr-2"></i> 892 downloads
+                                </div>
+                                <a href="#" class="text-purple-600 hover:text-purple-800 font-medium flex items-center">
+                                    Download Whitepaper <i class="fas fa-arrow-down ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whitepaper Row 3 -->
+                <div class="whitepaper-card bg-white p-6 rounded-xl border border-gray-200 hover:border-green-200">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0 md:pr-6">
+                            <div class="w-full h-40 bg-gradient-to-r from-green-50 to-green-100 rounded-lg flex items-center justify-center text-green-600">
+                                <i class="fas fa-file-pdf text-5xl"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <div class="flex items-center mb-3">
+                                <span class="px-2 py-1 rounded-full badge-technical text-xs font-bold mr-3">
+                                    Technical
+                                </span>
+                                <span class="text-sm text-gray-500">February 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Quantum-Safe PKI Architectures</h3>
+                            <p class="text-gray-600 mb-4">Design patterns for transitioning public key infrastructure to resist quantum attacks while maintaining compatibility.</p>
+                            <div class="flex flex-wrap justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500 mb-2 md:mb-0">
+                                    <i class="fas fa-file-alt mr-2"></i> 30 pages
+                                    <span class="mx-3">•</span>
+                                    <i class="fas fa-download mr-2"></i> 1,502 downloads
+                                </div>
+                                <a href="#" class="text-green-600 hover:text-green-800 font-medium flex items-center">
+                                    Download Whitepaper <i class="fas fa-arrow-down ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    
+                </div>
+                <div class="text-sm text-gray-500">
+                    Showing 1-6 of 23 whitepapers
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- <section class="py-20 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Need Custom Research?</h2>
+            <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                Our quantum security experts can prepare tailored whitepapers and technical briefs for your organization's specific needs.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="inline-flex items-center px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100">
+                    <i class="fas fa-envelope mr-2"></i> Request Custom Report
+                </a>
+                <a href="#" class="inline-flex items-center px-8 py-3 border border-white rounded-lg font-medium hover:bg-white hover:bg-opacity-10">
+                    <i class="fas fa-phone-alt mr-2"></i> Speak to an Expert
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+ <div id="footer-placeholder"></div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+(function() {
+    'use strict';
+    
+    // Mobile menu functionality
+    function initializeMobileMenu() {
+        console.log('🔧 Initializing mobile menu...');
+        
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!menuButton) {
+            console.error('❌ Mobile menu button not found');
+            return;
+        }
+        
+        if (!mobileMenu) {
+            console.error('❌ Mobile menu not found');
+            return;
+        }
+        
+        console.log('✅ Mobile menu elements found');
+        
+        // Remove any existing listeners to prevent duplicates
+        const newButton = menuButton.cloneNode(true);
+        menuButton.parentNode.replaceChild(newButton, menuButton);
+        
+        // Add click listener to toggle menu
+        newButton.addEventListener('click', function(e) {
+            console.log('📱 Menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const wasHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            const isNowHidden = mobileMenu.classList.contains('hidden');
+            
+            console.log(`Menu: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !newButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    console.log('📱 Closing menu - clicked outside');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        console.log('✅ Mobile menu initialized successfully');
+    }
+
+    // Dropdown toggle function
+    window.toggleDropdown = function(menuId) {
+        console.log(`🔽 Toggling dropdown: ${menuId}`);
+        
+        const menu = document.getElementById(`${menuId}-menu`);
+        const arrow = document.getElementById(`${menuId}-arrow`);
+        
+        if (!menu) {
+            console.error(`❌ Dropdown menu not found: ${menuId}-menu`);
+            return;
+        }
+        
+        const wasHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        
+        if (arrow) {
+            arrow.classList.toggle('rotate-180');
+        } else {
+            console.warn(`⚠️ Arrow not found: ${menuId}-arrow`);
+        }
+        
+        console.log(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`);
+    };
+    
+    // Initialize when DOM is ready
+    function init() {
+        console.log('🚀 Starting mobile menu initialization...');
+        
+        // Wait a bit for imported content to load
+        setTimeout(() => {
+            initializeMobileMenu();
+        }, 100);
+        
+        // Also try again after a longer delay in case of slow loading
+        setTimeout(() => {
+            if (!document.getElementById('mobile-menu-button')?.onclick) {
+                console.log('🔄 Retrying mobile menu initialization...');
+                initializeMobileMenu();
+            }
+        }, 500);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Also initialize on window load as backup
+    window.addEventListener('load', function() {
+        setTimeout(init, 200);
+    });
+})();
+</script>
+</body>
+</html>
+
+

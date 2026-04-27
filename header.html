@@ -1,0 +1,1062 @@
+<link rel="stylesheet" href="styles.css">
+
+
+<nav class="fixed w-full z-50 bg-gradient-to-r from-black via-blue-900 to-black/90 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center absolute left-4">
+                <a href="index.html">
+                    <img src="./assets/Taqbit.avif" alt="Taqbit Labs" style="width: 180px;">
+                </a>
+            </div>
+
+            <!-- Centered Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-1 mx-auto">
+                <!-- Home Link -->
+                <a href="index.html" class="text-gray-200 hover:text-blue-400 px-5 py-2 text-sm font-medium transition-colors duration-300 group/home">
+                    Home
+                    <span class="block h-0.5 bg-blue-400 scale-x-0 group-hover/home:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                
+                <!-- Products Dropdown -->
+                <div class="relative group">
+                    <a href="products.html">    
+                        <button class="text-gray-200 hover:text-blue-400 px-5 py-2 text-sm font-medium flex items-center transition-colors duration-300">
+                            Products
+                            <svg class="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 bg-gradient-to-br from-blue-900/95 to-black/95 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-lg border border-blue-700/30 transform group-hover:translate-y-0 translate-y-1 z-[60] overflow-visible">
+                        <div class="px-4 py-2 border-b border-blue-800/50">
+                            <h3 class="text-blue-300 font-semibold text-xs uppercase tracking-wider">Our Quantum Solutions</h3>
+                        </div>
+                        <a href="qkd.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Quantum Key Distribution</span>
+                                <span class="text-xs text-blue-300/80">Unbreakable encryption keys</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-auto h-4 w-4 text-blue-400 opacity-0 group-hover/item:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="qrng.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Quantum Random Numbers</span>
+                                <span class="text-xs text-blue-300/80">True randomness for security</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-auto h-4 w-4 text-blue-400 opacity-0 group-hover/item:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="pqc.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Post Quantum Crypto</span>
+                                <span class="text-xs text-blue-300/80">Quantum-resistant algorithms</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-auto h-4 w-4 text-blue-400 opacity-0 group-hover/item:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <div class="px-4 py-3 border-t border-blue-800/50 text-center">
+                            <a href="products.html" class="text-xs text-blue-300 hover:text-white font-medium inline-flex items-center transition-colors">
+                                View all products
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Dropdown -->
+               
+ <div class="relative group">
+                    <a href="resources.html">
+                        <button class="text-gray-200 hover:text-blue-400 px-5 py-2 text-sm font-medium flex items-center transition-colors duration-300">
+                            Resources
+                            <svg class="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </a> 
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-96 bg-gradient-to-br from-blue-900/95 to-black/95 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-lg border border-blue-700/30 transform group-hover:translate-y-0 translate-y-1 z-[60] overflow-visible">
+                        <div class="grid grid-cols-2 gap-1 px-4">
+                            <div class="col-span-2 px-4 py-2 border-b border-blue-800/50">
+                                <h3 class="text-blue-300 font-semibold text-xs uppercase tracking-wider">Knowledge Center</h3>
+                            </div>
+                            
+                            <a href="blogs.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">Blogs</span>
+                                    <span class="text-xs text-blue-300/80">Latest quantum insights</span>
+                                </div>
+                            </a>
+                            
+                            <a href="events.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">Events</span>
+                                    <span class="text-xs text-blue-300/80">Conferences & webinars</span>
+                                </div>
+                            </a>
+                            
+                            <a href="news.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">News</span>
+                                    <span class="text-xs text-blue-300/80">Company updates</span>
+                                </div>
+                            </a>
+                            
+                            <a href="faqs.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">FAQs</span>
+                                    <span class="text-xs text-blue-300/80">Common questions</span>
+                                </div>
+                            </a>
+                            
+                            <a href="publications.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">Publications</span>
+                                    <span class="text-xs text-blue-300/80">Research papers</span>
+                                </div>
+                            </a>
+                            
+                          
+                            
+                            <a href="whitepapers.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item rounded-lg">
+                                <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="font-medium block">Whitepapers</span>
+                                    <span class="text-xs text-blue-300/80">In-depth technical guides</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="px-4 py-3 border-t border-blue-800/50 text-center">
+                            <a href="resources.html" class="text-xs text-blue-300 hover:text-white font-medium inline-flex items-center transition-colors">
+                                Explore all resources
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+              <div class="relative group">
+                    <a href="about.html">
+                        <button class="text-gray-200 hover:text-blue-400 px-5 py-2 text-sm font-medium flex items-center transition-colors duration-300">
+                            Company
+                            <svg class="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </a> 
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-72 bg-gradient-to-br from-blue-900/95 to-black/95 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 backdrop-blur-lg border border-blue-700/30 transform group-hover:translate-y-0 translate-y-1 z-[60] overflow-visible">
+                        <div class="px-4 py-2 border-b border-blue-800/50">
+                            <h3 class="text-blue-300 font-semibold text-xs uppercase tracking-wider">About Taqbit</h3>
+                        </div>
+                        <a href="about.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">About Us</span>
+                                <span class="text-xs text-blue-300/80">Our vision and mission</span>
+                            </div>
+                        </a>
+                        <a href="careers.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Careers</span>
+                                <span class="text-xs text-blue-300/80">Join our team</span>
+                            </div>
+                        </a>
+                        <a href="contact.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Contact Us</span>
+                                <span class="text-xs text-blue-300/80">Get in touch</span>
+                            </div>
+                        </a>
+                        <a href="academy.html" class="block px-4 py-3 text-sm text-gray-200 hover:bg-blue-800/30 hover:text-white transition-all duration-200 flex items-start group/item">
+                            <div class="bg-blue-900/50 p-2 rounded-lg mr-3 group-hover/item:bg-blue-700 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="font-medium block">Academy</span>
+                                <span class="text-xs text-blue-300/80">Learning resources</span>
+                            </div>
+                        </a>
+                        <div class="px-4 py-3 border-t border-blue-800/50 text-center">
+                            <a href="about.html" class="text-xs text-blue-300 hover:text-white font-medium inline-flex items-center transition-colors">
+                                Learn more about us
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+            
+
+               <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center absolute right-4">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-blue-800/30 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-900/95 to-black/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+                <!-- Products Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('products')">
+                        Products
+                        <svg id="products-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="products-menu" class="hidden pl-4">
+                        <a href="qkd.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Key Distribution</a>
+                        <a href="qrng.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Random Number Generator</a>
+                        <a href="pqc.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Post Quantum Cryptography</a>
+                        <a href="products.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Products</a>
+                    </div>
+                </div>
+
+                <!-- Resources Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('resources')">
+                        Resources
+                        <svg id="resources-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="resources-menu" class="hidden pl-4">
+                        <a href="blogs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blogs</a>
+                        <a href="events.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                        <a href="news.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
+                        <a href="faqs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">FAQs</a>
+                        <a href="publications.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Publications</a>
+                        <a href="whitepapers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Whitepapers</a>
+                         <a href="resources.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Resources</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('company')">
+                        Company
+                        <svg id="company-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="company-menu" class="hidden pl-4">
+                        <a href="careers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Careers</a>
+                        <a href="contact.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                        <a href="academy.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Academy</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content area for testing -->
+   
+    <script>
+        // Debug logging function
+        function debugLog(message, type = 'info') {
+            const output = document.getElementById('debug-output');
+            const item = document.createElement('div');
+            item.className = `debug-item ${type}`;
+            item.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            output.appendChild(item);
+            output.scrollTop = output.scrollHeight;
+            console.log(`[DEBUG ${type.toUpperCase()}] ${message}`);
+        }
+
+        // Comprehensive diagnostics function
+        function runDiagnostics() {
+            const output = document.getElementById('debug-output');
+            output.innerHTML = '<div class="debug-item info">🚀 Running diagnostics...</div>';
+
+            // Check if DOM is loaded
+            debugLog('DOM Content Loaded: ' + (document.readyState === 'complete' ? '✅' : '⚠️'), 
+                     document.readyState === 'complete' ? 'success' : 'warning');
+
+            // Check critical elements
+            const elements = {
+                'mobile-menu-button': 'Mobile Menu Button',
+                'mobile-menu': 'Mobile Menu',
+                'products-menu': 'Products Dropdown',
+                'resources-menu': 'Resources Dropdown',
+                'company-menu': 'Company Dropdown',
+                'products-arrow': 'Products Arrow',
+                'resources-arrow': 'Resources Arrow',
+                'company-arrow': 'Company Arrow'
+            };
+
+            let allElementsFound = true;
+            Object.entries(elements).forEach(([id, name]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    debugLog(`${name}: ✅ Found`, 'success');
+                    // Check if element is visible
+                    const styles = window.getComputedStyle(element);
+                    const isVisible = styles.display !== 'none' && styles.visibility !== 'hidden';
+                    debugLog(`${name} Visibility: ${isVisible ? '✅ Visible' : '⚠️ Hidden'}`, 
+                             isVisible ? 'success' : 'warning');
+                } else {
+                    debugLog(`${name}: ❌ NOT FOUND`, 'error');
+                    allElementsFound = false;
+                }
+            });
+
+            // Check event listeners
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (menuButton) {
+                debugLog('Menu Button Click Handler: ✅ Attached', 'success');
+            } else {
+                debugLog('Menu Button Click Handler: ❌ Button not found', 'error');
+            }
+
+            // Check CSS classes and Tailwind
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                const hasHiddenClass = mobileMenu.classList.contains('hidden');
+                debugLog(`Mobile Menu Hidden Class: ${hasHiddenClass ? '✅ Present' : '⚠️ Missing'}`, 
+                         hasHiddenClass ? 'success' : 'warning');
+                
+                const computedDisplay = window.getComputedStyle(mobileMenu).display;
+                debugLog(`Mobile Menu Computed Display: ${computedDisplay}`, 'info');
+            }
+
+            // Check viewport width
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport Width: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 
+                     isMobileViewport ? 'success' : 'warning');
+
+            // Check for JavaScript errors
+            window.addEventListener('error', function(e) {
+                debugLog(`JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+            });
+
+            // Test toggleDropdown function
+            if (typeof toggleDropdown === 'function') {
+                debugLog('toggleDropdown function: ✅ Available', 'success');
+            } else {
+                debugLog('toggleDropdown function: ❌ NOT FOUND', 'error');
+            }
+
+            debugLog('🔍 Diagnostics complete!', 'info');
+        }
+
+        // Test mobile menu programmatically
+        function testMobileMenuProgrammatically() {
+            debugLog('🧪 Testing mobile menu toggle...', 'info');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                // Simulate button click
+                menuButton.click();
+                
+                setTimeout(() => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    debugLog(`Menu toggle test: ${!isHidden ? '✅ Menu opened' : '❌ Menu still hidden'}`, 
+                             !isHidden ? 'success' : 'error');
+                }, 100);
+            } else {
+                debugLog('❌ Cannot test - elements not found', 'error');
+            }
+        }
+
+        // Your original mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            debugLog('🎯 DOMContentLoaded event fired', 'success');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuButton) {
+                debugLog('❌ Mobile menu button not found in DOM', 'error');
+                return;
+            }
+            
+            if (!mobileMenu) {
+                debugLog('❌ Mobile menu not found in DOM', 'error');
+                return;
+            }
+            
+            debugLog('✅ Both menu button and mobile menu found', 'success');
+            
+            // Toggle menu with debugging
+            menuButton.addEventListener('click', function(e) {
+                debugLog('📱 Menu button clicked', 'info');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const wasHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                const isNowHidden = mobileMenu.classList.contains('hidden');
+                
+                debugLog(`Menu visibility changed: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`, 'success');
+            });
+
+            // Close when clicking outside with debugging
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        debugLog('📱 Closing menu - clicked outside', 'info');
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            debugLog('✅ Mobile menu event listeners attached', 'success');
+        });
+
+        // Dropdown toggle function with debugging
+        function toggleDropdown(menuId) {
+            debugLog(`🔽 Toggling dropdown: ${menuId}`, 'info');
+            
+            const menu = document.getElementById(`${menuId}-menu`);
+            const arrow = document.getElementById(`${menuId}-arrow`);
+            
+            if (!menu) {
+                debugLog(`❌ Dropdown menu not found: ${menuId}-menu`, 'error');
+                return;
+            }
+            
+            if (!arrow) {
+                debugLog(`⚠️ Arrow not found: ${menuId}-arrow`, 'warning');
+            }
+            
+            const wasHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            
+            if (arrow) {
+                arrow.classList.toggle('rotate-180');
+            }
+            
+            debugLog(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`, 'success');
+        }
+
+        // Auto-run diagnostics when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                runDiagnostics();
+            }, 500);
+        });
+
+        // Monitor viewport changes
+        window.addEventListener('resize', function() {
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport resized: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 'info');
+        });
+    </script>
+        <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center absolute right-4">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-blue-800/30 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-900/95 to-black/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+                <!-- Products Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('products')">
+                        Products
+                        <svg id="products-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="products-menu" class="hidden pl-4">
+                        <a href="qkd.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Key Distribution</a>
+                        <a href="qrng.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Random Number Generator</a>
+                        <a href="pqc.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Post Quantum Cryptography</a>
+                        <a href="products.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Products</a>
+
+                    </div>
+                </div>
+
+                <!-- Resources Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('resources')">
+                        Resources
+                        <svg id="resources-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="resources-menu" class="hidden pl-4">
+                        <a href="blogs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blogs</a>
+                        <a href="events.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                        <a href="news.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
+                        <a href="faqs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">FAQs</a>
+                        <a href="publications.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Publications</a>
+                        <a href="whitepapers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Whitepapers</a>
+                        <a href="resources.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Resources</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('company')">
+                        Company
+                        <svg id="company-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="company-menu" class="hidden pl-4">
+                        <a href="careers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Careers</a>
+                        <a href="contact.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                        <a href="academy.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Academy</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        // Debug logging function
+        function debugLog(message, type = 'info') {
+            const output = document.getElementById('debug-output');
+            const item = document.createElement('div');
+            item.className = `debug-item ${type}`;
+            item.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            output.appendChild(item);
+            output.scrollTop = output.scrollHeight;
+            console.log(`[DEBUG ${type.toUpperCase()}] ${message}`);
+        }
+
+        // Comprehensive diagnostics function
+        function runDiagnostics() {
+            const output = document.getElementById('debug-output');
+            output.innerHTML = '<div class="debug-item info">🚀 Running diagnostics...</div>';
+
+            // Check if DOM is loaded
+            debugLog('DOM Content Loaded: ' + (document.readyState === 'complete' ? '✅' : '⚠️'), 
+                     document.readyState === 'complete' ? 'success' : 'warning');
+
+            // Check critical elements
+            const elements = {
+                'mobile-menu-button': 'Mobile Menu Button',
+                'mobile-menu': 'Mobile Menu',
+                'products-menu': 'Products Dropdown',
+                'resources-menu': 'Resources Dropdown',
+                'company-menu': 'Company Dropdown',
+                'products-arrow': 'Products Arrow',
+                'resources-arrow': 'Resources Arrow',
+                'company-arrow': 'Company Arrow'
+            };
+
+            let allElementsFound = true;
+            Object.entries(elements).forEach(([id, name]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    debugLog(`${name}: ✅ Found`, 'success');
+                    // Check if element is visible
+                    const styles = window.getComputedStyle(element);
+                    const isVisible = styles.display !== 'none' && styles.visibility !== 'hidden';
+                    debugLog(`${name} Visibility: ${isVisible ? '✅ Visible' : '⚠️ Hidden'}`, 
+                             isVisible ? 'success' : 'warning');
+                } else {
+                    debugLog(`${name}: ❌ NOT FOUND`, 'error');
+                    allElementsFound = false;
+                }
+            });
+
+            // Check event listeners
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (menuButton) {
+                debugLog('Menu Button Click Handler: ✅ Attached', 'success');
+            } else {
+                debugLog('Menu Button Click Handler: ❌ Button not found', 'error');
+            }
+
+            // Check CSS classes and Tailwind
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                const hasHiddenClass = mobileMenu.classList.contains('hidden');
+                debugLog(`Mobile Menu Hidden Class: ${hasHiddenClass ? '✅ Present' : '⚠️ Missing'}`, 
+                         hasHiddenClass ? 'success' : 'warning');
+                
+                const computedDisplay = window.getComputedStyle(mobileMenu).display;
+                debugLog(`Mobile Menu Computed Display: ${computedDisplay}`, 'info');
+            }
+
+            // Check viewport width
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport Width: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 
+                     isMobileViewport ? 'success' : 'warning');
+
+            // Check for JavaScript errors
+            window.addEventListener('error', function(e) {
+                debugLog(`JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+            });
+
+            // Test toggleDropdown function
+            if (typeof toggleDropdown === 'function') {
+                debugLog('toggleDropdown function: ✅ Available', 'success');
+            } else {
+                debugLog('toggleDropdown function: ❌ NOT FOUND', 'error');
+            }
+
+            debugLog('🔍 Diagnostics complete!', 'info');
+        }
+
+        // Test mobile menu programmatically
+        function testMobileMenuProgrammatically() {
+            debugLog('🧪 Testing mobile menu toggle...', 'info');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                // Simulate button click
+                menuButton.click();
+                
+                setTimeout(() => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    debugLog(`Menu toggle test: ${!isHidden ? '✅ Menu opened' : '❌ Menu still hidden'}`, 
+                             !isHidden ? 'success' : 'error');
+                }, 100);
+            } else {
+                debugLog('❌ Cannot test - elements not found', 'error');
+            }
+        }
+
+        // Your original mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            debugLog('🎯 DOMContentLoaded event fired', 'success');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuButton) {
+                debugLog('❌ Mobile menu button not found in DOM', 'error');
+                return;
+            }
+            
+            if (!mobileMenu) {
+                debugLog('❌ Mobile menu not found in DOM', 'error');
+                return;
+            }
+            
+            debugLog('✅ Both menu button and mobile menu found', 'success');
+            
+            // Toggle menu with debugging
+            menuButton.addEventListener('click', function(e) {
+                debugLog('📱 Menu button clicked', 'info');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const wasHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                const isNowHidden = mobileMenu.classList.contains('hidden');
+                
+                debugLog(`Menu visibility changed: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`, 'success');
+            });
+
+            // Close when clicking outside with debugging
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        debugLog('📱 Closing menu - clicked outside', 'info');
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            debugLog('✅ Mobile menu event listeners attached', 'success');
+        });
+
+        // Dropdown toggle function with debugging
+        function toggleDropdown(menuId) {
+            debugLog(`🔽 Toggling dropdown: ${menuId}`, 'info');
+            
+            const menu = document.getElementById(`${menuId}-menu`);
+            const arrow = document.getElementById(`${menuId}-arrow`);
+            
+            if (!menu) {
+                debugLog(`❌ Dropdown menu not found: ${menuId}-menu`, 'error');
+                return;
+            }
+            
+            if (!arrow) {
+                debugLog(`⚠️ Arrow not found: ${menuId}-arrow`, 'warning');
+            }
+            
+            const wasHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            
+            if (arrow) {
+                arrow.classList.toggle('rotate-180');
+            }
+            
+            debugLog(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`, 'success');
+        }
+
+        // Auto-run diagnostics when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                runDiagnostics();
+            }, 500);
+        });
+
+        // Monitor viewport changes
+        window.addEventListener('resize', function() {
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport resized: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 'info');
+        });
+    </script>    <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center absolute right-4">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-blue-800/30 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gradient-to-b from-blue-900/95 to-black/95 backdrop-blur-sm">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+                <!-- Products Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('products')">
+                        Products
+                        <svg id="products-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="products-menu" class="hidden pl-4">
+                        <a href="qkd.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Key Distribution</a>
+                        <a href="qrng.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quantum Random Number Generator</a>
+                        <a href="pqc.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Post Quantum Cryptography</a>
+                       <a href="products.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Products</a>
+                    </div>
+                </div>
+
+                <!-- Resources Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('resources')">
+                        Resources
+                        <svg id="resources-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="resources-menu" class="hidden pl-4">
+                        <a href="blogs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blogs</a>
+                        <a href="events.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                        <a href="news.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
+                        <a href="faqs.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">FAQs</a>
+                        <a href="publications.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Publications</a>
+                        <a href="whitepapers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Whitepapers</a>
+                        <a href="resources.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">View All Resources</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile -->
+                <div class="relative">
+                    <button class="w-full flex justify-between items-center px-3 py-2 text-gray-300 hover:bg-blue-800/30 hover:text-white rounded-md text-base font-medium" onclick="toggleDropdown('company')">
+                        Company
+                        <svg id="company-arrow" class="ml-1 h-4 w-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="company-menu" class="hidden pl-4">
+                        <a href="careers.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Careers</a>
+                        <a href="contact.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact Us</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                        <a href="academy.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Academy</a>
+                        <a href="about.html" class="text-gray-400 hover:bg-blue-800/30 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        // Debug logging function
+        function debugLog(message, type = 'info') {
+            const output = document.getElementById('debug-output');
+            const item = document.createElement('div');
+            item.className = `debug-item ${type}`;
+            item.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            output.appendChild(item);
+            output.scrollTop = output.scrollHeight;
+            console.log(`[DEBUG ${type.toUpperCase()}] ${message}`);
+        }
+
+        // Comprehensive diagnostics function
+        function runDiagnostics() {
+            const output = document.getElementById('debug-output');
+            output.innerHTML = '<div class="debug-item info">🚀 Running diagnostics...</div>';
+
+            // Check if DOM is loaded
+            debugLog('DOM Content Loaded: ' + (document.readyState === 'complete' ? '✅' : '⚠️'), 
+                     document.readyState === 'complete' ? 'success' : 'warning');
+
+            // Check critical elements
+            const elements = {
+                'mobile-menu-button': 'Mobile Menu Button',
+                'mobile-menu': 'Mobile Menu',
+                'products-menu': 'Products Dropdown',
+                'resources-menu': 'Resources Dropdown',
+                'company-menu': 'Company Dropdown',
+                'products-arrow': 'Products Arrow',
+                'resources-arrow': 'Resources Arrow',
+                'company-arrow': 'Company Arrow'
+            };
+
+            let allElementsFound = true;
+            Object.entries(elements).forEach(([id, name]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    debugLog(`${name}: ✅ Found`, 'success');
+                    // Check if element is visible
+                    const styles = window.getComputedStyle(element);
+                    const isVisible = styles.display !== 'none' && styles.visibility !== 'hidden';
+                    debugLog(`${name} Visibility: ${isVisible ? '✅ Visible' : '⚠️ Hidden'}`, 
+                             isVisible ? 'success' : 'warning');
+                } else {
+                    debugLog(`${name}: ❌ NOT FOUND`, 'error');
+                    allElementsFound = false;
+                }
+            });
+
+            // Check event listeners
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (menuButton) {
+                debugLog('Menu Button Click Handler: ✅ Attached', 'success');
+            } else {
+                debugLog('Menu Button Click Handler: ❌ Button not found', 'error');
+            }
+
+            // Check CSS classes and Tailwind
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                const hasHiddenClass = mobileMenu.classList.contains('hidden');
+                debugLog(`Mobile Menu Hidden Class: ${hasHiddenClass ? '✅ Present' : '⚠️ Missing'}`, 
+                         hasHiddenClass ? 'success' : 'warning');
+                
+                const computedDisplay = window.getComputedStyle(mobileMenu).display;
+                debugLog(`Mobile Menu Computed Display: ${computedDisplay}`, 'info');
+            }
+
+            // Check viewport width
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport Width: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 
+                     isMobileViewport ? 'success' : 'warning');
+
+            // Check for JavaScript errors
+            window.addEventListener('error', function(e) {
+                debugLog(`JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+            });
+
+            // Test toggleDropdown function
+            if (typeof toggleDropdown === 'function') {
+                debugLog('toggleDropdown function: ✅ Available', 'success');
+            } else {
+                debugLog('toggleDropdown function: ❌ NOT FOUND', 'error');
+            }
+
+            debugLog('🔍 Diagnostics complete!', 'info');
+        }
+
+        // Test mobile menu programmatically
+        function testMobileMenuProgrammatically() {
+            debugLog('🧪 Testing mobile menu toggle...', 'info');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                // Simulate button click
+                menuButton.click();
+                
+                setTimeout(() => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    debugLog(`Menu toggle test: ${!isHidden ? '✅ Menu opened' : '❌ Menu still hidden'}`, 
+                             !isHidden ? 'success' : 'error');
+                }, 100);
+            } else {
+                debugLog('❌ Cannot test - elements not found', 'error');
+            }
+        }
+
+        // Your original mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            debugLog('🎯 DOMContentLoaded event fired', 'success');
+            
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuButton) {
+                debugLog('❌ Mobile menu button not found in DOM', 'error');
+                return;
+            }
+            
+            if (!mobileMenu) {
+                debugLog('❌ Mobile menu not found in DOM', 'error');
+                return;
+            }
+            
+            debugLog('✅ Both menu button and mobile menu found', 'success');
+            
+            // Toggle menu with debugging
+            menuButton.addEventListener('click', function(e) {
+                debugLog('📱 Menu button clicked', 'info');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const wasHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                const isNowHidden = mobileMenu.classList.contains('hidden');
+                
+                debugLog(`Menu visibility changed: ${wasHidden ? 'hidden' : 'visible'} → ${isNowHidden ? 'hidden' : 'visible'}`, 'success');
+            });
+
+            // Close when clicking outside with debugging
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        debugLog('📱 Closing menu - clicked outside', 'info');
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+            
+            debugLog('✅ Mobile menu event listeners attached', 'success');
+        });
+
+        // Dropdown toggle function with debugging
+        function toggleDropdown(menuId) {
+            debugLog(`🔽 Toggling dropdown: ${menuId}`, 'info');
+            
+            const menu = document.getElementById(`${menuId}-menu`);
+            const arrow = document.getElementById(`${menuId}-arrow`);
+            
+            if (!menu) {
+                debugLog(`❌ Dropdown menu not found: ${menuId}-menu`, 'error');
+                return;
+            }
+            
+            if (!arrow) {
+                debugLog(`⚠️ Arrow not found: ${menuId}-arrow`, 'warning');
+            }
+            
+            const wasHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            
+            if (arrow) {
+                arrow.classList.toggle('rotate-180');
+            }
+            
+            debugLog(`Dropdown ${menuId}: ${wasHidden ? 'closed' : 'open'} → ${menu.classList.contains('hidden') ? 'closed' : 'open'}`, 'success');
+        }
+
+        // Auto-run diagnostics when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                runDiagnostics();
+            }, 500);
+        });
+
+        // Monitor viewport changes
+        window.addEventListener('resize', function() {
+            const viewportWidth = window.innerWidth;
+            const isMobileViewport = viewportWidth < 768;
+            debugLog(`Viewport resized: ${viewportWidth}px (${isMobileViewport ? 'Mobile' : 'Desktop'})`, 'info');
+        });
+    </script>
