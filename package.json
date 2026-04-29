@@ -1,21 +1,13 @@
 {
-  "name": "websitev1",
+  "name": "public",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "blog-data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TaqbitWebsite/quantum-security-site.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TaqbitWebsite/quantum-security-site/issues"
-  },
-  "homepage": "https://github.com/TaqbitWebsite/quantum-security-site#readme",
   "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"

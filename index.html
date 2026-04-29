@@ -1,6 +1,12 @@
+ 
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
+    <link rel="icon" href="favicon.png" type="image/png">
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Taqbit Labs provides quantum-safe cybersecurity solutions including Quantum Key Distribution (QKD) and Quantum Random Number Generators (QRNG) for defense, telecom, and enterprise infrastructure.">
@@ -12,18 +18,123 @@
     <title>Taqbit Labs|Enterprise Quantum-Safe Cybersecurity Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-    </style>
+     <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --track-duration: 25s;
+}
+
+/* ================= CONTAINER ================= */
+.news-strip {
+  width: 100%;
+  height: 410px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= TRACK ================= */
+.track {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: max-content; 
+  animation: slide var(--track-duration) linear infinite;
+  will-change: transform;
+}
+
+/* ================= TILE ================= */
+.tile {
+  width: 260px;
+  min-height: 320px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: auto 1fr; /* image + text */
+  
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 0 0 auto;
+}
+
+
+/* ================= IMAGE ================= */
+.tile img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ================= CAPTION ================= */
+.caption {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: #fafafa;
+
+  overflow: hidden;      /* no spill */
+}
+
+
+
+/* ================= ANIMATION ================= */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= HOVER PAUSE ================= */
+.news-strip:hover .track {
+  animation-play-state: paused;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 700px) {
+  :root {
+    --track-duration: 38s; /* smoother on mobile */
+  }
+
+  .news-strip {
+    height: 200px;
+  }
+
+  .tile {
+    width: 180px;
+    min-height: 260px;   /* SAME HEIGHT for all */
+  }
+
+  .tile img {
+    height: 100px;
+  }
+
+  .caption {
+    font-size: 11px;
+    line-height: 1.35;
+    padding: 6px;
+  }
+}
+</style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css.html">
 </head>
 <body class="quantum-pattern overflow-x-hidden">
-    <!-- Navigation -->
+     <!-- Navigation (same as index.html) -->
 <div id="header-placeholder"></div>
+
  <!-- Quantum Transition Elements -->
     <div class="quantum-grid"></div>
     <div class="energy-wave"></div>
@@ -53,63 +164,157 @@
             </div>
         </div>
     </section>
+    
+    <!-- Latest News
+     <div>
+    <div style="width: 100%; height: 410px; overflow: hidden; position: relative; display: flex; align-items: center;" onmouseover="this.querySelector('.track').style.animationPlayState='paused'" onmouseout="this.querySelector('.track').style.animationPlayState='running'">
+        <div style="display: flex; gap: 18px; align-items: center; flex-wrap: nowrap; animation: slide var(--track-duration) linear infinite;" id="track" class='track'></div>
+    </div> -->
 
-    <!-- Intro Section -->
-    <section id="intro" class="relative py-24 bg-gray-900 overflow-hidden section-transition">
+    <section class="relative min-h-screen flex items-center justify-center pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-blue-50 overflow-hidden">
+
+
+    <!-- Soft background gradient -->
     <div class="absolute inset-0 z-0">
-        <img src="./assets/wp4425600.webp"
-             alt="Quantum Core" 
-             class="w-full h-full object-cover brightness-50 opacity-80">
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-gray-800/80"></div>
+       <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="text-white">
-                <span class="inline-block px-4 py-1 text-xs font-semibold bg-blue-600/80 rounded-full mb-4 tracking-wide">
-                    QUANTUM TECHNOLOGY
-                </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                    Explore the Power of <span class="text-blue-400">Quantum Innovation</span>
-                </h2>
-                <div class="space-y-5 text-gray-300">
-                    <p class="text-lg">
-                        Quantum physics governs the universe at the smallest scales—where particles exist in multiple states at once, enabling phenomena beyond classical logic.
-                    </p>
-                    <p class="text-lg">
-                        Our <span class="font-medium text-blue-400">Quantum Core Systems</span> harness these principles to deliver next-generation quantum computing and quantum encryption, ensuring computational breakthroughs and unbreakable security.
-                    </p>
-                </div>
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <!-- <a href="#" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-all duration-300 flex items-center group">
-                        Explore Quantum Lab
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="#" class="px-6 py-3 border-2 border-blue-400 hover:bg-blue-500/10 rounded-lg font-medium transition-all duration-300 text-blue-300">
-                        Watch Demo
-                    </a> -->
-                </div>
-            </div>
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto relative z-20 w-full">
+        
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-12">
+            Taqbit Labs in the News
+        </h2>
 
-           <div class="relative group">
-    <!-- Blue hover background -->
-    <div class="absolute -inset-4 bg-blue-500 rounded-2xl opacity-20 blur-md transition-all duration-500 pointer-events-none"></div>
-
-    <!-- Video Card -->
-    <div class="relative overflow-hidden rounded-xl border border-blue-400/30 shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 transition-all duration-500 p-2 group-hover:scale-105">
-        <video controls playsinline class="w-full h-auto rounded-xl">
-            <source src="./assets/What is Quantum Cryptography_ An Introduction.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</div>
-
-
+        <!-- Grid -->
+        <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         </div>
+
     </div>
 </section>
+      
+      
+    
+    <!-- <script>
+        const tiles = [
+            { img: 'assets/mou_img1.jpeg', title: 'Taqbit Labs is proud to announce the signing of a Memorandum of Understanding (MoU) with the Government of Andhra Pradesh, marking our entry into the state’s bold and rapidly advancing quantum ecosystem.' },
+            { img: 'assets/mou_img2.jpeg', title: 'Under leadership of Shri N. Chandrababu Naidu and Shri Nara Lokesh, Andhra Pradesh is advancing deep technology and building India’s quantum-ready future. We are honored to join this journey.' },
+            { img: 'assets/amravati_workshop1.jpeg', title: 'Animesh Aaryan featured as a panelist at the Amravati Quantum Valley Workshop, discussing breakthroughs shaping the quantum future.' },
+            { img: 'assets/amravati_workshop2.jpeg', title: 'Acknowledged for its quantum tech innovations, Taqbit Labs participated in the Amravati Quantum Valley Workshop panel, offering valuable contributions.' },
+        ];
+
+        const track = document.getElementById('track');
+
+        // Duplicate tiles to ensure seamless scrolling
+        const doubled = [...tiles, ...tiles];
+
+        doubled.forEach(t => {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+
+            const img = document.createElement('img');
+            img.src = t.img;
+
+            const cap = document.createElement('div');
+            cap.className = 'caption';
+            cap.textContent = t.title;
+
+            tile.appendChild(img);
+            tile.appendChild(cap);
+            track.appendChild(tile);
+        });
+    </script> -->
+     <script>
+const tiles = [
+    { img: 'assets/mou_img1.jpeg', title: 'Taqbit Labs is proud to announce the signing of a Memorandum of Understanding (MoU) with the Government of Andhra Pradesh, marking our entry into the state’s bold and rapidly advancing quantum ecosystem.', style: 'object-position: top;' },
+    { img: 'assets/mou_img2.jpeg', title: 'Under leadership of Shri N. Chandrababu Naidu and Shri Nara Lokesh, Andhra Pradesh is advancing deep technology and building India’s quantum-ready future. We are honored to join this journey.' },
+    { img: 'assets/amravati_workshop1.jpeg', title: 'Animesh Aaryan featured as a panelist at the Amravati Quantum Valley Workshop, discussing breakthroughs shaping the quantum future.' },
+    { img: 'assets/bilesh_event.jpg', title: 'Team Taqbit Labs is excited to be exhibiting today at the Amaravati Quantum Valley Workshop 2025 in Vijayawada!' },
+    { img: 'assets/amravati_workshop2.jpeg', title: 'Acknowledged for its quantum tech innovations, Taqbit Labs participated in the Amravati Quantum Valley Workshop panel, offering valuable contributions.' },
+    { img: 'assets/animesh_cll_event2.jpg', title: 'At the CII Quantum Technology Conclave 2026, New Delhi, our CEO Animesh Aaryan, participated in a strategic panel discussion on Quantum-Safe Cybersecurity & Cryptography.' },
+    { img: 'assets/nasc_complex.jpg', title: 'CEO, represented Taqbit Labs at this prestigious event held at the NASC Complex, New Delhi. The theme—"Technology, Coordination, and Commitment: Vision for a Secure and Strong India"—resonates deeply with our mission at Taqbit LABS' ,style: 'object-position: 50% 25%; transform: scale(0.95);'},
+    { img: 'assets/ai_summit_animesh.jpg', title: 'Thrilled that our CEO Animesh Aaryan is representing Taqbit LABS at the AI Impact Summit 2026—tackling a huge hurdle for innovators today : 𝐅𝐚𝐢𝐫 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐀𝐈 𝐜𝐨𝐦𝐩𝐮𝐭𝐞 𝐚𝐧𝐝 𝐝𝐚𝐭𝐚 𝐫𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬.' },
+    { img: 'assets/xdlinx_animesh.jpg', title: 'As the International Year of Quantum (IYQ) 2025 draws to a close, Taqbit Labs is thrilled to announce our MoU with XDLINX Space Labs to pioneer quantum-safe satellite communications.\nThis pioneering collaboration integrates Quantum Key Distribution (QKD) with Post-Quantum Cryptography (PQC) for robust, future-resilient security across space-to-ground links (command & telemetry) and space-to-space links (inter-satellite communications).', style: 'object-position: top;'  }
+];
+
+const container2 = document.getElementById('news-container');
+
+tiles.forEach(t => {
+    const card = document.createElement('div');
+    card.className = "bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300";
+
+    const img = document.createElement('img');
+    img.src = t.img;
+   img.className = "max-h-full max-w-full object-contain";
+img.style = t.style || "";
+
+    const cap = document.createElement('div');
+   img.className = "w-full h-52 object-cover object-center";
+    cap.textContent = t.title;
+
+    card.appendChild(img);
+    card.appendChild(cap);
+    container2.appendChild(card);
+});
+</script>
+    <!-- Intro Section -->
+</div>
+    <!-- Intro Section -->
+  <section id="intro" class="relative min-h-screen bg-gray-900 overflow-hidden section-transition flex items-center justify-center">
+  <!-- Background Image + Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="./assets/wp4425600.webp"
+         alt="Quantum Core"
+         class="w-full h-full object-cover brightness-50 opacity-80">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-gray-800/80"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="relative z-10 max-w-7xl w-full px-6 sm:px-10 lg:px-20">
+    <div class="flex flex-col items-center justify-center min-h-[80vh] text-center mx-auto max-w-4xl">
+      
+      <!-- Text Content -->
+      <div class="text-white">
+        <span class="inline-block px-4 py-1 text-xs font-semibold bg-blue-600/80 rounded-full mb-4 tracking-wide">
+          QUANTUM TECHNOLOGY
+        </span>
+        
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          Explore the Power of <span class="text-blue-400">Quantum Innovation</span>
+        </h1>
+        
+        <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+          <p>
+            Quantum physics is rewriting the rules of reality, where particles exist in superpositions, teleport information, and defy classical computation. It's not science fiction—it's the next scientific revolution.
+          </p>
+          <p>
+            At <span class="text-blue-400 font-medium">Taqbit</span>, we're building quantum-secure communication systems, post-quantum cryptography, and real-time quantum key distribution (QKD) solutions that ensure digital trust in an uncertain future.
+          </p>
+          <p>
+            Our technologies enable <strong class="text-blue-300">unhackable encryption</strong>, <strong class="text-blue-300">true randomness generation</strong>, and a secure quantum backbone for government, finance, and critical infrastructure.
+          </p>
+          <p>
+            With global quantum threats on the horizon, now is the time to invest in <span class="text-blue-400 font-medium">quantum resilience</span>.
+          </p>
+        </div>
+        
+        <div class="flex flex-col items-center justify-center gap-10 text-center mx-auto max-w-4xl">
+          <a href="products.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-all duration-300 flex items-center group">
+            Explore Our Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- You can re-enable video block here if needed -->
+
+    </div>
+  </div>
+</section>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -184,35 +389,31 @@
 
 <!-- Quotes Section -->
 <section class="py-8 relative bg-white overflow-hidden">
-
-    <div class="max-w-6xl mx-auto px-6 text-center py-8">
-
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center py-8">
         <!-- Headings -->
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Quantum Reflections
         </h2>
-
-        <p class="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto italic">
-            Exploring the quantum world through the words of visionaries.
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto italic">
+            Exploring the quantum world through the words of visionaries
         </p>
 
         <!-- Quotes Container -->
-        <div id="quoteContainer" class="relative h-96 flex items-center justify-center text-gray-800 text-xl font-medium">
+        <div id="quoteContainer" class="relative h-64 sm:h-80 md:h-96 flex items-center justify-center text-gray-800 text-lg sm:text-xl font-medium px-2">
             <!-- Slides will be injected here dynamically -->
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex justify-center mt-8 space-x-4">
+        <div class="flex justify-center mt-6 sm:mt-8 space-x-4">
             <button id="prevBtn" aria-label="Previous Quote" 
-                    class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-800 shadow-md transition">
+                    class="p-2 sm:p-3 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-800 shadow-md transition">
                 &#8592;
             </button>
             <button id="nextBtn" aria-label="Next Quote" 
-                    class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-800 shadow-md transition">
+                    class="p-2 sm:p-3 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-800 shadow-md transition">
                 &#8594;
             </button>
         </div>
-
     </div>
 </section>
 
@@ -225,99 +426,135 @@
             source: "DRDO Quantum Communication Program"
         },
         {
-        organization: "CISA (Cybersecurity & Infrastructure Security Agency)",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/1/1f/CISA_Logo.png",
-        text: "Organizations must begin preparing now for post-quantum cryptography to protect vital systems before quantum capabilities mature.",
-        source: "CISA Post-Quantum Cryptography Alert"
-    },
-    {
-        organization: "Ministry of Electronics & IT (MeitY) - India",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ministry_of_Electronics_and_Information_Technology.svg/2560px-Ministry_of_Electronics_and_Information_Technology.svg.png",
-        text: "India is building indigenous quantum technologies to safeguard national security and digital infrastructure from quantum threats.",
-        source: "Quantum Mission Statement, MeitY"
-    },
-    {
-        organization: "NSA (National Security Agency)",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Seal_of_the_U.S._National_Security_Agency.svg",
-        text: "Post‑quantum cryptography is about proactively developing and building capabilities to secure critical information and systems from being compromised through the use of quantum computers.",
-        source: "Rob Joyce, NSA Cybersecurity Director"
-    },
-    {
-        organization: "NIST (National Institute of Standards and Technology)",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/NIST_logo.svg/1200px-NIST_logo.svg.png",
-        text: "NIST is leading the development of post-quantum cryptographic standards to secure our digital future against quantum threats.",
-        source: "NIST Official Statement"
-    },
-    {
-        organization: "MIT Quantum Information Science",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg",
-        text: "Quantum security is not optional. As quantum computers evolve, so must our cryptographic defenses.",
-        source: "MIT Quantum Information Science Group"
-    },
-    {
-        organization: "IISc Bangalore - Quantum Technologies Initiative",
-        logo: "https://images.seeklogo.com/logo-png/48/2/indian-institute-of-science-logo-png_seeklogo-482012.png",
-        text: "India must invest in quantum-secure systems today to protect critical infrastructure tomorrow.",
-        source: "IISc Quantum Research Division"
-    }
-];
-
-let current = 0;
-const container = document.getElementById('quoteContainer');
-
-function renderSlides() {
-    container.innerHTML = '';
-    quotes.forEach((q, index) => {
-        const isMeity = q.organization.includes("MeitY");
-
-        const slide = document.createElement('div');
-        slide.className = 'absolute inset-0 flex flex-col justify-center items-center quote-slide ' + 
-                          (index === current ? 'active-slide' : 'inactive-slide');
-
-        slide.innerHTML = `
-            <div class="${isMeity ? 'max-w-6xl' : 'max-w-4xl'} w-full px-4 sm:px-8 md:px-12 flex flex-col items-center text-center mx-auto">
-                <img src="${q.logo}" alt="${q.organization}" 
-                     class="${isMeity ? 'w-60' : 'w-40'} h-auto object-contain mb-8 transition-transform duration-500 hover:scale-105">
-                <p class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 leading-relaxed">"${q.text}"</p>
-                <div class="font-bold text-blue-500 text-lg">${q.organization}</div>
-                <div class="text-sm text-gray-500 mt-2">${q.source}</div>
-            </div>
-        `;
-
-        container.appendChild(slide);
-    });
-}
-
-
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-    current = (current + 1) % quotes.length;
-    animateSlides();
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    current = (current - 1 + quotes.length) % quotes.length;
-    animateSlides();
-});
-
-function animateSlides() {
-    const slides = document.querySelectorAll('.quote-slide');
-    slides.forEach((slide, index) => {
-        if (index === current) {
-            gsap.to(slide, {opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out'});
-            slide.classList.remove('inactive-slide');
-            slide.classList.add('active-slide');
-        } else {
-            gsap.to(slide, {opacity: 0, scale: 0.95, duration: 0.8, ease: 'power2.in'});
-            slide.classList.remove('active-slide');
-            slide.classList.add('inactive-slide');
+            organization: "CISA (Cybersecurity & Infrastructure Security Agency)",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/1/1f/CISA_Logo.png",
+            text: "Organizations must begin preparing now for post-quantum cryptography to protect vital systems before quantum capabilities mature.",
+            source: "CISA Post-Quantum Cryptography Alert"
+        },
+        {
+            organization: "Ministry of Electronics & IT (MeitY) - India",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ministry_of_Electronics_and_Information_Technology.svg/2560px-Ministry_of_Electronics_and_Information_Technology.svg.png",
+            text: "India is building indigenous quantum technologies to safeguard national security and digital infrastructure from quantum threats.",
+            source: "Quantum Mission Statement, MeitY"
+        },
+        {
+            organization: "NSA (National Security Agency)",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Seal_of_the_U.S._National_Security_Agency.svg",
+            text: "Post‑quantum cryptography is about proactively developing and building capabilities to secure critical information and systems from being compromised through the use of quantum computers.",
+            source: "Rob Joyce, NSA Cybersecurity Director"
+        },
+      
+        {
+            organization: "MIT Quantum Information Science",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg",
+            text: "Quantum security is not optional. As quantum computers evolve, so must our cryptographic defenses.",
+            source: "MIT Quantum Information Science Group"
+        },
+        {
+            organization: "IISc Bangalore - Quantum Technologies Initiative",
+            logo: "https://images.seeklogo.com/logo-png/48/2/indian-institute-of-science-logo-png_seeklogo-482012.png",
+            text: "India must invest in quantum-secure systems today to protect critical infrastructure tomorrow.",
+            source: "IISc Quantum Research Division"
         }
-    });
-}
+    ];
 
-renderSlides();
+    let current = 0;
+    const container = document.getElementById('quoteContainer');
+
+    function renderSlides() {
+        container.innerHTML = '';
+        quotes.forEach((q, index) => {
+            const isMeity = q.organization.includes("MeitY");
+
+            const slide = document.createElement('div');
+            slide.className = 'absolute inset-0 flex flex-col justify-center items-center quote-slide px-4 ' + 
+                            (index === current ? 'active-slide' : 'inactive-slide');
+
+            slide.innerHTML = `
+                <div class="w-full flex flex-col items-center text-center mx-auto">
+                    <img src="${q.logo}" alt="${q.organization}" 
+                         class="${isMeity ? 'w-40 sm:w-60' : 'w-32 sm:w-40'} h-auto object-contain mb-4 sm:mb-6 transition-transform duration-500 hover:scale-105">
+                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6 leading-relaxed">"${q.text}"</p>
+                    <div class="font-bold text-blue-500 text-sm sm:text-base md:text-lg">${q.organization}</div>
+                    <div class="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">${q.source}</div>
+                </div>
+            `;
+
+            container.appendChild(slide);
+        });
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        current = (current + 1) % quotes.length;
+        animateSlides();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        current = (current - 1 + quotes.length) % quotes.length;
+        animateSlides();
+    });
+
+    function animateSlides() {
+        const slides = document.querySelectorAll('.quote-slide');
+        slides.forEach((slide, index) => {
+            if (index === current) {
+                gsap.to(slide, {opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out'});
+                slide.classList.remove('inactive-slide');
+                slide.classList.add('active-slide');
+            } else {
+                gsap.to(slide, {opacity: 0, scale: 0.95, duration: 0.8, ease: 'power2.in'});
+                slide.classList.remove('active-slide');
+                slide.classList.add('inactive-slide');
+            }
+        });
+    }
+
+    // Initial render
+    renderSlides();
+
+    // Make sure GSAP is loaded
+    if (typeof gsap === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js';
+        script.onload = renderSlides;
+        document.head.appendChild(script);
+    }
+
+
+       let slideInterval = setInterval(() => {
+        current = (current + 1) % quotes.length;
+        animateSlides();
+    }, 6000); // Change 6000 to any interval in milliseconds (e.g., 3000 for 3 seconds)
+
+    // Optional: Pause on hover
+    container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    container.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(() => {
+            current = (current + 1) % quotes.length;
+            animateSlides();
+        }, 15000);
+    });
 </script>
 
+<style>
+    .quote-slide {
+        transition: all 0.3s ease;
+    }
+    .active-slide {
+        opacity: 1;
+        z-index: 10;
+    }
+    .inactive-slide {
+        opacity: 0;
+        z-index: 1;
+    }
+    @media (max-width: 640px) {
+        #quoteContainer {
+            height: auto;
+            min-height: 300px;
+        }
+    }
+</style>
 
 
 <!-- Why Taqbit Section -->
@@ -346,7 +583,7 @@ renderSlides();
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">Quantum Expertise</h3>
-                <p class="text-gray-300">Developed by global experts in quantum physics who bring research into practical security.</p>
+                <p class="text-gray-300">Global experts in quantum physics bring research into practical security</p>
             </div>
 
             <!-- Made in India -->
@@ -359,7 +596,7 @@ renderSlides();
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">Made in India</h3>
-                <p class="text-gray-300">Proudly developed and manufactured in India for national security needs.</p>
+                <p class="text-gray-300">Proudly developed and manufactured in India for national security needs</p>
             </div>
 
             <!-- Trusted -->
@@ -372,7 +609,7 @@ renderSlides();
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">Trusted Security</h3>
-                <p class="text-gray-300">Our systems meet stringent certifications for classified environments.</p>
+                <p class="text-gray-300">Our systems meet stringent standards for classified environments</p>
             </div>
         </div>
     </div>
@@ -389,62 +626,94 @@ renderSlides();
 <section id="audience" class="py-20 bg-gray-900 relative overflow-hidden">
     <div class="absolute inset-0 z-0">
         <img src="./assets/Quantum11.webp" 
-        alt="Quantum Infrastructure Security" 
-        class="w-full h-full object-cover brightness-75 opacity-80 bg-fixed"
-        loading="lazy">
+             alt="Quantum Infrastructure Security" 
+             class="w-full h-full object-cover brightness-75 opacity-80 bg-fixed"
+             loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-blue-900/70"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-4 tracking-wide">Securing India's Critical Infrastructure</h2>
-            <p class="text-blue-200 max-w-2xl mx-auto">Quantum solutions for defense, aerospace, and maritime sectors.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-4 tracking-wide">Industries</h2>
+            <p class="text-blue-200 max-w-2xl mx-auto">Protecting India's most critical systems with post-quantum cryptography</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Defense -->
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-8 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
-                 data-aos="fade-right" data-aos-delay="0">
-                <div class="w-14 h-14 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
-                    <!-- SVG Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+                 data-aos="fade-up" data-aos-delay="0">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Defense & Military</h3>
-                <p class="text-blue-200">Quantum-secured communications for military operations and strategy.</p>
+                <h3 class="text-lg font-bold text-white mb-2">Defense Systems</h3>
+                <p class="text-blue-200 text-sm">Quantum-resistant encryption for tactical communications and strategic defense networks</p>
             </div>
 
-            <!-- Navy -->
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-8 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
-                 data-aos="zoom-in" data-aos-delay="100">
-                <div class="w-14 h-14 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            <!-- Armed Forces -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+                 data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Navy & Maritime</h3>
-                <p class="text-blue-200">Quantum encryption for secure naval communication and surveillance.</p>
+                <h3 class="text-lg font-bold text-white mb-2">Armed Forces</h3>
+                <p class="text-blue-200 text-sm">Secure command & control systems for army, navy and air force operations</p>
             </div>
 
             <!-- Aerospace -->
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-8 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
-                 data-aos="fade-left" data-aos-delay="200">
-                <div class="w-14 h-14 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+                 data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Aerospace</h3>
-                <p class="text-blue-200">Quantum systems for satellite and aviation data security.</p>
+                <h3 class="text-lg font-bold text-white mb-2">Aerospace</h3>
+                <p class="text-blue-200 text-sm">Quantum-safe avionics and airborne communication systems</p>
             </div>
+
+            <!-- Critical Infrastructure -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+                 data-aos="fade-up" data-aos-delay="0">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Critical Infrastructure</h3>
+                <p class="text-blue-200 text-sm">Power grids, transportation and utilities protected against quantum threats</p>
+            </div>
+
+            <!-- Government Data Centers -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+                 data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Government Data Centers</h3>
+                <p class="text-blue-200 text-sm">Quantum-proof encryption for sensitive citizen and national security data</p>
+            </div>
+
+            <!-- Space Research -->
+            <!-- Financial Sector -->
+<div class="bg-gradient-to-br from-gray-800 to-gray-900 border border-blue-500/30 rounded-xl p-6 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 group"
+     data-aos="fade-up" data-aos-delay="200">
+    <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300 group-hover:text-blue-400 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 00-8 0v2M5 20h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2zm7-7h.01"/>
+        </svg>
+    </div>
+    <h3 class="text-lg font-bold text-white mb-2">Financial Sector</h3>
+    <p class="text-blue-200 text-sm">Quantum-secure banking transactions and encryption for high-value financial operations</p>
+</div>
         </div>
     </div>
 </section>
-
 <!-- Products Section with Enhanced Cards -->
 <section id="products" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -456,7 +725,7 @@ renderSlides();
             <p class="text-gray-600 max-w-2xl mx-auto text-lg">Cutting-edge technologies designed for real-world security challenges.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
             <!-- QKD Card -->
             <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:border-blue-400 transition-all duration-300">
                 <div class="w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center mb-6 border border-blue-200">
@@ -489,7 +758,39 @@ renderSlides();
                     </li>
                 </ul>
             </div>
-            
+            <!-- PQC CARD -->
+             <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:border-blue-400 transition-all duration-300">
+    <div class="w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center mb-6 border border-blue-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.1-.9-2-2-2H6a2 2 0 00-2 2v4h8v-4zm4 0v4h4v-4a2 2 0 00-2-2h-2c-1.1 0-2 .9-2 2zM4 15v2a2 2 0 002 2h4a2 2 0 002-2v-2H4zm10 0v2a2 2 0 002 2h4a2 2 0 002-2v-2h-8z" />
+        </svg>
+    </div>
+    <h3 class="text-xl font-bold text-gray-900 mb-3">Post-Quantum Cryptography (PQC)</h3>
+    <p class="text-gray-600 leading-relaxed mb-4">
+        PQC uses quantum-resistant algorithms to safeguard sensitive data against future quantum attacks, enabling a secure transition for today's infrastructure.
+    </p>
+    <ul class="space-y-2 text-gray-600 text-sm">
+        <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Resistant to both classical and quantum attacks
+        </li>
+        <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Includes NIST-selected algorithms like Kyber & Dilithium
+        </li>
+        <li class="flex items-start">
+            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Hybrid-compatible for gradual migration
+        </li>
+    </ul>
+</div>
+
             <!-- QRNG Card -->
             <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:border-purple-400 transition-all duration-300">
                 <div class="w-14 h-14 rounded-lg bg-purple-50 flex items-center justify-center mb-6 border border-purple-200">
@@ -659,16 +960,21 @@ renderSlides();
                 </button>
             </div>
             
-            <form class="space-y-6">
+             <form id="contactForm"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSei8a2ls9S2UbaEsR-7wEFumf5zrVlvcniRV6x5brwAxoDQLw/formResponse"
+                method="POST"
+
+                target="hidden_iframe"
+                class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name*</label>
-                        <input type="text" id="name" name="name" required 
+                        <input type="text" id="name" name="entry.1220880475" required 
                                class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email*</label>
-                        <input type="email" id="email" name="email" required 
+                        <input type="email" id="email" name="entry.1260654428" required 
                                class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                 </div>
@@ -676,19 +982,19 @@ renderSlides();
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company*</label>
-                        <input type="text" id="company" name="company" required 
+                        <input type="text" id="company" name="entry.2001433784" required 
                                class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                        <input type="tel" id="phone" name="phone" 
+                        <input type="tel" id="phone" name="entry.1534171847" 
                                class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                 </div>
                 
                 <div>
                     <label for="interest" class="block text-sm font-medium text-gray-700 mb-2">Primary Interest*</label>
-                    <select id="interest" name="interest" 
+                    <select id="interest" name="entry.1273645149" 
                             class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9Ii82NDc0OGIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im02IDkgNiA2IDYtNiIvPjwvc3ZnPg==')] bg-no-repeat bg-[center_right_1rem]">
                         <option value="" disabled selected>Select an option</option>
                         <option>Quantum Key Distribution (QKD)</option>
@@ -701,7 +1007,7 @@ renderSlides();
                 
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
-                    <textarea id="message" name="message" rows="3" 
+                    <textarea id="message" name="entry.1740065280" rows="3" 
                               class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"></textarea>
                 </div>
                 
@@ -709,7 +1015,7 @@ renderSlides();
                     <input id="privacy" name="privacy" type="checkbox" required 
                            class="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 mr-3">
                     <label for="privacy" class="text-sm text-gray-600">
-                        I agree to Taqbit Labs' <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a> and <a href="#" class="text-blue-600 hover:underline">Terms of Service</a>
+                        I agree to Taqbit Labs' <a href="privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a> and <a href="tos.html" class="text-blue-600 hover:underline">Terms of Service</a>
                     </label>
                 </div>
                 
@@ -718,6 +1024,20 @@ renderSlides();
                     Schedule My Demo
                 </button>
             </form>
+            
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function() {
+
+setTimeout(function(){
+alert("Thank you! Our team will contact you shortly.");
+document.getElementById("contactForm").reset();
+},500);
+
+});
+</script>
         </div>
     </div>
 </div>
@@ -755,7 +1075,8 @@ renderSlides();
 </section>
 
 <!-- Footer -->
-<div id="footer-placeholder"></div>
+ <div id="footer-placeholder"></div>
+
 
 <script src="script.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -880,3 +1201,5 @@ renderSlides();
     
 </body>
 </html>
+
+
