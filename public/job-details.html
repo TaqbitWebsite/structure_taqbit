@@ -198,13 +198,17 @@
                         <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
                 <input type="text" name="entry.2014241344" required
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                 pattern="^[A-Za-z]{2,50}$"
+                title="Only letters allowed (2-50 characters)"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
                 <input type="text" name="entry.2019822433" required
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                pattern="^[A-Za-z]{2,50}$"
+                title="Only letters allowed (2-50 characters)"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 </div>
@@ -212,39 +216,51 @@
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                 <input type="email" name="entry.85833498" required
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+                title="Enter a valid email address"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                 <input type="tel" name="entry.664686211"
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                pattern="^[0-9]{10}$"
+                title="Enter a valid 10-digit phone number"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
                 <input type="date" name="entry.1727693267"
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                max="2008-12-31"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Resume (Google Drive Link) *</label>
                 <input type="url" name="entry.47658816" required
+                pattern="https://.*"
+                title="Enter a valid URL starting with https://"
                 placeholder="Paste your Google Drive resume link"
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">LinkedIn Profile</label>
                 <input type="url" name="entry.854793834"
+                pattern="https://(www\.)?linkedin\.com/.*"
+                title="Enter a valid LinkedIn profile URL"
                 placeholder="https://linkedin.com/in/your-profile"
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary">
                 </div>
 
                 <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Cover Letter</label>
                 <textarea name="entry.51755001" rows="5"
-                class="mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary"></textarea>
+                 minlength="20" maxlength="1000"
+                pattern="^[A-Za-z0-9\s.,'\"-]{20,1000}$"
+                title="Minimum 20 characters, no special symbols like @#$%"
+                class="form-field mt-1 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-qdit-primary"></textarea>
                 </div>
 
                 <div class="flex items-start">
@@ -268,6 +284,48 @@
 
     <!-- Footer -->
  <div id="footer-placeholder"></div>
+
+ <script>
+document.querySelectorAll(".form-field").forEach(field => {
+
+  const icon = document.createElement("span");
+  icon.innerHTML = "❗";
+  icon.className = "absolute right-3 top-1/2 -translate-y-1/2 text-red-500 hidden";
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "relative";
+  field.parentNode.insertBefore(wrapper, field);
+  wrapper.appendChild(field);
+  wrapper.appendChild(icon);
+
+  const error = document.createElement("p");
+  error.className = "text-red-500 text-sm mt-1 hidden";
+  error.innerText = field.title || "Invalid input";
+  wrapper.parentNode.insertBefore(error, wrapper.nextSibling);
+
+  field.addEventListener("input", () => {
+
+    let isValid = field.checkValidity();
+
+    // 🔥 Custom validation for textarea (Cover Letter)
+    if (field.id === "coverLetter") {
+      const regex = /^[A-Za-z0-9\s.,'"-]{20,1000}$/;
+      isValid = regex.test(field.value);
+    }
+
+    if (isValid) {
+      field.classList.remove("border-red-500");
+      field.classList.add("border-gray-300");
+      icon.classList.add("hidden");
+      error.classList.add("hidden");
+    } else {
+      field.classList.add("border-red-500");
+      icon.classList.remove("hidden");
+      error.classList.remove("hidden");
+    }
+  });
+});
+</script>
     
 
     <!-- Your original script remains unchanged -->

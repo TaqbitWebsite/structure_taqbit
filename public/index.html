@@ -228,13 +228,13 @@
      <script>
 const tiles = [
     { img: 'assets/mou_img1.jpeg', title: 'Taqbit Labs is proud to announce the signing of a Memorandum of Understanding (MoU) with the Government of Andhra Pradesh, marking our entry into the state’s bold and rapidly advancing quantum ecosystem.', style: 'object-position: top;' },
-    { img: 'assets/mou_img2.jpeg', title: 'Under leadership of Shri N. Chandrababu Naidu and Shri Nara Lokesh, Andhra Pradesh is advancing deep technology and building India’s quantum-ready future. We are honored to join this journey.' },
-    { img: 'assets/amravati_workshop1.jpeg', title: 'Animesh Aaryan featured as a panelist at the Amravati Quantum Valley Workshop, discussing breakthroughs shaping the quantum future.' },
+    { img: 'assets/mou_img2.jpeg', title: 'Under the leadership of Shri N. Chandrababu Naidu and Shri Nara Lokesh, Andhra Pradesh is advancing deep technology and building India’s quantum-ready future. We are honored to join this journey.' },
+    { img: 'assets/amravati_workshop1.jpeg', title: 'Animesh Aaryan featured as a panelist at the Amaravati Quantum Valley Workshop, discussing breakthroughs shaping the quantum future.' },
     { img: 'assets/bilesh_event.jpg', title: 'Team Taqbit Labs is excited to be exhibiting today at the Amaravati Quantum Valley Workshop 2025 in Vijayawada!' },
-    { img: 'assets/amravati_workshop2.jpeg', title: 'Acknowledged for its quantum tech innovations, Taqbit Labs participated in the Amravati Quantum Valley Workshop panel, offering valuable contributions.' },
-    { img: 'assets/animesh_cll_event2.jpg', title: 'At the CII Quantum Technology Conclave 2026, New Delhi, our CEO Animesh Aaryan, participated in a strategic panel discussion on Quantum-Safe Cybersecurity & Cryptography.' },
-    { img: 'assets/nasc_complex.jpg', title: 'CEO, represented Taqbit Labs at this prestigious event held at the NASC Complex, New Delhi. The theme—"Technology, Coordination, and Commitment: Vision for a Secure and Strong India"—resonates deeply with our mission at Taqbit LABS' ,style: 'object-position: 50% 25%; transform: scale(0.95);'},
-    { img: 'assets/ai_summit_animesh.jpg', title: 'Thrilled that our CEO Animesh Aaryan is representing Taqbit LABS at the AI Impact Summit 2026—tackling a huge hurdle for innovators today : 𝐅𝐚𝐢𝐫 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐀𝐈 𝐜𝐨𝐦𝐩𝐮𝐭𝐞 𝐚𝐧𝐝 𝐝𝐚𝐭𝐚 𝐫𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬.' },
+    { img: 'assets/amravati_workshop2.jpeg', title: 'Acknowledged for its quantum tech innovations, Taqbit Labs participated in the Amaravati Quantum Valley Workshop panel, offering valuable contributions.' },
+    { img: 'assets/animesh_cll_event2.jpg', title: 'At the CII Quantum Technology Conclave 2026, New Delhi, our CEO Animesh Aaryan participated in a strategic panel discussion on Quantum-Safe Cybersecurity & Cryptography.' },
+    { img: 'assets/nasc_complex.jpg', title: 'Our CEO represented Taqbit Labs at this prestigious event held at the NASC Complex, New Delhi. The theme—"Technology, Coordination, and Commitment: Vision for a Secure and Strong India"—resonates deeply with our mission at Taqbit LABS' ,style: 'object-position: 50% 25%; transform: scale(0.95);'},
+    { img: 'assets/ai_summit_animesh.jpg', title: 'We are thrilled that our CEO, Animesh Aaryan, is representing Taqbit Labs at the AI Impact Summit 2026—tackling a huge hurdle for innovators today: 𝐅𝐚𝐢𝐫 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐀𝐈 𝐜𝐨𝐦𝐩𝐮𝐭𝐞 𝐚𝐧𝐝 𝐝𝐚𝐭𝐚 𝐫𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬.' },
     { img: 'assets/xdlinx_animesh.jpg', title: 'As the International Year of Quantum (IYQ) 2025 draws to a close, Taqbit Labs is thrilled to announce our MoU with XDLINX Space Labs to pioneer quantum-safe satellite communications.\nThis pioneering collaboration integrates Quantum Key Distribution (QKD) with Post-Quantum Cryptography (PQC) for robust, future-resilient security across space-to-ground links (command & telemetry) and space-to-space links (inter-satellite communications).', style: 'object-position: top;'  }
 ];
 
@@ -660,7 +660,7 @@ img.style = t.style || "";
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-white mb-2">Armed Forces</h3>
-                <p class="text-blue-200 text-sm">Secure command & control systems for army, navy and air force operations</p>
+                <p class="text-blue-200 text-sm">Secure command & control systems for Army, Navy and Air Force operations</p>
             </div>
 
             <!-- Aerospace -->
@@ -970,12 +970,16 @@ img.style = t.style || "";
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name*</label>
                         <input type="text" id="name" name="entry.1220880475" required 
-                               class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
+                        pattern="^[A-Za-z\s'-]{2,60}$"
+                        title="Enter a valid name (letters only)"
+                        class="form-field name-field w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email*</label>
                         <input type="email" id="email" name="entry.1260654428" required 
-                               class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
+                        pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+                        title="Enter a valid email address"
+                        class="form-field email-field w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                 </div>
                 
@@ -983,12 +987,16 @@ img.style = t.style || "";
                     <div>
                         <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company*</label>
                         <input type="text" id="company" name="entry.2001433784" required 
-                               class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
+                        pattern="^[A-Za-z0-9\s&.,'-]{2,100}$"
+                        title="Enter a valid company name"
+                        class="form-field company-field w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                        <input type="tel" id="phone" name="entry.1534171847" 
-                               class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
+                        <input type="tel" id="phone" name="entry.1534171847" required
+                        pattern="^[0-9]{10}$"
+                        title="Enter a valid 10-digit phone number"
+                        class="form-field phone-field w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200">
                     </div>
                 </div>
                 
@@ -1008,7 +1016,9 @@ img.style = t.style || "";
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
                     <textarea id="message" name="entry.1740065280" rows="3" 
-                              class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"></textarea>
+                    minlength="20" maxlength="1000"
+                    title="Minimum 20 characters required"
+                    class="w-full px-4 py-3 text-lg rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"></textarea>
                 </div>
                 
                 <div class="flex items-center">
@@ -1027,6 +1037,53 @@ img.style = t.style || "";
             
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+document.querySelectorAll(".form-field").forEach(field => {
+
+  const icon = document.createElement("span");
+  icon.innerHTML = "❗";
+  icon.className = "absolute right-3 top-1/2 -translate-y-1/2 text-red-500 hidden";
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "relative";
+  field.parentNode.insertBefore(wrapper, field);
+  wrapper.appendChild(field);
+  wrapper.appendChild(icon);
+
+  const error = document.createElement("p");
+  error.className = "text-red-500 text-sm mt-1 hidden";
+  error.innerText = field.title || "Invalid input";
+  wrapper.parentNode.insertBefore(error, wrapper.nextSibling);
+
+  field.addEventListener("input", () => {
+
+    // 🔥 Block invalid chars in name
+    if (field.classList.contains("name-field")) {
+      field.value = field.value.replace(/[^A-Za-z\s'-]/g, "");
+    }
+
+    let isValid = field.checkValidity();
+
+    // 🔥 Fix textarea validation
+    if (field.id === "messageField") {
+      const regex = /^(?=.*[A-Za-z])[A-Za-z0-9\s.,'"@#()\-+/]{20,1000}$/;
+      isValid = regex.test(field.value);
+    }
+
+    if (isValid) {
+      field.classList.remove("border-red-500");
+      field.classList.add("border-gray-300");
+      icon.classList.add("hidden");
+      error.classList.add("hidden");
+    } else {
+      field.classList.add("border-red-500");
+      icon.classList.remove("hidden");
+      error.classList.remove("hidden");
+    }
+  });
+});
+</script>
+
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", function() {

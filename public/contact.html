@@ -125,26 +125,32 @@ class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                    <input type="text"  name="entry.1230527811" required 
-                           class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text"  name="entry.1230527811" required
+                     pattern="^[A-Za-z\s'-]{2,60}$"
+                     title="Enter a valid name (letters only)"
+                    class="form-field contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div>
                     <label  class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                     <input type="email"  name="entry.545578063" required 
-                           class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                     pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+                    title="Enter a valid email address"
+                    class="form-field contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
             </div>
 
             <div>
                 <label  class="block text-sm font-medium text-gray-700 mb-1">Company/Organization</label>
                 <input type="text"  name="entry.1608802158"
-                       class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                pattern="^[A-Za-z0-9\s&.,'-]{2,100}$"
+                title="Enter a valid company name"
+                class="form-field contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                 <select  name="entry.1691273455"
-                        class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="form-field contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Product Information">Product Information</option>
                     <option value="Technical Support">Technical Support</option>
@@ -156,7 +162,9 @@ class="space-y-6">
             <div>
                 <label  class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
                 <textarea  name="entry.1382442882" rows="5" required 
-                          class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                minlength="20" maxlength="1000"
+                title="    Minimum 20 characters required"
+                class="form-field contact-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
             </div>
 
             <div class="flex items-center">
@@ -175,6 +183,56 @@ class="space-y-6">
             </div>
         </form>
         <iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+document.querySelectorAll(".form-field").forEach(field => {
+
+  // Create icon
+  const icon = document.createElement("span");
+  icon.innerHTML = "❗";
+  icon.className = "absolute right-3 top-1/2 -translate-y-1/2 text-red-500 hidden";
+
+  // Wrap field
+  const wrapper = document.createElement("div");
+  wrapper.className = "relative";
+  field.parentNode.insertBefore(wrapper, field);
+  wrapper.appendChild(field);
+  wrapper.appendChild(icon);
+
+  // Error message
+  const error = document.createElement("p");
+  error.className = "text-red-500 text-sm mt-1 hidden";
+  error.innerText = field.title || "Invalid input";
+  wrapper.parentNode.insertBefore(error, wrapper.nextSibling);
+
+  field.addEventListener("input", () => {
+
+    // 🔥 1. Block numbers/symbols in NAME fields
+    if (field.name === "entry.914221333" || field.name === "entry.899466070" || field.name === "entry.2058807647") {
+      field.value = field.value.replace(/[^A-Za-z\s'-]/g, "");
+    }
+
+    let isValid = field.checkValidity();
+
+    // 🔥 2. Fix for textarea (Message / Cover Letter)
+    if (field.id === "messageField" || field.id === "coverLetter") {
+      const regex = /^(?=.*[A-Za-z])[A-Za-z0-9\s.,'"@#()\-+/]{20,1000}$/;
+      isValid = regex.test(field.value);
+    }
+
+    // 🔥 3. Apply UI feedback
+    if (isValid) {
+      field.classList.remove("border-red-500");
+      field.classList.add("border-gray-300");
+      icon.classList.add("hidden");
+      error.classList.add("hidden");
+    } else {
+      field.classList.add("border-red-500");
+      icon.classList.remove("hidden");
+      error.classList.remove("hidden");
+    }
+  });
+});
+</script>
 <script>
 function formSubmitted() {
     setTimeout(function () {
@@ -222,7 +280,7 @@ function formSubmitted() {
                     <p class="text-taqbit-text-light mb-4">Send us an email and we'll respond within one business day.</p>
                     <div class="space-y-2">
                         <p class="text-lg font-medium text-taqbit-text">
-                            <i class="fas fa-at mr-2 text-purple-500" aria-hidden="true"></i> contact@taqbit.com
+                            <i class="fas fa-at mr-2 text-purple-500" aria-hidden="true"></i> contact@taqbitlabs.com
                         </p>
                         <p class="text-sm text-gray-500">For general inquiries</p>
                     </div>
@@ -234,10 +292,10 @@ function formSubmitted() {
                         <i class="fas fa-headset text-2xl text-green-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold text-taqbit-text mb-3">Technical Support</h3>
-                    <p class="text-taqbit-text-light mb-4">24/7 support for our enterprise customers and partners.</p>
+                    <p class="text-taqbit-text-light mb-4">Dedicated technical support for our enterprise customers and partners.</p>
                     <div class="space-y-2">
                         <p class="text-lg font-medium text-taqbit-text">
-                            <i class="fas fa-life-ring mr-2 text-green-500" aria-hidden="true"></i> support@taqbit.com
+                            <i class="fas fa-life-ring mr-2 text-green-500" aria-hidden="true"></i> support@taqbitlabs.com
                         </p>
                         <p class="text-sm text-gray-500">24/7 for registered customers</p>
                     </div>
