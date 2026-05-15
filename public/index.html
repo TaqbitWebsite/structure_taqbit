@@ -173,18 +173,28 @@
 
     <section class="relative min-h-screen flex items-center justify-center pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-blue-50 overflow-hidden">
 
+ <!-- Animated Background -->
+<div class="absolute inset-0 overflow-hidden z-0">
 
-    <!-- Soft background gradient -->
-    <div class="absolute inset-0 z-0">
-       <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-indigo-50"></div>
-    </div>
+    <!-- Premium Soft Blue Background -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-100 to-sky-50"></div>
 
+    <!-- Floating Shape 1 -->
+    <div class="floating-shape shape1"></div>
+
+    <!-- Floating Shape 2 -->
+    <div class="floating-shape shape2"></div>
+
+    <!-- Floating Shape 3 -->
+    <div class="floating-shape shape3"></div>
+
+</div>
     <!-- Content -->
     <div class="max-w-7xl mx-auto relative z-20 w-full">
         
         <!-- Heading -->
         <h2 class="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-12">
-            Taqbit Labs in the News
+            <span class="text-red-600">Taqbit Labs</span> in the News
         </h2>
 
         <!-- Grid -->
@@ -225,6 +235,88 @@
             track.appendChild(tile);
         });
     </script> -->
+ <style>
+
+/* Shared shape style */
+.floating-shape{
+    position:absolute;
+    border-radius:9999px;
+    filter:blur(100px);
+    opacity:0.45;
+    pointer-events:none;
+}
+
+/* Soft sky blue */
+.shape1{
+    width:320px;
+    height:320px;
+
+    background:#bae6fd;
+
+    top:5%;
+    left:0%;
+
+    animation:move1 8s infinite alternate ease-in-out;
+}
+
+/* Light cyan */
+.shape2{
+    width:260px;
+    height:260px;
+
+    background:#4c839c;
+
+    bottom:5%;
+    right:5%;
+
+    animation:move2 9s infinite alternate ease-in-out;
+}
+
+/* Very soft blue */
+.shape3{
+    width:240px;
+    height:240px;
+
+    background:#bfdbfe;
+
+    top:45%;
+    left:45%;
+
+    animation:move3 10s infinite alternate ease-in-out;
+}
+
+/* Smooth floating animations */
+@keyframes move1{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    100%{
+        transform:translate(120px,-80px) scale(1.15);
+    }
+}
+
+@keyframes move2{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    100%{
+        transform:translate(-100px,70px) scale(1.1);
+    }
+}
+
+@keyframes move3{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    100%{
+        transform:translate(80px,-100px) scale(1.18);
+    }
+}
+
+</style>
      <script>
 const tiles = [
     { img: 'assets/mou_img1.jpeg', title: 'Taqbit Labs is proud to announce the signing of a Memorandum of Understanding (MoU) with the Government of Andhra Pradesh, marking our entry into the state’s bold and rapidly advancing quantum ecosystem.', style: 'object-position: top;' },
@@ -232,8 +324,8 @@ const tiles = [
     { img: 'assets/amravati_workshop1.jpeg', title: 'Animesh Aaryan featured as a panelist at the Amaravati Quantum Valley Workshop, discussing breakthroughs shaping the quantum future.' },
     { img: 'assets/bilesh_event.jpg', title: 'Team Taqbit Labs is excited to be exhibiting today at the Amaravati Quantum Valley Workshop 2025 in Vijayawada!' },
     { img: 'assets/amravati_workshop2.jpeg', title: 'Acknowledged for its quantum tech innovations, Taqbit Labs participated in the Amaravati Quantum Valley Workshop panel, offering valuable contributions.' },
-    { img: 'assets/animesh_cll_event2.jpg', title: 'At the CII Quantum Technology Conclave 2026, New Delhi, our CEO Animesh Aaryan participated in a strategic panel discussion on Quantum-Safe Cybersecurity & Cryptography.' },
-    { img: 'assets/nasc_complex.jpg', title: 'Our CEO represented Taqbit Labs at this prestigious event held at the NASC Complex, New Delhi. The theme—"Technology, Coordination, and Commitment: Vision for a Secure and Strong India"—resonates deeply with our mission at Taqbit LABS' ,style: 'object-position: 50% 25%; transform: scale(0.95);'},
+    { img: 'assets/animesh_cll_event2.jpg', title: 'At the CII Quantum Technology Conclave 2026, New Delhi, our CEO Animesh Aaryan participated in a strategic panel discussion on Quantum-Safe Cybersecurity and Cryptography.' },
+    { img: 'assets/nasc_complex.jpg', title: 'Our CEO represented Taqbit Labs at this prestigious event held at the NASC Complex, New Delhi. The theme—"Technology, Coordination, and Commitment: Vision for a Secure and Strong India"—resonates deeply with our mission at Taqbit Labs' ,style: 'object-position: 50% 25%; transform: scale(0.95);'},
     { img: 'assets/ai_summit_animesh.jpg', title: 'We are thrilled that our CEO, Animesh Aaryan, is representing Taqbit Labs at the AI Impact Summit 2026—tackling a huge hurdle for innovators today: 𝐅𝐚𝐢𝐫 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐨 𝐀𝐈 𝐜𝐨𝐦𝐩𝐮𝐭𝐞 𝐚𝐧𝐝 𝐝𝐚𝐭𝐚 𝐫𝐞𝐬𝐨𝐮𝐫𝐜𝐞𝐬.' },
     { img: 'assets/xdlinx_animesh.jpg', title: 'As the International Year of Quantum (IYQ) 2025 draws to a close, Taqbit Labs is thrilled to announce our MoU with XDLINX Space Labs to pioneer quantum-safe satellite communications.\nThis pioneering collaboration integrates Quantum Key Distribution (QKD) with Post-Quantum Cryptography (PQC) for robust, future-resilient security across space-to-ground links (command & telemetry) and space-to-space links (inter-satellite communications).', style: 'object-position: top;'  }
 ];
@@ -242,7 +334,7 @@ const container2 = document.getElementById('news-container');
 
 tiles.forEach(t => {
     const card = document.createElement('div');
-    card.className = "bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300";
+    card.className = "bg-blue/70 backdrop-blur-xl rounded-2xl overflow-hidden border border-transparent shadow-lg hover:scale-105 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(239,68,68,0.5)] transition-all duration-500";
 
     const img = document.createElement('img');
     img.src = t.img;
@@ -660,7 +752,7 @@ img.style = t.style || "";
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-white mb-2">Armed Forces</h3>
-                <p class="text-blue-200 text-sm">Secure command & control systems for Army, Navy and Air Force operations</p>
+                <p class="text-blue-200 text-sm">Secure command and control systems for Army, Navy and Air Force operations</p>
             </div>
 
             <!-- Aerospace -->
@@ -780,7 +872,7 @@ img.style = t.style || "";
             <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Includes NIST-selected algorithms like Kyber & Dilithium
+            Includes NIST-selected algorithms like Kyber and Dilithium
         </li>
         <li class="flex items-start">
             <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -21,7 +21,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     </style>
-    <link rel="stylesheet" href="styles.css.html">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="quantum-pattern">
 
@@ -64,9 +64,53 @@
                 <p class="text-gray-600 max-w-4xl mx-auto">Join our webinars, conferences, and workshops on quantum-safe cybersecurity technologies</p>
             </div>
 
-            <div id="events-grid" class="grid md:grid-cols-3 gap-8">
-                <!-- JS will inject event cards here -->
+            <!-- <div id="events-grid" class="grid md:grid-cols-3 gap-8">
+                JS will inject event cards here
+            </div> -->
+             <!-- Coming Soon Card -->
+        <div class="max-w-3xl mx-auto">
+
+            <div class="bg-white/80 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-xl p-12 text-center
+                        hover:shadow-[0_0_40px_rgba(239,68,68,0.25)]
+                        hover:border-red-400
+                        transition-all duration-500">
+
+                <!-- Icon -->
+                <div class="w-24 h-24 mx-auto mb-8 rounded-full flex items-center justify-center
+                            bg-gradient-to-r from-blue-400 to-blue-500 shadow-lg">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-12 h-12 text-black"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v11a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+
+                <!-- Text -->
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                    Stay Tuned
+                </h3>
+
+                <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                    Exciting webinars, conferences, workshops, and industry events are currently being planned.
+                    Upcoming event details will be announced soon.
+                </p>
+
+                <!-- Small Tag -->
+                <div class="mt-8 inline-flex items-center px-5 py-2 rounded-full
+                            bg-blue-50 border border-blue-200 text-blue-600 font-medium">
+
+                    Upcoming Events Coming Soon
+                </div>
+
             </div>
+        </div>
         </div>
     </section>
 
@@ -146,8 +190,17 @@
         //                 </div>`;
         //         });
         // }
-        function fetchNews() {
-    fetch("/api/news")
+      function fetchNews() {
+
+    const isLocal =
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname === "localhost";
+
+    const url = isLocal
+        ? "https://gnews.io/api/v4/search?q=quantum%20security%20OR%20quantum%20computing%20OR%20cryptography&lang=en&max=6&token=d90a84a7085b43855cc3b6dff1a08f46"
+        : "/api/news";
+
+    fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch news");
@@ -155,6 +208,7 @@
             return response.json();
         })
         .then(data => {
+
             const container = document.getElementById("news-container");
 
             if (!data.articles || data.articles.length === 0) {
@@ -165,12 +219,17 @@
 
             container.innerHTML = data.articles.map(article => `
                 <div class="card-hover-effect bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
-                    <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="block mb-4">
-                        <img 
+
+                    <a href="${article.url}" target="_blank"
+                       rel="noopener noreferrer"
+                       class="block mb-4">
+
+                        <img
                             src="${article.image || 'https://via.placeholder.com/600x300?text=Quantum+News'}"
                             alt="${article.title}"
                             class="w-full h-48 object-cover rounded-md mb-4"
                         >
+
                         <h2 class="text-2xl font-bold text-gray-900 mb-2">
                             ${article.title}
                         </h2>
@@ -184,31 +243,32 @@
                         ${article.description || ""}
                     </p>
 
-                    <a href="${article.url}" target="_blank" rel="noopener noreferrer"
+                    <a href="${article.url}"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        class="inline-flex items-center text-yellow-600 font-medium">
+
                         Read Full Article
-                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                                  clip-rule="evenodd" />
-                        </svg>
                     </a>
+
                 </div>
             `).join("");
         })
         .catch(error => {
+
             console.error(error);
+
             document.getElementById("news-container").innerHTML = `
                 <div class="text-center py-10">
-                    <p class="text-red-500 mb-2">Failed to load news.</p>
-                    <p class="text-gray-600 text-sm">Please try again later.</p>
+                    <p class="text-red-500 mb-2">
+                        Failed to load news.
+                    </p>
                 </div>
             `;
         });
 }
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderEvents();
             fetchNews();
         });
     </script>
